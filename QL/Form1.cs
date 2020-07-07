@@ -43,11 +43,17 @@ namespace QL
            else if(txttk.Text == "" && txtmk.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin !!!");
-            }    
+            }   
+           
             else
             {
                 MessageBox.Show("Bạn đã nhập sai tài khoản hoặc mật khẩu vui lòng kiểm tra lại !!!");
             }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

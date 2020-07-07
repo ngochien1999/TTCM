@@ -79,7 +79,7 @@ namespace QL
 
         private void GunaButton4_Click(object sender, EventArgs e)
         {
-            Form4 f = new Form4();
+           Form10 f = new Form10();
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -88,7 +88,7 @@ namespace QL
 
         private void GunaButton7_Click(object sender, EventArgs e)
         {
-            Form3 f = new Form3();
+            Form9 f = new Form9();
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -97,10 +97,10 @@ namespace QL
 
         private void GunaButton5_Click(object sender, EventArgs e)
         {
-            Sanbay f = new Sanbay();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            //Sanbay f = new Sanbay();
+            //this.Hide();
+            //f.ShowDialog();
+            //this.Show();
 
         }
 
@@ -116,17 +116,33 @@ namespace QL
 
         private void GunaButton6_Click(object sender, EventArgs e)
         {
-
             Form5 f = new Form5();
             this.Hide();
             f.ShowDialog();
             this.Show();
-
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
+          
+
+        }
+
+        private void gunaButton9_Click(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void GunaButton8_Click(object sender, EventArgs e)
+        {
+            Form8 f = new Form8();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         Random random = new Random();

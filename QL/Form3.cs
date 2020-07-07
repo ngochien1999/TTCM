@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL.QLBCMBDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,149 +13,62 @@ namespace QL
 {
     public partial class Form3 : Form
     {
-        public void Load()
-        {
-            string query = " select * from Nhanvien";
-            DataTable data = Connect.Instace.excutequery(query);
-            dtnhanvien.DataSource = data;
-
-        }
-        public bool kiemtra(string manv)
-        {
-            string query = " select * from Nhanvien where MaNV='" +txtMaNV.Text + "'";
-            DataTable data = Connect.Instace.excutequery(query);
-            int dem = 0;
-            foreach (DataRow item in data.Rows)
-            {
-                dem++;
-            }
-            if (dem > 0)
-                return true;
-            return false;
-        }
-      
         public Form3()
         {
             InitializeComponent();
-            Load();
+            //Loadtt();
         }
-
-        private void dtnhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
+       
+        private void simpleButton2_Click(object sender, EventArgs e)
         {
-            int i;
-            i = dtnhanvien.CurrentRow.Index;
-           txtMaNV.Text = dtnhanvien.Rows[i].Cells[0].Value.ToString();
-            txtNhanvien.Text = dtnhanvien.Rows[i].Cells[1].Value.ToString();
-            txtCMND.Text = dtnhanvien.Rows[i].Cells[2].Value.ToString();
-           txtDiachi.Text = dtnhanvien.Rows[i].Cells[3].Value.ToString();
-            txtSDT.Text = dtnhanvien.Rows[i].Cells[4].Value.ToString();
+
+            Form4 f = new Form4();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
-
-        private void gunaButton1_Click(object sender, EventArgs e)
+        public void thongTinChuyenBay(string gv)
         {
-            if (txtMaNV.Text == "" || txtNhanvien.Text == "" || txtCMND.Text == "" || txtSDT.Text=="" || txtDiachi.Text=="")
-            {
-                MessageBox.Show(" vui lòng nhập đầy đủ thông tin");
-            }
-            else
-            {
-                try
-                {
-                    if (kiemtra(txtMaNV.Text) == true)
-                    {
-                        MessageBox.Show(" Mã đã tồn tại");
-                        return;
-                    }
-                    else
-                    {
-                        string query = "insert into Nhavien values (N'" + txtMaNV.Text + "',N'" + txtNhanvien.Text + "',N'" + txtCMND.Text + "' ,N'"+txtDiachi.Text+"', N'"+txtSDT.Text+"' )";
-                        DataTable data = Connect.Instace.excutequery(query);
-                        Load();
-                        MessageBox.Show(" Thêm thành công");
-
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Thêm Thất bại");
-
-                }
-            }
-        }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtMaNV.Text == "")
-                {
-                    MessageBox.Show(" Vui Long chon dong can xoa");
-                    return;
-                }
-                else
-                {
-                    string query = "delete from Nhanvien where MaNV = '" + txtMaNV.Text + "'";
-                    DataTable data = Connect.Instace.excutequery(query);
-                    Load();
-                    MessageBox.Show(" Xóa thông tin thành công");
-                }
-
-            }
-            catch
-            {
-                MessageBox.Show(" Xoa that bai");
-            }
-
-        }
-
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-            string query = "update Nhanvien set TenNV = '" + txtNhanvien.Text + "' , CMND = '" + txtCMND.Text + "', Diachi = '" + txtDiachi.Text + "' , SĐT = '" + txtSDT.Text + "' where MaNV = '"+txtMaNV.Text+"' ";
-            DataTable data = Connect.Instace.excutequery(query);
-            MessageBox.Show(" Sửa thông tin thành công");
-            Load();
-        }
-        Connect connect = new Connect();
-
-        public DataTable DataTable { get; private set; }
-
-        private void gunaButton4_Click(object sender, EventArgs e)
-        {
-            if(textBox1.Text.Trim()== "")
-            {
-                MessageBox.Show("Bạn chưa nhập đủ thông tin cần tìm kiếm !!!", "Thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-
-            }
-            else
-            {
-                DataTable = new DataTable();
-                if(DataTable.Rows.Count > 0)
-                {
-                    dtnhanvien.DataSource = DataTable;
-                } 
-                else
-                {
-                    MessageBox.Show("Bạn tìm :" + txtNhanvien.Text + "không có trong dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             
-                    txtNhanvien.Text = "";
-                }    
-
-                
-                
-            }
         }
-
-        private void gunaButton5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Form3_Load(object sender, EventArgs e)
         {
+           
+            // TODO: This line of code loads data into the 'qLBCMBDataSet1.Chuyenbay' table. You can move, or remove it, as needed.
+            // this.chuyenbayTableAdapter.Fill(this.qLBCMBDataSet1.Chuyenbay);
+            // TODO: This line of code loads data into the 'qLBCMBDataSet.Tuyenbay' table. You can move, or remove it, as needed.
+            // this.tuyenbayTableAdapter.Fill(this.qLBCMBDataSet.Tuyenbay);
+            // TODO: This line of code loads data into the 'qLBCMBDataSet2.Ve' table. You can move, or remove it, as needed.
+            //this.veTableAdapter.Fill(this.qLBCMBDataSet2.Ve);
+            // TODO: This line of code loads data into the 'qLBCMBDataSet2.Chuyenbay' table. You can move, or remove it, as needed.
+            // this.chuyenbayTableAdapter.Fill(this.qLBCMBDataSet2.Chuyenbay);
 
         }
 
-        private void Form3_Load_1(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TableAdapterManager tt = new TableAdapterManager();
+            DataTable table = new DataTable();
+           tt.Fill(table, cbDiemDi.SelectedValue.ToString(), cbDiemDen.SelectedValue.ToString(), dtpNgayDi.Value, cbLoaiVe.Text);
+            dataGridView1.DataSource = table;
+        }
+
+        private void cbDiemDi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtThongTin_TextChanged(object sender, EventArgs e)
         {
 
         }

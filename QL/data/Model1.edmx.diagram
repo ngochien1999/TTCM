@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8723c0bde8d94bfda838c74cbd113903" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBCMBModel.Chuyenbay" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.CTchuyenbay" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.CTVe" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.Hoadon" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.Khachhang" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.Maybay" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.Nhanvien" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.Sanbay" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.Tuyenbay" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBCMBModel.Ve" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <AssociationConnector Association="QLBCMBModel.FK__Chuyenbay__MaMB__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK__CTchuyenb__Thoig__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK_Hoadon_Chuyenbay" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK__CTchuyenba__MaTB__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK_CTchuyenbay_Sanbay" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK__CTVe__Mave__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK__CTVe__Soluongban__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK__Hoadon__Tongtien__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK__Ve__Giave__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK_Tuyenbay_Sanbay" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBCMBModel.FK_Tuyenbay_Sanbay1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

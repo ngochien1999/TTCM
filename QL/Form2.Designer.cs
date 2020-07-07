@@ -33,10 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbchao = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.GunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.GunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.GunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -46,32 +42,36 @@
             this.GunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.GunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.pcchinh = new System.Windows.Forms.PictureBox();
             this.GunaPictureBox8 = new Guna.UI.WinForms.GunaPictureBox();
             this.GunaPictureBox7 = new Guna.UI.WinForms.GunaPictureBox();
             this.GunaPictureBox6 = new Guna.UI.WinForms.GunaPictureBox();
             this.GunaPictureBox5 = new Guna.UI.WinForms.GunaPictureBox();
             this.GunaPictureBox4 = new Guna.UI.WinForms.GunaPictureBox();
             this.GunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.pcchinh = new System.Windows.Forms.PictureBox();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.GunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.GunaPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcchinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcchinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
@@ -116,81 +116,6 @@
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(174, 403);
             this.gunaPanel2.TabIndex = 9;
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::QL.Properties.Resources.Capture1;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(-1, -15);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(179, 63);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 8;
-            this.gunaPictureBox1.TabStop = false;
-            // 
-            // gunaButton3
-            // 
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.White;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.Transparent;
-            this.gunaButton3.Image = global::QL.Properties.Resources.tải_xuống__3_;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(895, 11);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(47, 24);
-            this.gunaButton3.TabIndex = 7;
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
-            // 
-            // gunaButton2
-            // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.White;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.Image = global::QL.Properties.Resources.tải_xuống__2_;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(829, 11);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(44, 24);
-            this.gunaButton2.TabIndex = 6;
-            // 
-            // GunaButton1
-            // 
-            this.GunaButton1.AnimationHoverSpeed = 0.07F;
-            this.GunaButton1.AnimationSpeed = 0.03F;
-            this.GunaButton1.BaseColor = System.Drawing.Color.White;
-            this.GunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.GunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.GunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GunaButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.GunaButton1.Image = global::QL.Properties.Resources.icon_fb;
-            this.GunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.GunaButton1.Location = new System.Drawing.Point(746, 12);
-            this.GunaButton1.Name = "GunaButton1";
-            this.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.GunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.GunaButton1.OnHoverImage = null;
-            this.GunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.GunaButton1.Size = new System.Drawing.Size(44, 24);
-            this.GunaButton1.TabIndex = 5;
             // 
             // GunaLabel2
             // 
@@ -257,6 +182,7 @@
             this.GunaButton8.TabIndex = 15;
             this.GunaButton8.Text = "Thống kê";
             this.GunaButton8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GunaButton8.Click += new System.EventHandler(this.GunaButton8_Click);
             // 
             // GunaButton7
             // 
@@ -377,6 +303,66 @@
             this.gunaButton9.TabIndex = 10;
             this.gunaButton9.Text = "Vé";
             this.gunaButton9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton9.Click += new System.EventHandler(this.gunaButton9_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.DeepSkyBlue;
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.LightSteelBlue;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.LightSkyBlue;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(613, 49);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(338, 20);
+            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.TargetControl = this.panel1;
+            // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.Radius = 10;
+            this.gunaElipse2.TargetControl = this.GunaPanel3;
+            // 
+            // gunaElipse3
+            // 
+            this.gunaElipse3.Radius = 10;
+            this.gunaElipse3.TargetControl = this.pcchinh;
+            // 
+            // gunaElipse4
+            // 
+            this.gunaElipse4.TargetControl = this;
+            // 
+            // pcchinh
+            // 
+            this.pcchinh.Image = global::QL.Properties.Resources.maybay10;
+            this.pcchinh.Location = new System.Drawing.Point(179, 69);
+            this.pcchinh.Name = "pcchinh";
+            this.pcchinh.Size = new System.Drawing.Size(772, 461);
+            this.pcchinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcchinh.TabIndex = 3;
+            this.pcchinh.TabStop = false;
             // 
             // GunaPictureBox8
             // 
@@ -444,64 +430,80 @@
             this.GunaPictureBox3.TabIndex = 4;
             this.GunaPictureBox3.TabStop = false;
             // 
-            // timer1
+            // gunaPictureBox1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::QL.Properties.Resources.Capture1;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(-1, -15);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(179, 63);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 8;
+            this.gunaPictureBox1.TabStop = false;
             // 
-            // timer2
+            // gunaButton3
             // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 10;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.gunaButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaButton3.AnimationSpeed = 0.03F;
+            this.gunaButton3.BaseColor = System.Drawing.Color.White;
+            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton3.ForeColor = System.Drawing.Color.Transparent;
+            this.gunaButton3.Image = global::QL.Properties.Resources.tải_xuống__3_;
+            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton3.Location = new System.Drawing.Point(895, 11);
+            this.gunaButton3.Name = "gunaButton3";
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverImage = null;
+            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton3.Size = new System.Drawing.Size(47, 24);
+            this.gunaButton3.TabIndex = 7;
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
-            // dateTimePicker1
+            // gunaButton2
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.DeepSkyBlue;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.LightSteelBlue;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkTurquoise;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.LightSkyBlue;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(613, 49);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(338, 20);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.gunaButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaButton2.AnimationSpeed = 0.03F;
+            this.gunaButton2.BaseColor = System.Drawing.Color.White;
+            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton2.ForeColor = System.Drawing.Color.Transparent;
+            this.gunaButton2.Image = global::QL.Properties.Resources.tải_xuống__2_;
+            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton2.Location = new System.Drawing.Point(829, 11);
+            this.gunaButton2.Name = "gunaButton2";
+            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton2.OnHoverImage = null;
+            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton2.Size = new System.Drawing.Size(44, 24);
+            this.gunaButton2.TabIndex = 6;
             // 
-            // timer3
+            // GunaButton1
             // 
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // pcchinh
-            // 
-            this.pcchinh.Image = global::QL.Properties.Resources.maybay10;
-            this.pcchinh.Location = new System.Drawing.Point(179, 69);
-            this.pcchinh.Name = "pcchinh";
-            this.pcchinh.Size = new System.Drawing.Size(772, 461);
-            this.pcchinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcchinh.TabIndex = 3;
-            this.pcchinh.TabStop = false;
-            // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.TargetControl = this.panel1;
-            // 
-            // gunaElipse2
-            // 
-            this.gunaElipse2.Radius = 10;
-            this.gunaElipse2.TargetControl = this.GunaPanel3;
-            // 
-            // gunaElipse3
-            // 
-            this.gunaElipse3.Radius = 10;
-            this.gunaElipse3.TargetControl = this.pcchinh;
-            // 
-            // gunaElipse4
-            // 
-            this.gunaElipse4.TargetControl = this;
+            this.GunaButton1.AnimationHoverSpeed = 0.07F;
+            this.GunaButton1.AnimationSpeed = 0.03F;
+            this.GunaButton1.BaseColor = System.Drawing.Color.White;
+            this.GunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.GunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.GunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GunaButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.GunaButton1.Image = global::QL.Properties.Resources.icon_fb;
+            this.GunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.GunaButton1.Location = new System.Drawing.Point(746, 12);
+            this.GunaButton1.Name = "GunaButton1";
+            this.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.GunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.GunaButton1.OnHoverImage = null;
+            this.GunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.GunaButton1.Size = new System.Drawing.Size(44, 24);
+            this.GunaButton1.TabIndex = 5;
             // 
             // Form2
             // 
@@ -521,16 +523,16 @@
             this.gunaPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.GunaPanel3.ResumeLayout(false);
             this.GunaPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcchinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcchinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

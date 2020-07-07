@@ -44,7 +44,7 @@
             // 
             this.GunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.GunaPictureBox2.Image = global::QL.Properties.Resources.admin;
-            this.GunaPictureBox2.Location = new System.Drawing.Point(348, 42);
+            this.GunaPictureBox2.Location = new System.Drawing.Point(74, 36);
             this.GunaPictureBox2.Name = "GunaPictureBox2";
             this.GunaPictureBox2.Size = new System.Drawing.Size(121, 83);
             this.GunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -55,7 +55,7 @@
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::QL.Properties.Resources.air;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(248, 13);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(-2, -1);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.Size = new System.Drawing.Size(319, 425);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,7 +66,7 @@
             // 
             this.GunaLabel2.AutoSize = true;
             this.GunaLabel2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GunaLabel2.Location = new System.Drawing.Point(279, 185);
+            this.GunaLabel2.Location = new System.Drawing.Point(12, 163);
             this.GunaLabel2.Name = "GunaLabel2";
             this.GunaLabel2.Size = new System.Drawing.Size(58, 17);
             this.GunaLabel2.TabIndex = 10;
@@ -81,7 +81,7 @@
             this.txttk.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txttk.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txttk.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttk.Location = new System.Drawing.Point(398, 176);
+            this.txttk.Location = new System.Drawing.Point(112, 154);
             this.txttk.Name = "txttk";
             this.txttk.PasswordChar = '\0';
             this.txttk.Size = new System.Drawing.Size(143, 26);
@@ -91,7 +91,7 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(279, 251);
+            this.gunaLabel1.Location = new System.Drawing.Point(12, 224);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(66, 17);
             this.gunaLabel1.TabIndex = 12;
@@ -106,7 +106,7 @@
             this.txtmk.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtmk.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtmk.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtmk.Location = new System.Drawing.Point(398, 242);
+            this.txtmk.Location = new System.Drawing.Point(112, 215);
             this.txtmk.Name = "txtmk";
             this.txtmk.PasswordChar = '*';
             this.txtmk.Size = new System.Drawing.Size(143, 26);
@@ -124,9 +124,9 @@
             this.GunaButton1.ForeColor = System.Drawing.Color.White;
             this.GunaButton1.Image = null;
             this.GunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.GunaButton1.Location = new System.Drawing.Point(291, 293);
+            this.GunaButton1.Location = new System.Drawing.Point(18, 282);
             this.GunaButton1.Name = "GunaButton1";
-            this.GunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.GunaButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.GunaButton1.OnHoverImage = null;
@@ -148,7 +148,7 @@
             this.GunaButton2.ForeColor = System.Drawing.Color.White;
             this.GunaButton2.Image = null;
             this.GunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.GunaButton2.Location = new System.Drawing.Point(291, 359);
+            this.GunaButton2.Location = new System.Drawing.Point(18, 341);
             this.GunaButton2.Name = "GunaButton2";
             this.GunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.GunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(319, 424);
             this.Controls.Add(this.GunaButton2);
             this.Controls.Add(this.GunaButton1);
             this.Controls.Add(this.txtmk);
@@ -178,6 +178,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -22,5 +22,10 @@ namespace QL
             this.Close();
 
         }
+
+        private void gunaDateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
