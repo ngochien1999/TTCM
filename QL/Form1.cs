@@ -19,7 +19,9 @@ namespace QL
 
         private void GunaButton2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult tl = MessageBox.Show("Bạn có thực sự muốn thoát chương trình ?", "Chú ý !",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (tl == DialogResult.Yes) { Application.Exit(); }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -44,6 +46,14 @@ namespace QL
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin !!!");
             }   
+           else if(txttk.Text=="nhanvien " && txtmk.Text == "12345")
+            {
+
+                Form16 f = new Form16();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }    
            
             else
             {
@@ -55,6 +65,11 @@ namespace QL
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReset_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmk.Text = txttk.Text = "";
         }
     }
 }

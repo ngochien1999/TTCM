@@ -74,6 +74,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -91,7 +92,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chuyenbay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Connect.cs" />
+    <Compile Include="CTchuyenbay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTVe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,60 +127,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DuLieu.xsd</DependentUpon>
     </Compile>
-    <Compile Include="data\Chuyenbay.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\CTchuyenbay.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\CTVe.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Hoadon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Khachhang.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Maybay.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="data\Nhanvien.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Sanbay.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Tuyenbay.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="data\Ve.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +144,36 @@
     </Compile>
     <Compile Include="Form11.Designer.cs">
       <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form13.Designer.cs">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form15.Designer.cs">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form16.Designer.cs">
+      <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -212,6 +198,12 @@
     </Compile>
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmhoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmhoadon.Designer.cs">
+      <DependentUpon>frmhoadon.cs</DependentUpon>
     </Compile>
     <Compile Include="Form5.cs">
       <SubType>Form</SubType>
@@ -243,6 +235,36 @@
     <Compile Include="frmThemChuyenBay.Designer.cs">
       <DependentUpon>frmThemChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hoadon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Khachhang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maybay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NewSelectCommand_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nhanvien.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="QLBCMBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -262,6 +284,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBCMBDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLBCMBDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBCMBDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLBCMBDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBCMBDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLBCMBDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBCMBDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLBCMBDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBCMBDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLBCMBDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBCMBDataSet16.xsd</DependentUpon>
     </Compile>
     <Compile Include="QLBCMBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -305,6 +352,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBCMBDataSet9.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Sanbay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemNangCao_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tuyenbay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ve.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +387,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form11.resx">
       <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13.resx">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form15.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form16.resx">
+      <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -325,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmhoadon.resx">
+      <DependentUpon>frmhoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
@@ -353,6 +442,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -386,14 +478,14 @@
     <None Include="dataset\DuLieu.xss">
       <DependentUpon>DuLieu.xsd</DependentUpon>
     </None>
-    <EntityDeploy Include="data\Model1.edmx">
+    <None Include="EF.Reverse.POCO.v3.ttinclude" />
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="data\Model1.edmx.diagram">
+    <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
-    <None Include="EF.Reverse.POCO.v3.ttinclude" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Connect.datasource" />
     <None Include="Properties\DataSources\Customer.datasource" />
@@ -463,6 +555,61 @@
     </None>
     <None Include="QLBCMBDataSet11.xss">
       <DependentUpon>QLBCMBDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet12.xsc">
+      <DependentUpon>QLBCMBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBCMBDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBCMBDataSet12.xss">
+      <DependentUpon>QLBCMBDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet13.xsc">
+      <DependentUpon>QLBCMBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBCMBDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBCMBDataSet13.xss">
+      <DependentUpon>QLBCMBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet14.xsc">
+      <DependentUpon>QLBCMBDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBCMBDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBCMBDataSet14.xss">
+      <DependentUpon>QLBCMBDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet15.xsc">
+      <DependentUpon>QLBCMBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBCMBDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBCMBDataSet15.xss">
+      <DependentUpon>QLBCMBDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet16.xsc">
+      <DependentUpon>QLBCMBDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBCMBDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBCMBDataSet16.xss">
+      <DependentUpon>QLBCMBDataSet16.xsd</DependentUpon>
     </None>
     <None Include="QLBCMBDataSet2.xsc">
       <DependentUpon>QLBCMBDataSet2.xsd</DependentUpon>
@@ -594,6 +741,16 @@
     <None Include="Resources\tải xuống %282%29.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pexels-photo-2700532.jpeg" />
+    <None Include="Resources\nv.jpg" />
+    <None Include="Resources\sua1.PNG" />
+    <None Include="Resources\Timkiem1.PNG" />
+    <None Include="Resources\Xóa1.PNG" />
+    <None Include="Resources\them1.PNG" />
+    <None Include="Resources\Timkiem.PNG" />
+    <None Include="Resources\sua.PNG" />
+    <None Include="Resources\Xóa.PNG" />
+    <None Include="Resources\them.PNG" />
     <None Include="Resources\tải xuống %283%291.jpg" />
     <None Include="Resources\tải xuống %283%29.jpg" />
     <None Include="Resources\tải xuống %282%291.jpg" />
@@ -627,16 +784,28 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <Content Include="data\Model1.Context.tt">
+    <None Include="Resources\kh.png" />
+    <None Include="Resources\kh1.png" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\2.jpg" />
+    <None Include="Resources\istockphoto-1149089650-1024x1024.jpg" />
+    <None Include="Resources\9.jpg" />
+    <None Include="Resources\hb.jpeg" />
+    <None Include="Resources\a.jpeg" />
+    <None Include="Resources\1.gif" />
+    <None Include="Resources\kh2.png" />
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="data\Model1.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\BAMBOO.jpg" />
+    <None Include="Resources\l.png" />
     <Content Include="Resources\maybay1.jpeg" />
     <None Include="Resources\tải xuống1.png" />
     <None Include="Resources\tải xuống %281%291.jpg" />
@@ -672,6 +841,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

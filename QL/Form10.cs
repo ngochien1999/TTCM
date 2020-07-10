@@ -1,15 +1,9 @@
-﻿using DevExpress.Internal.WinApi.Windows.UI.Notifications;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL.QLBCMBDataSet4TableAdapters;
-using QL.data;
+
 
 namespace QL
 {
@@ -45,7 +39,7 @@ namespace QL
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
             {
                 dtmaybay.DataSource = quanli.Maybays.Where(p => p.MaMB.Contains(txttimkiem.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -54,9 +48,8 @@ namespace QL
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
             {
-
                 quanli.deletemb(mamb);
                 quanli.SaveChanges();
                 MessageBox.Show("đã xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -80,7 +73,7 @@ namespace QL
                 {
                     return;
                 }
-                using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
                 {
                     string mamb = quanli.Maybays.Max(p => p.MaMB);
                     string ma = mamb.Substring(2, mamb.Length - 2);
@@ -113,27 +106,57 @@ namespace QL
             catch { }
         }
 
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+
+            {
+                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                {
+
+                    if (mamb == "")
+                    {
+                        MessageBox.Show("Hãy chọn sân bay cần sửa!");
+                        return;
+                    }
+                    Maybay nv = quanli.Maybays.FirstOrDefault(p => p.MaMB == mamb);
+
+                    nv.TenMB = txtten.Text;
+                    nv.Hang = cbGT.Text;
+                    nv.Gheloai1 = txtI.Text;
+                    nv.Gheloai2 = txtII.Text;
+
+                    quanli.SaveChanges();
+                    DialogResult dr = MessageBox.Show("Sua thanh cong!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dr == DialogResult.OK)
+                    {
+                        Form10_Load(sender, e);
+                    }
+                } 
+            }
+        }
+
         Random random = new Random();
         private void timer1_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                x += a;
-                lbchao.Location = new Point(x, y);
-                if (x >= 178)
-                {
-                    a = -2;
-                    lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
-                }
-                if (x <= 11)
-                {
-                    a = 2;
-                    lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
-                }
+            //try
+            //{
+            //    x += a;
+            //    lbchao.Location = new Point(x, y);
+            //    if (x >= 178)
+            //    {
+            //        a = -2;
+            //        lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+            //    }
+            //    if (x <= 11)
+            //    {
+            //        a = 2;
+            //        lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+            //    }
 
-            }
-            catch (Exception)
-            { }
+            //}
+            //catch (Exception)
+            //{ }
         }
     }
 }

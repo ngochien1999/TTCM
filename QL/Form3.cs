@@ -1,4 +1,4 @@
-﻿using QL.QLBCMBDataSetTableAdapters;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,64 +13,54 @@ namespace QL
 {
     public partial class Form3 : Form
     {
+       
         public Form3()
         {
             InitializeComponent();
             //Loadtt();
         }
+        QLBCMBEntities1 dt = new QLBCMBEntities1();
        
         private void simpleButton2_Click(object sender, EventArgs e)
         {
 
-            Form4 f = new Form4();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
         }
-        public void thongTinChuyenBay(string gv)
-        {
-            
-        }
+      
         private void Form3_Load(object sender, EventArgs e)
         {
-           
-            // TODO: This line of code loads data into the 'qLBCMBDataSet1.Chuyenbay' table. You can move, or remove it, as needed.
-            // this.chuyenbayTableAdapter.Fill(this.qLBCMBDataSet1.Chuyenbay);
-            // TODO: This line of code loads data into the 'qLBCMBDataSet.Tuyenbay' table. You can move, or remove it, as needed.
-            // this.tuyenbayTableAdapter.Fill(this.qLBCMBDataSet.Tuyenbay);
-            // TODO: This line of code loads data into the 'qLBCMBDataSet2.Ve' table. You can move, or remove it, as needed.
-            //this.veTableAdapter.Fill(this.qLBCMBDataSet2.Ve);
-            // TODO: This line of code loads data into the 'qLBCMBDataSet2.Chuyenbay' table. You can move, or remove it, as needed.
-            // this.chuyenbayTableAdapter.Fill(this.qLBCMBDataSet2.Chuyenbay);
+            //DataTable data = new DataTable();
+            //data.Columns.Add("MaCB");
+            //data.Columns.Add("NgayBay");
+            //data.Columns.Add("Thoigianbay");
+            //data.Columns.Add("Giave");
+            //data.Columns.Add("Hangve");
+            //data.Columns.Add("Hangmb");
 
-        }
+            cbDiemDi.ValueMember = "MaSb";
+            cbDiemDi.DisplayMember = "TenSb";
+            cbDiemDi.DataSource = dt.Sanbays.ToList();
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+            cbDiemDen.ValueMember = "MaSb";
+            cbDiemDen.DisplayMember = "TenSb";
+            cbDiemDen.DataSource = dt.Sanbays.ToList();
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            
+            cbLoaiVe.ValueMember = "Hang";
+            cbLoaiVe.DisplayMember = "Hang";
+            cbLoaiVe.DataSource = dt.Maybays.ToList();
+
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            TableAdapterManager tt = new TableAdapterManager();
-            DataTable table = new DataTable();
-           tt.Fill(table, cbDiemDi.SelectedValue.ToString(), cbDiemDen.SelectedValue.ToString(), dtpNgayDi.Value, cbLoaiVe.Text);
-            dataGridView1.DataSource = table;
+            dataGridView1.DataSource = dt.TimKiemNangCao(   cbDiemDi.SelectedValue.ToString(),
+                                                            cbDiemDen.SelectedValue.ToString(),
+                                                            cbLoaiVe.SelectedValue.ToString() ,
+                                                            Convert.ToDateTime(dtpNgayDi.Value));
         }
 
-        private void cbDiemDi_SelectedIndexChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void txtThongTin_TextChanged(object sender, EventArgs e)
-        {
-
+           
         }
     }
 }

@@ -36,6 +36,7 @@
             this.txtmk = new Guna.UI.WinForms.GunaTextBox();
             this.GunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.GunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.btnReset = new DevExpress.XtraEditors.CheckButton();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // 
             this.GunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.GunaPictureBox2.Image = global::QL.Properties.Resources.admin;
-            this.GunaPictureBox2.Location = new System.Drawing.Point(74, 36);
+            this.GunaPictureBox2.Location = new System.Drawing.Point(102, 36);
             this.GunaPictureBox2.Name = "GunaPictureBox2";
             this.GunaPictureBox2.Size = new System.Drawing.Size(121, 83);
             this.GunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,7 +67,7 @@
             // 
             this.GunaLabel2.AutoSize = true;
             this.GunaLabel2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GunaLabel2.Location = new System.Drawing.Point(12, 163);
+            this.GunaLabel2.Location = new System.Drawing.Point(40, 163);
             this.GunaLabel2.Name = "GunaLabel2";
             this.GunaLabel2.Size = new System.Drawing.Size(58, 17);
             this.GunaLabel2.TabIndex = 10;
@@ -81,7 +82,7 @@
             this.txttk.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txttk.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txttk.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttk.Location = new System.Drawing.Point(112, 154);
+            this.txttk.Location = new System.Drawing.Point(136, 154);
             this.txttk.Name = "txttk";
             this.txttk.PasswordChar = '\0';
             this.txttk.Size = new System.Drawing.Size(143, 26);
@@ -91,7 +92,7 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(12, 224);
+            this.gunaLabel1.Location = new System.Drawing.Point(40, 224);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(66, 17);
             this.gunaLabel1.TabIndex = 12;
@@ -106,7 +107,7 @@
             this.txtmk.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtmk.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtmk.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtmk.Location = new System.Drawing.Point(112, 215);
+            this.txtmk.Location = new System.Drawing.Point(136, 215);
             this.txtmk.Name = "txtmk";
             this.txtmk.PasswordChar = '*';
             this.txtmk.Size = new System.Drawing.Size(143, 26);
@@ -124,7 +125,7 @@
             this.GunaButton1.ForeColor = System.Drawing.Color.White;
             this.GunaButton1.Image = null;
             this.GunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.GunaButton1.Location = new System.Drawing.Point(18, 282);
+            this.GunaButton1.Location = new System.Drawing.Point(43, 284);
             this.GunaButton1.Name = "GunaButton1";
             this.GunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -148,7 +149,7 @@
             this.GunaButton2.ForeColor = System.Drawing.Color.White;
             this.GunaButton2.Image = null;
             this.GunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.GunaButton2.Location = new System.Drawing.Point(18, 341);
+            this.GunaButton2.Location = new System.Drawing.Point(43, 341);
             this.GunaButton2.Name = "GunaButton2";
             this.GunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.GunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -161,11 +162,23 @@
             this.GunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GunaButton2.Click += new System.EventHandler(this.GunaButton2_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Appearance.Options.UseFont = true;
+            this.btnReset.Location = new System.Drawing.Point(84, 377);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(98, 27);
+            this.btnReset.TabIndex = 13;
+            this.btnReset.Text = "Reset";
+            this.btnReset.CheckedChanged += new System.EventHandler(this.btnReset_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 424);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.GunaButton2);
             this.Controls.Add(this.GunaButton1);
             this.Controls.Add(this.txtmk);
@@ -196,6 +209,7 @@
         internal Guna.UI.WinForms.GunaTextBox txtmk;
         internal Guna.UI.WinForms.GunaButton GunaButton1;
         internal Guna.UI.WinForms.GunaButton GunaButton2;
+        private DevExpress.XtraEditors.CheckButton btnReset;
     }
 }
 

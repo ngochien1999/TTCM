@@ -1,4 +1,4 @@
-﻿using QL.data;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +42,7 @@ namespace QL
             {
                 if (MessageBox.Show("Bạn có muốn xóa nhà khách hàng không ?", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+                    using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
                     {
                         quanli.deletenv(manv);
                         MessageBox.Show("đã xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -84,7 +84,7 @@ namespace QL
                 {
                     return;
                 }
-                using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
                 {
                     string manv = quanli.Nhanviens.Max(p=>p.MaNV);
                     string ma = manv.Substring(2, manv.Length - 2);
@@ -127,7 +127,7 @@ namespace QL
                     MessageBox.Show("Hãy chọn nhân viên cần sửa!");
                     return;
                 }
-                using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
                 {
                     Nhanvien nv = quanli.Nhanviens.FirstOrDefault(p => p.MaNV == manv);
                    
@@ -144,7 +144,7 @@ namespace QL
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
             {
                 dtnhanvien.DataSource = quanli.Nhanviens.Where(p => p.MaNV.Contains(txttimkiem.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -152,27 +152,50 @@ namespace QL
 
         }
 
+        private void txtcmnd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsdt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            txtten.Text = "";
+            txtcmnd.Text = "";
+            txtdiachi.Text = "";
+            txtsdt.Text = "";
+        }
+
         Random random = new Random();
         private void timer2_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                x += a;
-                lbchao.Location = new Point(x, y);
-                if (x >= 415)
-                {
-                    a = -2;
-                    lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
-                }
-                if (x <= 12)
-                {
-                    a = 2;
-                    lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
-                }
+            //try
+            //{
+            //    x += a;
+            //    lbchao.Location = new Point(x, y);
+            //    if (x >= 415)
+            //    {
+            //        a = -2;
+            //        lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+            //    }
+            //    if (x <= 12)
+            //    {
+            //        a = 2;
+            //        lbchao.ForeColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+            //    }
 
-            }
-            catch (Exception)
-            { }
+            //}
+            //catch (Exception)
+            //{ }
         }
     }
 }
