@@ -15,10 +15,10 @@ namespace QL
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class QLBCMBEntities1 : DbContext
+    public partial class QLBCMBEntities3 : DbContext
     {
-        public QLBCMBEntities1()
-            : base("name=QLBCMBEntities1")
+        public QLBCMBEntities3()
+            : base("name=QLBCMBEntities3")
         {
         }
     
@@ -38,6 +38,57 @@ namespace QL
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tuyenbay> Tuyenbays { get; set; }
         public virtual DbSet<Ve> Ves { get; set; }
+        public virtual DbSet<TK> TKs { get; set; }
+        public virtual DbSet<KM> KMs { get; set; }
+    
+        public virtual int chuyenbay123(string maMB, string maCB, Nullable<System.DateTime> ngaybay, Nullable<System.TimeSpan> thoigianbay, string sabden, string sabdi, Nullable<int> sLveLoaiI, Nullable<int> sLveloaiII, string maTB, Nullable<System.TimeSpan> thoigiandung, string sBtrunggian)
+        {
+            var maMBParameter = maMB != null ?
+                new ObjectParameter("MaMB", maMB) :
+                new ObjectParameter("MaMB", typeof(string));
+    
+            var maCBParameter = maCB != null ?
+                new ObjectParameter("MaCB", maCB) :
+                new ObjectParameter("MaCB", typeof(string));
+    
+            var ngaybayParameter = ngaybay.HasValue ?
+                new ObjectParameter("Ngaybay", ngaybay) :
+                new ObjectParameter("Ngaybay", typeof(System.DateTime));
+    
+            var thoigianbayParameter = thoigianbay.HasValue ?
+                new ObjectParameter("Thoigianbay", thoigianbay) :
+                new ObjectParameter("Thoigianbay", typeof(System.TimeSpan));
+    
+            var sabdenParameter = sabden != null ?
+                new ObjectParameter("Sabden", sabden) :
+                new ObjectParameter("Sabden", typeof(string));
+    
+            var sabdiParameter = sabdi != null ?
+                new ObjectParameter("Sabdi", sabdi) :
+                new ObjectParameter("Sabdi", typeof(string));
+    
+            var sLveLoaiIParameter = sLveLoaiI.HasValue ?
+                new ObjectParameter("SLveLoaiI", sLveLoaiI) :
+                new ObjectParameter("SLveLoaiI", typeof(int));
+    
+            var sLveloaiIIParameter = sLveloaiII.HasValue ?
+                new ObjectParameter("SLveloaiII", sLveloaiII) :
+                new ObjectParameter("SLveloaiII", typeof(int));
+    
+            var maTBParameter = maTB != null ?
+                new ObjectParameter("MaTB", maTB) :
+                new ObjectParameter("MaTB", typeof(string));
+    
+            var thoigiandungParameter = thoigiandung.HasValue ?
+                new ObjectParameter("Thoigiandung", thoigiandung) :
+                new ObjectParameter("Thoigiandung", typeof(System.TimeSpan));
+    
+            var sBtrunggianParameter = sBtrunggian != null ?
+                new ObjectParameter("SBtrunggian", sBtrunggian) :
+                new ObjectParameter("SBtrunggian", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("chuyenbay123", maMBParameter, maCBParameter, ngaybayParameter, thoigianbayParameter, sabdenParameter, sabdiParameter, sLveLoaiIParameter, sLveloaiIIParameter, maTBParameter, thoigiandungParameter, sBtrunggianParameter);
+        }
     
         public virtual int deletecb(string macb)
         {
@@ -82,6 +133,48 @@ namespace QL
                 new ObjectParameter("masb", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deletesb", masbParameter);
+        }
+    
+        public virtual ObjectResult<h_Result> h(Nullable<System.DateTime> ngaybay, string sanbaydi, string sanbayden, string hang)
+        {
+            var ngaybayParameter = ngaybay.HasValue ?
+                new ObjectParameter("ngaybay", ngaybay) :
+                new ObjectParameter("ngaybay", typeof(System.DateTime));
+    
+            var sanbaydiParameter = sanbaydi != null ?
+                new ObjectParameter("sanbaydi", sanbaydi) :
+                new ObjectParameter("sanbaydi", typeof(string));
+    
+            var sanbaydenParameter = sanbayden != null ?
+                new ObjectParameter("sanbayden", sanbayden) :
+                new ObjectParameter("sanbayden", typeof(string));
+    
+            var hangParameter = hang != null ?
+                new ObjectParameter("hang", hang) :
+                new ObjectParameter("hang", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<h_Result>("h", ngaybayParameter, sanbaydiParameter, sanbaydenParameter, hangParameter);
+        }
+    
+        public virtual ObjectResult<hien_Result> hien(string sanden, string sandi, string hang, Nullable<System.DateTime> ngaybay)
+        {
+            var sandenParameter = sanden != null ?
+                new ObjectParameter("sanden", sanden) :
+                new ObjectParameter("sanden", typeof(string));
+    
+            var sandiParameter = sandi != null ?
+                new ObjectParameter("sandi", sandi) :
+                new ObjectParameter("sandi", typeof(string));
+    
+            var hangParameter = hang != null ?
+                new ObjectParameter("Hang", hang) :
+                new ObjectParameter("Hang", typeof(string));
+    
+            var ngaybayParameter = ngaybay.HasValue ?
+                new ObjectParameter("Ngaybay", ngaybay) :
+                new ObjectParameter("Ngaybay", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<hien_Result>("hien", sandenParameter, sandiParameter, hangParameter, ngaybayParameter);
         }
     
         public virtual ObjectResult<NewSelectCommand_Result> NewSelectCommand()
@@ -192,6 +285,11 @@ namespace QL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
+        public virtual ObjectResult<them_Result> them()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<them_Result>("them");
+        }
+    
         public virtual int ThemDuLieu(string maCB, Nullable<System.DateTime> ngayBay, Nullable<System.TimeSpan> thoiGianBay, string maTB, Nullable<System.TimeSpan> thoigiandung, string sBtrunggian, string sBdi, string sBden, string maMB)
         {
             var maCBParameter = maCB != null ?
@@ -233,6 +331,100 @@ namespace QL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemDuLieu", maCBParameter, ngayBayParameter, thoiGianBayParameter, maTBParameter, thoigiandungParameter, sBtrunggianParameter, sBdiParameter, sBdenParameter, maMBParameter);
         }
     
+        public virtual int themdulieu1(string maCB, Nullable<System.DateTime> ngayBay, Nullable<System.TimeSpan> thoiGianBay, string sabden, string sabdi, Nullable<int> sLveloaiI, Nullable<int> sLveloaiII, string maTB, Nullable<System.TimeSpan> thoigiandung, string sBtrunggian, string sBdi, string sBden, string maMB)
+        {
+            var maCBParameter = maCB != null ?
+                new ObjectParameter("MaCB", maCB) :
+                new ObjectParameter("MaCB", typeof(string));
+    
+            var ngayBayParameter = ngayBay.HasValue ?
+                new ObjectParameter("NgayBay", ngayBay) :
+                new ObjectParameter("NgayBay", typeof(System.DateTime));
+    
+            var thoiGianBayParameter = thoiGianBay.HasValue ?
+                new ObjectParameter("ThoiGianBay", thoiGianBay) :
+                new ObjectParameter("ThoiGianBay", typeof(System.TimeSpan));
+    
+            var sabdenParameter = sabden != null ?
+                new ObjectParameter("Sabden", sabden) :
+                new ObjectParameter("Sabden", typeof(string));
+    
+            var sabdiParameter = sabdi != null ?
+                new ObjectParameter("Sabdi", sabdi) :
+                new ObjectParameter("Sabdi", typeof(string));
+    
+            var sLveloaiIParameter = sLveloaiI.HasValue ?
+                new ObjectParameter("SLveloaiI", sLveloaiI) :
+                new ObjectParameter("SLveloaiI", typeof(int));
+    
+            var sLveloaiIIParameter = sLveloaiII.HasValue ?
+                new ObjectParameter("SLveloaiII", sLveloaiII) :
+                new ObjectParameter("SLveloaiII", typeof(int));
+    
+            var maTBParameter = maTB != null ?
+                new ObjectParameter("MaTB", maTB) :
+                new ObjectParameter("MaTB", typeof(string));
+    
+            var thoigiandungParameter = thoigiandung.HasValue ?
+                new ObjectParameter("Thoigiandung", thoigiandung) :
+                new ObjectParameter("Thoigiandung", typeof(System.TimeSpan));
+    
+            var sBtrunggianParameter = sBtrunggian != null ?
+                new ObjectParameter("SBtrunggian", sBtrunggian) :
+                new ObjectParameter("SBtrunggian", typeof(string));
+    
+            var sBdiParameter = sBdi != null ?
+                new ObjectParameter("SBdi", sBdi) :
+                new ObjectParameter("SBdi", typeof(string));
+    
+            var sBdenParameter = sBden != null ?
+                new ObjectParameter("SBden", sBden) :
+                new ObjectParameter("SBden", typeof(string));
+    
+            var maMBParameter = maMB != null ?
+                new ObjectParameter("MaMB", maMB) :
+                new ObjectParameter("MaMB", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("themdulieu1", maCBParameter, ngayBayParameter, thoiGianBayParameter, sabdenParameter, sabdiParameter, sLveloaiIParameter, sLveloaiIIParameter, maTBParameter, thoigiandungParameter, sBtrunggianParameter, sBdiParameter, sBdenParameter, maMBParameter);
+        }
+    
+        public virtual int themhd(string maNV, Nullable<System.DateTime> nlap, Nullable<int> tongtien, string mave, Nullable<int> thueVAT, string tinhtrang, string maCB, string makh)
+        {
+            var maNVParameter = maNV != null ?
+                new ObjectParameter("MaNV", maNV) :
+                new ObjectParameter("MaNV", typeof(string));
+    
+            var nlapParameter = nlap.HasValue ?
+                new ObjectParameter("Nlap", nlap) :
+                new ObjectParameter("Nlap", typeof(System.DateTime));
+    
+            var tongtienParameter = tongtien.HasValue ?
+                new ObjectParameter("Tongtien", tongtien) :
+                new ObjectParameter("Tongtien", typeof(int));
+    
+            var maveParameter = mave != null ?
+                new ObjectParameter("Mave", mave) :
+                new ObjectParameter("Mave", typeof(string));
+    
+            var thueVATParameter = thueVAT.HasValue ?
+                new ObjectParameter("ThueVAT", thueVAT) :
+                new ObjectParameter("ThueVAT", typeof(int));
+    
+            var tinhtrangParameter = tinhtrang != null ?
+                new ObjectParameter("Tinhtrang", tinhtrang) :
+                new ObjectParameter("Tinhtrang", typeof(string));
+    
+            var maCBParameter = maCB != null ?
+                new ObjectParameter("MaCB", maCB) :
+                new ObjectParameter("MaCB", typeof(string));
+    
+            var makhParameter = makh != null ?
+                new ObjectParameter("Makh", makh) :
+                new ObjectParameter("Makh", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("themhd", maNVParameter, nlapParameter, tongtienParameter, maveParameter, thueVATParameter, tinhtrangParameter, maCBParameter, makhParameter);
+        }
+    
         public virtual ObjectResult<TimKiemNangCao_Result> TimKiemNangCao(string sbdi, string sbden, string hang, Nullable<System.DateTime> ngaybay)
         {
             var sbdiParameter = sbdi != null ?
@@ -252,6 +444,60 @@ namespace QL
                 new ObjectParameter("Ngaybay", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TimKiemNangCao_Result>("TimKiemNangCao", sbdiParameter, sbdenParameter, hangParameter, ngaybayParameter);
+        }
+    
+        public virtual int chuyenbay_ha(string maMB, string maCB, Nullable<System.DateTime> ngaybay, Nullable<System.TimeSpan> thoigianbay, string sabden, string sabdi, Nullable<int> sLveLoaiI, Nullable<int> sLveloaiII, string maTB, Nullable<System.TimeSpan> thoigiandung, string sBtrunggian)
+        {
+            var maMBParameter = maMB != null ?
+                new ObjectParameter("MaMB", maMB) :
+                new ObjectParameter("MaMB", typeof(string));
+    
+            var maCBParameter = maCB != null ?
+                new ObjectParameter("MaCB", maCB) :
+                new ObjectParameter("MaCB", typeof(string));
+    
+            var ngaybayParameter = ngaybay.HasValue ?
+                new ObjectParameter("Ngaybay", ngaybay) :
+                new ObjectParameter("Ngaybay", typeof(System.DateTime));
+    
+            var thoigianbayParameter = thoigianbay.HasValue ?
+                new ObjectParameter("Thoigianbay", thoigianbay) :
+                new ObjectParameter("Thoigianbay", typeof(System.TimeSpan));
+    
+            var sabdenParameter = sabden != null ?
+                new ObjectParameter("Sabden", sabden) :
+                new ObjectParameter("Sabden", typeof(string));
+    
+            var sabdiParameter = sabdi != null ?
+                new ObjectParameter("Sabdi", sabdi) :
+                new ObjectParameter("Sabdi", typeof(string));
+    
+            var sLveLoaiIParameter = sLveLoaiI.HasValue ?
+                new ObjectParameter("SLveLoaiI", sLveLoaiI) :
+                new ObjectParameter("SLveLoaiI", typeof(int));
+    
+            var sLveloaiIIParameter = sLveloaiII.HasValue ?
+                new ObjectParameter("SLveloaiII", sLveloaiII) :
+                new ObjectParameter("SLveloaiII", typeof(int));
+    
+            var maTBParameter = maTB != null ?
+                new ObjectParameter("MaTB", maTB) :
+                new ObjectParameter("MaTB", typeof(string));
+    
+            var thoigiandungParameter = thoigiandung.HasValue ?
+                new ObjectParameter("Thoigiandung", thoigiandung) :
+                new ObjectParameter("Thoigiandung", typeof(System.TimeSpan));
+    
+            var sBtrunggianParameter = sBtrunggian != null ?
+                new ObjectParameter("SBtrunggian", sBtrunggian) :
+                new ObjectParameter("SBtrunggian", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("chuyenbay_ha", maMBParameter, maCBParameter, ngaybayParameter, thoigianbayParameter, sabdenParameter, sabdiParameter, sLveLoaiIParameter, sLveloaiIIParameter, maTBParameter, thoigiandungParameter, sBtrunggianParameter);
+        }
+    
+        public virtual ObjectResult<doanhthu_Result> doanhthu()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<doanhthu_Result>("doanhthu");
         }
     }
 }

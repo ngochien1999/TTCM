@@ -16,5 +16,12 @@ namespace QL
         {
             InitializeComponent();
         }
+
+        private void Form14_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLBCMBDataSet17.Maybay' table. You can move, or remove it, as needed.
+            this.maybayTableAdapter.Fill(this.qLBCMBDataSet17.Maybay);
+
+        }
     }
 }

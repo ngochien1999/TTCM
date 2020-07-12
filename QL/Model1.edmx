@@ -13,6 +13,10 @@
           <Property Name="MaCB" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Ngaybay" Type="date" />
           <Property Name="Thoigianbay" Type="time" Precision="7" />
+          <Property Name="Sabden" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sabdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SLveLoaiI" Type="int" />
+          <Property Name="SLveloaiII" Type="int" />
         </EntityType>
         <EntityType Name="CTchuyenbay">
           <Key>
@@ -23,6 +27,7 @@
           <Property Name="MaTB" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Thoigiandung" Type="time" Precision="7" />
           <Property Name="SBtrunggian" Type="nvarchar" MaxLength="10" />
+          <Property Name="Magiovang" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="CTVe">
           <Key>
@@ -39,12 +44,14 @@
           </Key>
           <Property Name="MaHD" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="MaNV" Type="nvarchar" MaxLength="10" />
-          <Property Name="Nlap" Type="date" />
-          <Property Name="ThueVAT" Type="float" />
           <Property Name="Tinhtrang" Type="nvarchar" MaxLength="10" />
-          <Property Name="Tongtien" Type="float" />
           <Property Name="Mave" Type="nvarchar" MaxLength="10" />
           <Property Name="MaCB" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tongtien" Type="int" />
+          <Property Name="ThueVAT" Type="int" />
+          <Property Name="Makh" Type="nvarchar" MaxLength="10" />
+          <Property Name="Nlap" Type="datetime" />
+          <Property Name="Magiovang" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Khachhang">
           <Key>
@@ -57,6 +64,17 @@
           <Property Name="ĐCkh" Type="nvarchar" MaxLength="50" />
           <Property Name="CMND" Type="int" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="KM">
+          <Key>
+            <PropertyRef Name="Magiovang" />
+          </Key>
+          <Property Name="Magiovang" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Tengiovang" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ngaytrongtuan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Giobatdau" Type="int" Nullable="false" />
+          <Property Name="Giokethuc" Type="int" />
+          <Property Name="Tileud" Type="int" />
         </EntityType>
         <EntityType Name="Maybay">
           <Key>
@@ -77,6 +95,7 @@
           <Property Name="CMND" Type="int" />
           <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
           <Property Name="SĐT" Type="nvarchar" MaxLength="50" />
+          <Property Name="Chucvu" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Sanbay">
           <Key>
@@ -96,6 +115,13 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TK">
+          <Key>
+            <PropertyRef Name="TenTK" />
+          </Key>
+          <Property Name="TenTK" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Tuyenbay">
           <Key>
             <PropertyRef Name="MaTB" />
@@ -111,8 +137,8 @@
           <Property Name="Mave" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Makh" Type="nvarchar" MaxLength="10" />
           <Property Name="Slg" Type="int" />
-          <Property Name="Giave" Type="float" />
           <Property Name="Hangve" Type="nvarchar" MaxLength="50" />
+          <Property Name="Giave" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__Chuyenbay__MaMB__44FF419A">
           <End Role="Maybay" Type="Self.Maybay" Multiplicity="0..1" />
@@ -123,18 +149,6 @@
             </Principal>
             <Dependent Role="Chuyenbay">
               <PropertyRef Name="MaMB" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CTchuyenb__Thoig__4AB81AF0">
-          <End Role="Chuyenbay" Type="Self.Chuyenbay" Multiplicity="1" />
-          <End Role="CTchuyenbay" Type="Self.CTchuyenbay" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Chuyenbay">
-              <PropertyRef Name="MaCB" />
-            </Principal>
-            <Dependent Role="CTchuyenbay">
-              <PropertyRef Name="MaCB" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -186,15 +200,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CTchuyenbay_Sanbay">
-          <End Role="Sanbay" Type="Self.Sanbay" Multiplicity="0..1" />
+        <Association Name="FK_CTchuyenbay_Chuyenbay">
+          <End Role="Chuyenbay" Type="Self.Chuyenbay" Multiplicity="1" />
           <End Role="CTchuyenbay" Type="Self.CTchuyenbay" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Sanbay">
-              <PropertyRef Name="MaSb" />
+            <Principal Role="Chuyenbay">
+              <PropertyRef Name="MaCB" />
             </Principal>
             <Dependent Role="CTchuyenbay">
-              <PropertyRef Name="SBtrunggian" />
+              <PropertyRef Name="MaCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTchuyenbay_Tuyenbay">
+          <End Role="Tuyenbay" Type="Self.Tuyenbay" Multiplicity="1" />
+          <End Role="CTchuyenbay" Type="Self.CTchuyenbay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tuyenbay">
+              <PropertyRef Name="MaTB" />
+            </Principal>
+            <Dependent Role="CTchuyenbay">
+              <PropertyRef Name="MaTB" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -210,30 +236,68 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Tuyenbay_Sanbay">
-          <End Role="Sanbay" Type="Self.Sanbay" Multiplicity="0..1" />
-          <End Role="Tuyenbay" Type="Self.Tuyenbay" Multiplicity="*" />
+        <Association Name="FK_Hoadon_Chuyenbay1">
+          <End Role="Chuyenbay" Type="Self.Chuyenbay" Multiplicity="0..1" />
+          <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Sanbay">
-              <PropertyRef Name="MaSb" />
+            <Principal Role="Chuyenbay">
+              <PropertyRef Name="MaCB" />
             </Principal>
-            <Dependent Role="Tuyenbay">
-              <PropertyRef Name="SBdi" />
+            <Dependent Role="Hoadon">
+              <PropertyRef Name="MaCB" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Tuyenbay_Sanbay1">
-          <End Role="Sanbay" Type="Self.Sanbay" Multiplicity="0..1" />
-          <End Role="Tuyenbay" Type="Self.Tuyenbay" Multiplicity="*" />
+        <Association Name="FK_Hoadon_Khachhang">
+          <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+          <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Sanbay">
-              <PropertyRef Name="MaSb" />
+            <Principal Role="Khachhang">
+              <PropertyRef Name="Makh" />
             </Principal>
-            <Dependent Role="Tuyenbay">
-              <PropertyRef Name="SBden" />
+            <Dependent Role="Hoadon">
+              <PropertyRef Name="Makh" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TK_Nhanvien">
+          <End Role="Nhanvien" Type="Self.Nhanvien" Multiplicity="1" />
+          <End Role="TK" Type="Self.TK" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Nhanvien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="TK">
+              <PropertyRef Name="TenTK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="chuyenbay_ha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaMB" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaCB" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ngaybay" Type="date" Mode="In" />
+          <Parameter Name="Thoigianbay" Type="time" Mode="In" />
+          <Parameter Name="Sabden" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sabdi" Type="nvarchar" Mode="In" />
+          <Parameter Name="SLveLoaiI" Type="int" Mode="In" />
+          <Parameter Name="SLveloaiII" Type="int" Mode="In" />
+          <Parameter Name="MaTB" Type="nvarchar" Mode="In" />
+          <Parameter Name="Thoigiandung" Type="time" Mode="In" />
+          <Parameter Name="SBtrunggian" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="chuyenbay123" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaMB" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaCB" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ngaybay" Type="date" Mode="In" />
+          <Parameter Name="Thoigianbay" Type="time" Mode="In" />
+          <Parameter Name="Sabden" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sabdi" Type="nvarchar" Mode="In" />
+          <Parameter Name="SLveLoaiI" Type="int" Mode="In" />
+          <Parameter Name="SLveloaiII" Type="int" Mode="In" />
+          <Parameter Name="MaTB" Type="nvarchar" Mode="In" />
+          <Parameter Name="Thoigiandung" Type="time" Mode="In" />
+          <Parameter Name="SBtrunggian" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="deletecb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="macb" Type="nvarchar" Mode="In" />
         </Function>
@@ -249,7 +313,20 @@
         <Function Name="deletesb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masb" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="doanhthu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="h" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ngaybay" Type="date" Mode="In" />
+          <Parameter Name="sanbaydi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sanbayden" Type="nvarchar" Mode="In" />
+          <Parameter Name="hang" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="hien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="sanden" Type="nvarchar" Mode="In" />
+          <Parameter Name="sandi" Type="nvarchar" Mode="In" />
+          <Parameter Name="Hang" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ngaybay" Type="date" Mode="In" />
+        </Function>
         <Function Name="NewSelectCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -281,6 +358,7 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="them" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ThemDuLieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaCB" Type="nvarchar" Mode="In" />
           <Parameter Name="NgayBay" Type="date" Mode="In" />
@@ -291,6 +369,31 @@
           <Parameter Name="SBdi" Type="nvarchar" Mode="In" />
           <Parameter Name="SBden" Type="nvarchar" Mode="In" />
           <Parameter Name="MaMB" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="themdulieu1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaCB" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgayBay" Type="date" Mode="In" />
+          <Parameter Name="ThoiGianBay" Type="time" Mode="In" />
+          <Parameter Name="Sabden" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sabdi" Type="nvarchar" Mode="In" />
+          <Parameter Name="SLveloaiI" Type="int" Mode="In" />
+          <Parameter Name="SLveloaiII" Type="int" Mode="In" />
+          <Parameter Name="MaTB" Type="nvarchar" Mode="In" />
+          <Parameter Name="Thoigiandung" Type="time" Mode="In" />
+          <Parameter Name="SBtrunggian" Type="nvarchar" Mode="In" />
+          <Parameter Name="SBdi" Type="nvarchar" Mode="In" />
+          <Parameter Name="SBden" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaMB" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="themhd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nlap" Type="datetime" Mode="In" />
+          <Parameter Name="Tongtien" Type="int" Mode="In" />
+          <Parameter Name="Mave" Type="nvarchar" Mode="In" />
+          <Parameter Name="ThueVAT" Type="int" Mode="In" />
+          <Parameter Name="Tinhtrang" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaCB" Type="nvarchar" Mode="In" />
+          <Parameter Name="Makh" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="TimKiemNangCao" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="sbdi" Type="nvarchar" Mode="In" />
@@ -304,19 +407,17 @@
           <EntitySet Name="CTVe" EntityType="Self.CTVe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hoadon" EntityType="Self.Hoadon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Khachhang" EntityType="Self.Khachhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KM" EntityType="Self.KM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Maybay" EntityType="Self.Maybay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nhanvien" EntityType="Self.Nhanvien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sanbay" EntityType="Self.Sanbay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TK" EntityType="Self.TK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tuyenbay" EntityType="Self.Tuyenbay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ve" EntityType="Self.Ve" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Chuyenbay__MaMB__44FF419A" Association="Self.FK__Chuyenbay__MaMB__44FF419A">
             <End Role="Maybay" EntitySet="Maybay" />
             <End Role="Chuyenbay" EntitySet="Chuyenbay" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CTchuyenb__Thoig__4AB81AF0" Association="Self.FK__CTchuyenb__Thoig__4AB81AF0">
-            <End Role="Chuyenbay" EntitySet="Chuyenbay" />
-            <End Role="CTchuyenbay" EntitySet="CTchuyenbay" />
           </AssociationSet>
           <AssociationSet Name="FK__CTVe__Mave__4F7CD00D" Association="Self.FK__CTVe__Mave__4F7CD00D">
             <End Role="Ve" EntitySet="Ve" />
@@ -334,21 +435,29 @@
             <End Role="Khachhang" EntitySet="Khachhang" />
             <End Role="Ve" EntitySet="Ve" />
           </AssociationSet>
-          <AssociationSet Name="FK_CTchuyenbay_Sanbay" Association="Self.FK_CTchuyenbay_Sanbay">
-            <End Role="Sanbay" EntitySet="Sanbay" />
+          <AssociationSet Name="FK_CTchuyenbay_Chuyenbay" Association="Self.FK_CTchuyenbay_Chuyenbay">
+            <End Role="Chuyenbay" EntitySet="Chuyenbay" />
+            <End Role="CTchuyenbay" EntitySet="CTchuyenbay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTchuyenbay_Tuyenbay" Association="Self.FK_CTchuyenbay_Tuyenbay">
+            <End Role="Tuyenbay" EntitySet="Tuyenbay" />
             <End Role="CTchuyenbay" EntitySet="CTchuyenbay" />
           </AssociationSet>
           <AssociationSet Name="FK_Hoadon_Chuyenbay" Association="Self.FK_Hoadon_Chuyenbay">
             <End Role="Chuyenbay" EntitySet="Chuyenbay" />
             <End Role="Hoadon" EntitySet="Hoadon" />
           </AssociationSet>
-          <AssociationSet Name="FK_Tuyenbay_Sanbay" Association="Self.FK_Tuyenbay_Sanbay">
-            <End Role="Sanbay" EntitySet="Sanbay" />
-            <End Role="Tuyenbay" EntitySet="Tuyenbay" />
+          <AssociationSet Name="FK_Hoadon_Chuyenbay1" Association="Self.FK_Hoadon_Chuyenbay1">
+            <End Role="Chuyenbay" EntitySet="Chuyenbay" />
+            <End Role="Hoadon" EntitySet="Hoadon" />
           </AssociationSet>
-          <AssociationSet Name="FK_Tuyenbay_Sanbay1" Association="Self.FK_Tuyenbay_Sanbay1">
-            <End Role="Sanbay" EntitySet="Sanbay" />
-            <End Role="Tuyenbay" EntitySet="Tuyenbay" />
+          <AssociationSet Name="FK_Hoadon_Khachhang" Association="Self.FK_Hoadon_Khachhang">
+            <End Role="Khachhang" EntitySet="Khachhang" />
+            <End Role="Hoadon" EntitySet="Hoadon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TK_Nhanvien" Association="Self.FK_TK_Nhanvien">
+            <End Role="Nhanvien" EntitySet="Nhanvien" />
+            <End Role="TK" EntitySet="TK" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -363,9 +472,14 @@
           <Property Name="MaCB" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ngaybay" Type="DateTime" Precision="0" />
           <Property Name="Thoigianbay" Type="Time" Precision="7" />
+          <Property Name="Sabden" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sabdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SLveLoaiI" Type="Int32" />
+          <Property Name="SLveloaiII" Type="Int32" />
           <NavigationProperty Name="Maybay" Relationship="Self.FK__Chuyenbay__MaMB__44FF419A" FromRole="Chuyenbay" ToRole="Maybay" />
           <NavigationProperty Name="CTchuyenbays" Relationship="Self.FK__CTchuyenb__Thoig__4AB81AF0" FromRole="Chuyenbay" ToRole="CTchuyenbay" />
           <NavigationProperty Name="Hoadons" Relationship="Self.FK_Hoadon_Chuyenbay" FromRole="Chuyenbay" ToRole="Hoadon" />
+          <NavigationProperty Name="Hoadons1" Relationship="Self.FK_Hoadon_Chuyenbay1" FromRole="Chuyenbay" ToRole="Hoadon" />
         </EntityType>
         <EntityType Name="CTchuyenbay">
           <Key>
@@ -378,6 +492,8 @@
           <Property Name="SBtrunggian" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Chuyenbay" Relationship="Self.FK__CTchuyenb__Thoig__4AB81AF0" FromRole="CTchuyenbay" ToRole="Chuyenbay" />
           <NavigationProperty Name="Sanbay" Relationship="Self.FK_CTchuyenbay_Sanbay" FromRole="CTchuyenbay" ToRole="Sanbay" />
+          <NavigationProperty Name="Tuyenbay" Relationship="QLBCMBModel.FK_CTchuyenbay_Tuyenbay" FromRole="CTchuyenbay" ToRole="Tuyenbay" />
+          <Property Name="Magiovang" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CTVe">
           <Key>
@@ -396,15 +512,19 @@
           </Key>
           <Property Name="MaHD" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Nlap" Type="DateTime" Precision="0" />
-          <Property Name="ThueVAT" Type="Double" />
           <Property Name="Tinhtrang" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Tongtien" Type="Double" />
           <Property Name="Mave" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="MaCB" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Tongtien" Type="Int32" />
+          <Property Name="ThueVAT" Type="Int32" />
+          <Property Name="Makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nlap" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Chuyenbay" Relationship="Self.FK_Hoadon_Chuyenbay" FromRole="Hoadon" ToRole="Chuyenbay" />
+          <NavigationProperty Name="Chuyenbay1" Relationship="Self.FK_Hoadon_Chuyenbay1" FromRole="Hoadon" ToRole="Chuyenbay" />
           <NavigationProperty Name="CTVes" Relationship="Self.FK__CTVe__Soluongban__4E88ABD4" FromRole="Hoadon" ToRole="CTVe" />
           <NavigationProperty Name="Nhanvien" Relationship="Self.FK__Hoadon__Tongtien__47DBAE45" FromRole="Hoadon" ToRole="Nhanvien" />
+          <NavigationProperty Name="Khachhang" Relationship="Self.FK_Hoadon_Khachhang" FromRole="Hoadon" ToRole="Khachhang" />
+          <Property Name="Magiovang" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Khachhang">
           <Key>
@@ -417,6 +537,7 @@
           <Property Name="ĐCkh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CMND" Type="Int32" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hoadons" Relationship="Self.FK_Hoadon_Khachhang" FromRole="Khachhang" ToRole="Hoadon" />
           <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__Giave__412EB0B6" FromRole="Khachhang" ToRole="Ve" />
         </EntityType>
         <EntityType Name="Maybay">
@@ -440,6 +561,8 @@
           <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SĐT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Hoadons" Relationship="Self.FK__Hoadon__Tongtien__47DBAE45" FromRole="Nhanvien" ToRole="Hoadon" />
+          <NavigationProperty Name="TK" Relationship="QLBCMBModel.FK_TK_Nhanvien" FromRole="Nhanvien" ToRole="TK" />
+          <Property Name="Chucvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Sanbay">
           <Key>
@@ -471,6 +594,7 @@
           <Property Name="SBden" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Sanbay" Relationship="Self.FK_Tuyenbay_Sanbay" FromRole="Tuyenbay" ToRole="Sanbay" />
           <NavigationProperty Name="Sanbay1" Relationship="Self.FK_Tuyenbay_Sanbay1" FromRole="Tuyenbay" ToRole="Sanbay" />
+          <NavigationProperty Name="CTchuyenbays" Relationship="QLBCMBModel.FK_CTchuyenbay_Tuyenbay" FromRole="Tuyenbay" ToRole="CTchuyenbay" />
         </EntityType>
         <EntityType Name="Ve">
           <Key>
@@ -479,8 +603,8 @@
           <Property Name="Mave" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Slg" Type="Int32" />
-          <Property Name="Giave" Type="Double" />
           <Property Name="Hangve" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Giave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CTVes" Relationship="Self.FK__CTVe__Mave__4F7CD00D" FromRole="Ve" ToRole="CTVe" />
           <NavigationProperty Name="Khachhang" Relationship="Self.FK__Ve__Giave__412EB0B6" FromRole="Ve" ToRole="Khachhang" />
         </EntityType>
@@ -520,6 +644,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Hoadon_Chuyenbay1">
+          <End Role="Chuyenbay" Type="Self.Chuyenbay" Multiplicity="0..1" />
+          <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chuyenbay">
+              <PropertyRef Name="MaCB" />
+            </Principal>
+            <Dependent Role="Hoadon">
+              <PropertyRef Name="MaCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CTchuyenbay_Sanbay">
           <End Role="Sanbay" Type="Self.Sanbay" Multiplicity="0..1" />
           <End Role="CTchuyenbay" Type="Self.CTchuyenbay" Multiplicity="*" />
@@ -568,6 +704,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Hoadon_Khachhang">
+          <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+          <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khachhang">
+              <PropertyRef Name="Makh" />
+            </Principal>
+            <Dependent Role="Hoadon">
+              <PropertyRef Name="Makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Ve__Giave__412EB0B6">
           <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
           <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
@@ -604,7 +752,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLBCMBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLBCMBEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Chuyenbays" EntityType="Self.Chuyenbay" />
           <EntitySet Name="CTchuyenbays" EntityType="Self.CTchuyenbay" />
           <EntitySet Name="CTVes" EntityType="Self.CTVe" />
@@ -628,6 +776,10 @@
             <End Role="Chuyenbay" EntitySet="Chuyenbays" />
             <End Role="Hoadon" EntitySet="Hoadons" />
           </AssociationSet>
+          <AssociationSet Name="FK_Hoadon_Chuyenbay1" Association="Self.FK_Hoadon_Chuyenbay1">
+            <End Role="Chuyenbay" EntitySet="Chuyenbays" />
+            <End Role="Hoadon" EntitySet="Hoadons" />
+          </AssociationSet>
           <AssociationSet Name="FK_CTchuyenbay_Sanbay" Association="Self.FK_CTchuyenbay_Sanbay">
             <End Role="Sanbay" EntitySet="Sanbays" />
             <End Role="CTchuyenbay" EntitySet="CTchuyenbays" />
@@ -644,6 +796,10 @@
             <End Role="Nhanvien" EntitySet="Nhanviens" />
             <End Role="Hoadon" EntitySet="Hoadons" />
           </AssociationSet>
+          <AssociationSet Name="FK_Hoadon_Khachhang" Association="Self.FK_Hoadon_Khachhang">
+            <End Role="Khachhang" EntitySet="Khachhangs" />
+            <End Role="Hoadon" EntitySet="Hoadons" />
+          </AssociationSet>
           <AssociationSet Name="FK__Ve__Giave__412EB0B6" Association="Self.FK__Ve__Giave__412EB0B6">
             <End Role="Khachhang" EntitySet="Khachhangs" />
             <End Role="Ve" EntitySet="Ves" />
@@ -656,6 +812,19 @@
             <End Role="Sanbay" EntitySet="Sanbays" />
             <End Role="Tuyenbay" EntitySet="Tuyenbays" />
           </AssociationSet>
+          <FunctionImport Name="chuyenbay123">
+            <Parameter Name="MaMB" Mode="In" Type="String" />
+            <Parameter Name="MaCB" Mode="In" Type="String" />
+            <Parameter Name="Ngaybay" Mode="In" Type="DateTime" />
+            <Parameter Name="Thoigianbay" Mode="In" Type="Time" />
+            <Parameter Name="Sabden" Mode="In" Type="String" />
+            <Parameter Name="Sabdi" Mode="In" Type="String" />
+            <Parameter Name="SLveLoaiI" Mode="In" Type="Int32" />
+            <Parameter Name="SLveloaiII" Mode="In" Type="Int32" />
+            <Parameter Name="MaTB" Mode="In" Type="String" />
+            <Parameter Name="Thoigiandung" Mode="In" Type="Time" />
+            <Parameter Name="SBtrunggian" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="deletecb">
           <Parameter Name="macb" Mode="In" Type="String" />
           </FunctionImport>
@@ -670,6 +839,18 @@
           </FunctionImport>
           <FunctionImport Name="deletesb">
           <Parameter Name="masb" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="h" ReturnType="Collection(QLBCMBModel.h_Result)">
+            <Parameter Name="ngaybay" Mode="In" Type="DateTime" />
+            <Parameter Name="sanbaydi" Mode="In" Type="String" />
+            <Parameter Name="sanbayden" Mode="In" Type="String" />
+            <Parameter Name="hang" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="hien" ReturnType="Collection(QLBCMBModel.hien_Result)">
+            <Parameter Name="sanden" Mode="In" Type="String" />
+            <Parameter Name="sandi" Mode="In" Type="String" />
+            <Parameter Name="Hang" Mode="In" Type="String" />
+            <Parameter Name="Ngaybay" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="NewSelectCommand" ReturnType="Collection(QLBCMBModel.NewSelectCommand_Result)" />
           <FunctionImport Name="sp_alterdiagram">
@@ -702,6 +883,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="them" ReturnType="Collection(QLBCMBModel.them_Result)" />
           <FunctionImport Name="ThemDuLieu">
             <Parameter Name="MaCB" Mode="In" Type="String" />
             <Parameter Name="NgayBay" Mode="In" Type="DateTime" />
@@ -713,13 +895,80 @@
             <Parameter Name="SBden" Mode="In" Type="String" />
             <Parameter Name="MaMB" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="themdulieu1">
+            <Parameter Name="MaCB" Mode="In" Type="String" />
+            <Parameter Name="NgayBay" Mode="In" Type="DateTime" />
+            <Parameter Name="ThoiGianBay" Mode="In" Type="Time" />
+            <Parameter Name="Sabden" Mode="In" Type="String" />
+            <Parameter Name="Sabdi" Mode="In" Type="String" />
+            <Parameter Name="SLveloaiI" Mode="In" Type="Int32" />
+            <Parameter Name="SLveloaiII" Mode="In" Type="Int32" />
+            <Parameter Name="MaTB" Mode="In" Type="String" />
+            <Parameter Name="Thoigiandung" Mode="In" Type="Time" />
+            <Parameter Name="SBtrunggian" Mode="In" Type="String" />
+            <Parameter Name="SBdi" Mode="In" Type="String" />
+            <Parameter Name="SBden" Mode="In" Type="String" />
+            <Parameter Name="MaMB" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="themhd">
+            <Parameter Name="MaNV" Mode="In" Type="String" />
+            <Parameter Name="Nlap" Mode="In" Type="DateTime" />
+            <Parameter Name="Tongtien" Mode="In" Type="Int32" />
+            <Parameter Name="Mave" Mode="In" Type="String" />
+            <Parameter Name="ThueVAT" Mode="In" Type="Int32" />
+            <Parameter Name="Tinhtrang" Mode="In" Type="String" />
+            <Parameter Name="MaCB" Mode="In" Type="String" />
+            <Parameter Name="Makh" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="TimKiemNangCao" ReturnType="Collection(QLBCMBModel.TimKiemNangCao_Result)">
             <Parameter Name="sbdi" Mode="In" Type="String" />
             <Parameter Name="sbden" Mode="In" Type="String" />
             <Parameter Name="Hang" Mode="In" Type="String" />
             <Parameter Name="Ngaybay" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <AssociationSet Name="FK_CTchuyenbay_Tuyenbay" Association="QLBCMBModel.FK_CTchuyenbay_Tuyenbay">
+            <End Role="Tuyenbay" EntitySet="Tuyenbays" />
+            <End Role="CTchuyenbay" EntitySet="CTchuyenbays" />
+          </AssociationSet>
+          <FunctionImport Name="chuyenbay_ha">
+            <Parameter Name="MaMB" Mode="In" Type="String" />
+            <Parameter Name="MaCB" Mode="In" Type="String" />
+            <Parameter Name="Ngaybay" Mode="In" Type="DateTime" />
+            <Parameter Name="Thoigianbay" Mode="In" Type="Time" />
+            <Parameter Name="Sabden" Mode="In" Type="String" />
+            <Parameter Name="Sabdi" Mode="In" Type="String" />
+            <Parameter Name="SLveLoaiI" Mode="In" Type="Int32" />
+            <Parameter Name="SLveloaiII" Mode="In" Type="Int32" />
+            <Parameter Name="MaTB" Mode="In" Type="String" />
+            <Parameter Name="Thoigiandung" Mode="In" Type="Time" />
+            <Parameter Name="SBtrunggian" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TKs" EntityType="QLBCMBModel.TK" />
+          <AssociationSet Name="FK_TK_Nhanvien" Association="QLBCMBModel.FK_TK_Nhanvien">
+            <End Role="Nhanvien" EntitySet="Nhanviens" />
+            <End Role="TK" EntitySet="TKs" />
+          </AssociationSet>
+          <EntitySet Name="KMs" EntityType="QLBCMBModel.KM" />
+          <FunctionImport Name="doanhthu" ReturnType="Collection(QLBCMBModel.doanhthu_Result)" />
         </EntityContainer>
+        <ComplexType Name="h_Result">
+          <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Sabdi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sabden" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenMB" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Ngaybay" Nullable="true" />
+          <Property Type="Time" Name="Thoigianbay" Nullable="true" />
+          <Property Type="String" Name="Hang" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="hien_Result">
+          <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="Ngaybay" Nullable="true" />
+          <Property Type="String" Name="Sabden" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sabdi" Nullable="true" MaxLength="50" />
+          <Property Type="Time" Name="Thoigianbay" Nullable="true" />
+          <Property Type="String" Name="TenMB" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Hang" Nullable="true" MaxLength="50" />
+        </ComplexType>
         <ComplexType Name="NewSelectCommand_Result">
           <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
           <Property Type="DateTime" Name="Ngaybay" Nullable="true" />
@@ -741,21 +990,79 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <ComplexType Name="TimKiemNangCao_Result">
+        <ComplexType Name="them_Result">
           <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
           <Property Type="DateTime" Name="Ngaybay" Nullable="true" />
           <Property Type="Time" Name="Thoigianbay" Nullable="true" />
+          <Property Type="String" Name="Sabden" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sabdi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SLveLoaiI" Nullable="true" />
+          <Property Type="Int32" Name="SLveloaiII" Nullable="true" />
+          <Property Type="String" Name="SBtrunggian" Nullable="true" MaxLength="10" />
+          <Property Type="Time" Name="Thoigiandung" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TimKiemNangCao_Result">
+          <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Sabdi" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Sabden" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="TenMB" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Ngaybay" Nullable="true" />
+          <Property Type="Time" Name="Thoigianbay" Nullable="true" />
           <Property Type="String" Name="Hang" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SBdi" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="SBden" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <Association Name="FK_CTchuyenbay_Tuyenbay">
+          <End Type="QLBCMBModel.Tuyenbay" Role="Tuyenbay" Multiplicity="1" />
+          <End Type="QLBCMBModel.CTchuyenbay" Role="CTchuyenbay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tuyenbay">
+              <PropertyRef Name="MaTB" />
+            </Principal>
+            <Dependent Role="CTchuyenbay">
+              <PropertyRef Name="MaTB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TK">
+          <Key>
+            <PropertyRef Name="TenTK" />
+          </Key>
+          <Property Name="TenTK" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Nhanvien" Relationship="QLBCMBModel.FK_TK_Nhanvien" FromRole="TK" ToRole="Nhanvien" />
+        </EntityType>
+        <Association Name="FK_TK_Nhanvien">
+          <End Type="QLBCMBModel.Nhanvien" Role="Nhanvien" Multiplicity="1" />
+          <End Type="QLBCMBModel.TK" Role="TK" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Nhanvien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="TK">
+              <PropertyRef Name="TenTK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="KM">
+          <Key>
+            <PropertyRef Name="Magiovang" />
+          </Key>
+          <Property Name="Magiovang" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Tengiovang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ngaytrongtuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Giobatdau" Type="Int32" Nullable="false" />
+          <Property Name="Giokethuc" Type="Int32" />
+          <Property Name="Tileud" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="doanhthu_Result">
+          <Property Type="Int32" Name="thoigian" Nullable="true" />
+          <Property Type="Int32" Name="tongtien" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLBCMBModelStoreContainer" CdmEntityContainer="QLBCMBEntities1">
+        <EntityContainerMapping StorageEntityContainer="QLBCMBModelStoreContainer" CdmEntityContainer="QLBCMBEntities3">
           <EntitySetMapping Name="Chuyenbays">
             <EntityTypeMapping TypeName="QLBCMBModel.Chuyenbay">
               <MappingFragment StoreEntitySet="Chuyenbay">
@@ -763,12 +1070,17 @@
                 <ScalarProperty Name="MaCB" ColumnName="MaCB" />
                 <ScalarProperty Name="Ngaybay" ColumnName="Ngaybay" />
                 <ScalarProperty Name="Thoigianbay" ColumnName="Thoigianbay" />
+                <ScalarProperty Name="Sabden" ColumnName="Sabden" />
+                <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+                <ScalarProperty Name="SLveLoaiI" ColumnName="SLveLoaiI" />
+                <ScalarProperty Name="SLveloaiII" ColumnName="SLveloaiII" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CTchuyenbays">
             <EntityTypeMapping TypeName="QLBCMBModel.CTchuyenbay">
               <MappingFragment StoreEntitySet="CTchuyenbay">
+                <ScalarProperty Name="Magiovang" ColumnName="Magiovang" />
                 <ScalarProperty Name="MaCB" ColumnName="MaCB" />
                 <ScalarProperty Name="MaTB" ColumnName="MaTB" />
                 <ScalarProperty Name="Thoigiandung" ColumnName="Thoigiandung" />
@@ -788,14 +1100,16 @@
           <EntitySetMapping Name="Hoadons">
             <EntityTypeMapping TypeName="QLBCMBModel.Hoadon">
               <MappingFragment StoreEntitySet="Hoadon">
+                <ScalarProperty Name="Magiovang" ColumnName="Magiovang" />
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-                <ScalarProperty Name="Nlap" ColumnName="Nlap" />
-                <ScalarProperty Name="ThueVAT" ColumnName="ThueVAT" />
                 <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
-                <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
                 <ScalarProperty Name="Mave" ColumnName="Mave" />
                 <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+                <ScalarProperty Name="ThueVAT" ColumnName="ThueVAT" />
+                <ScalarProperty Name="Makh" ColumnName="Makh" />
+                <ScalarProperty Name="Nlap" ColumnName="Nlap" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -826,6 +1140,7 @@
           <EntitySetMapping Name="Nhanviens">
             <EntityTypeMapping TypeName="QLBCMBModel.Nhanvien">
               <MappingFragment StoreEntitySet="Nhanvien">
+                <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="Hoten" ColumnName="Hoten" />
                 <ScalarProperty Name="CMND" ColumnName="CMND" />
@@ -869,16 +1184,43 @@
                 <ScalarProperty Name="Mave" ColumnName="Mave" />
                 <ScalarProperty Name="Makh" ColumnName="Makh" />
                 <ScalarProperty Name="Slg" ColumnName="Slg" />
-                <ScalarProperty Name="Giave" ColumnName="Giave" />
                 <ScalarProperty Name="Hangve" ColumnName="Hangve" />
+                <ScalarProperty Name="Giave" ColumnName="Giave" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="chuyenbay123" FunctionName="QLBCMBModel.Store.chuyenbay123" />
           <FunctionImportMapping FunctionImportName="deletecb" FunctionName="QLBCMBModel.Store.deletecb" />
           <FunctionImportMapping FunctionImportName="deletekh" FunctionName="QLBCMBModel.Store.deletekh" />
           <FunctionImportMapping FunctionImportName="deletemb" FunctionName="QLBCMBModel.Store.deletemb" />
           <FunctionImportMapping FunctionImportName="deletenv" FunctionName="QLBCMBModel.Store.deletenv" />
           <FunctionImportMapping FunctionImportName="deletesb" FunctionName="QLBCMBModel.Store.deletesb" />
+          <FunctionImportMapping FunctionImportName="h" FunctionName="QLBCMBModel.Store.h">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBCMBModel.h_Result">
+                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+                <ScalarProperty Name="Sabden" ColumnName="Sabden" />
+                <ScalarProperty Name="TenMB" ColumnName="TenMB" />
+                <ScalarProperty Name="Ngaybay" ColumnName="Ngaybay" />
+                <ScalarProperty Name="Thoigianbay" ColumnName="Thoigianbay" />
+                <ScalarProperty Name="Hang" ColumnName="Hang" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hien" FunctionName="QLBCMBModel.Store.hien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBCMBModel.hien_Result">
+                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="Ngaybay" ColumnName="Ngaybay" />
+                <ScalarProperty Name="Sabden" ColumnName="Sabden" />
+                <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+                <ScalarProperty Name="Thoigianbay" ColumnName="Thoigianbay" />
+                <ScalarProperty Name="TenMB" ColumnName="TenMB" />
+                <ScalarProperty Name="Hang" ColumnName="Hang" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="NewSelectCommand" FunctionName="QLBCMBModel.Store.NewSelectCommand">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QLBCMBModel.NewSelectCommand_Result">
@@ -917,17 +1259,63 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLBCMBModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLBCMBModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="them" FunctionName="QLBCMBModel.Store.them">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBCMBModel.them_Result">
+                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="Ngaybay" ColumnName="Ngaybay" />
+                <ScalarProperty Name="Thoigianbay" ColumnName="Thoigianbay" />
+                <ScalarProperty Name="Sabden" ColumnName="Sabden" />
+                <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+                <ScalarProperty Name="SLveLoaiI" ColumnName="SLveLoaiI" />
+                <ScalarProperty Name="SLveloaiII" ColumnName="SLveloaiII" />
+                <ScalarProperty Name="SBtrunggian" ColumnName="SBtrunggian" />
+                <ScalarProperty Name="Thoigiandung" ColumnName="Thoigiandung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ThemDuLieu" FunctionName="QLBCMBModel.Store.ThemDuLieu" />
+          <FunctionImportMapping FunctionImportName="themdulieu1" FunctionName="QLBCMBModel.Store.themdulieu1" />
+          <FunctionImportMapping FunctionImportName="themhd" FunctionName="QLBCMBModel.Store.themhd" />
           <FunctionImportMapping FunctionImportName="TimKiemNangCao" FunctionName="QLBCMBModel.Store.TimKiemNangCao">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QLBCMBModel.TimKiemNangCao_Result">
                 <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+                <ScalarProperty Name="Sabden" ColumnName="Sabden" />
+                <ScalarProperty Name="TenMB" ColumnName="TenMB" />
                 <ScalarProperty Name="Ngaybay" ColumnName="Ngaybay" />
                 <ScalarProperty Name="Thoigianbay" ColumnName="Thoigianbay" />
-                <ScalarProperty Name="TenMB" ColumnName="TenMB" />
                 <ScalarProperty Name="Hang" ColumnName="Hang" />
-                <ScalarProperty Name="SBdi" ColumnName="SBdi" />
-                <ScalarProperty Name="SBden" ColumnName="SBden" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="chuyenbay_ha" FunctionName="QLBCMBModel.Store.chuyenbay_ha" />
+          <EntitySetMapping Name="TKs">
+            <EntityTypeMapping TypeName="QLBCMBModel.TK">
+              <MappingFragment StoreEntitySet="TK">
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="TenTK" ColumnName="TenTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KMs">
+            <EntityTypeMapping TypeName="QLBCMBModel.KM">
+              <MappingFragment StoreEntitySet="KM">
+                <ScalarProperty Name="Tileud" ColumnName="Tileud" />
+                <ScalarProperty Name="Giokethuc" ColumnName="Giokethuc" />
+                <ScalarProperty Name="Giobatdau" ColumnName="Giobatdau" />
+                <ScalarProperty Name="Ngaytrongtuan" ColumnName="Ngaytrongtuan" />
+                <ScalarProperty Name="Tengiovang" ColumnName="Tengiovang" />
+                <ScalarProperty Name="Magiovang" ColumnName="Magiovang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="doanhthu" FunctionName="QLBCMBModel.Store.doanhthu">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBCMBModel.doanhthu_Result">
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

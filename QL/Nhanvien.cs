@@ -25,8 +25,10 @@ namespace QL
         public Nullable<int> CMND { get; set; }
         public string Diachi { get; set; }
         public string SĐT { get; set; }
+        public string Chucvu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoadon> Hoadons { get; set; }
+        public virtual TK TK { get; set; }
     }
 }

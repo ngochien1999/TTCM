@@ -219,7 +219,6 @@ D:\ThucTapChuyenMon\QL\bin\Debug\de\DevExpress.Office.v19.1.Core.resources.dll
 D:\ThucTapChuyenMon\QL\bin\Debug\es\DevExpress.Office.v19.1.Core.resources.dll
 D:\ThucTapChuyenMon\QL\bin\Debug\ja\DevExpress.Office.v19.1.Core.resources.dll
 D:\ThucTapChuyenMon\QL\bin\Debug\ru\DevExpress.Office.v19.1.Core.resources.dll
-D:\ThucTapChuyenMon\QL\obj\Debug\QL.csprojAssemblyReference.cache
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form1.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form10.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form11.resources
@@ -247,3 +246,7 @@ D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form8.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form15.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.UserControl1.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form16.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form17.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form14.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.csprojAssemblyReference.cache
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form18.resources

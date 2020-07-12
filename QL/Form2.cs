@@ -22,9 +22,6 @@ namespace QL
         public Form2()
         {
             InitializeComponent();
-            
-           
-
         }
         private void loadform(object formload)
         {
@@ -53,9 +50,7 @@ namespace QL
 
         private void GunaButton4_Click(object sender, EventArgs e)
         {
-         
             loadform(new Form10());
-
         }
 
         private void GunaButton7_Click(object sender, EventArgs e)
@@ -87,7 +82,7 @@ namespace QL
            
             loadform(new Form5());
         }
-
+        public string manv;
         private void Form2_Load(object sender, EventArgs e)
         {
 
@@ -98,15 +93,25 @@ namespace QL
             //t.Interval = 1000;
             //t.Tick += new EventHandler(this.t_Tick);
             //t.Start();
-           
+
+
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
+            {
+                Nhanvien nv = quanli.Nhanviens.FirstOrDefault(p => p.MaNV == manv);
+                if (nv != null)
+                {
+                    if (nv.Chucvu.ToString().Equals("Nhanvien"))
+                    {
+                        btnchuyenbay.Enabled = false;
+                        GunaButton4.Enabled = false;
+                        btnnhanvien.Enabled = false;
+                        btnsanbay.Enabled = false;
+                        btnthongke.Enabled = false;
+                    }
+                }
+            }
             loadform(new Form13());
             timer5.Start();
-
-
-
-
-
-
         }
 
         //private void t_Tick(object sender, EventArgs e)
@@ -283,6 +288,11 @@ namespace QL
             pnMain.Controls.Clear();
             obj.Dock = DockStyle.Fill;
             pnMain.Controls.Add(obj);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         Random random = new Random();

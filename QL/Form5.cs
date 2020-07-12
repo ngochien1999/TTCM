@@ -13,7 +13,7 @@ namespace QL
 {
     public partial class Form5 : Form
     {
-        string MaTB;
+        string MaTB="";
         public Form5()
         {
             InitializeComponent();
@@ -37,32 +37,39 @@ namespace QL
       //      cbdi.DisplayMember = "SBdi";
       //  }
         private void Form5_Load(object sender, EventArgs e)
-        { 
-            DataTable table = new DataTable();
-            table.Columns.Add("MaCB");
-            table.Columns.Add("MaMB");
-            table.Columns.Add("NgayBay");
-            table.Columns.Add("ThoiGianBay");
-            table.Columns.Add("GheLoai1");
-            table.Columns.Add("GheLoai2");
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+        {
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
-                List<Chuyenbay> ds_cb = quanli.Chuyenbays.ToList();
-                foreach (var item in ds_cb)
-                {
-                    Maybay mb = quanli.Maybays.FirstOrDefault(p => p.MaMB == item.MaMB);
-                    table.Rows.Add(item.MaCB, item.MaMB, item.Ngaybay, item.Thoigianbay, mb.Gheloai1, mb.Gheloai2);
-                }
-            }
-            gunaDataGridView1.AutoGenerateColumns = false;
-            gunaDataGridView1.DataSource = table;
+                dataGridView1.DataSource = quanli.them();
+            }    
+
+
+            //DataTable table = new DataTable();
+            ////table.Columns.Add("MaCB");
+            ////table.Columns.Add("MaMB");
+            ////table.Columns.Add("NgayBay");
+            ////table.Columns.Add("ThoiGianBay");
+            ////table.Columns.Add("GheLoai1");
+            ////table.Columns.Add("GheLoai2");
+            //using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
+            //{
+
+                //    List<Chuyenbay> ds_cb = quanli.Chuyenbays.ToList();
+                //    foreach (var item in ds_cb)
+                //    {
+                //        Maybay mb = quanli.Maybays.FirstOrDefault(p => p.MaMB == item.MaMB);
+                //        table.Rows.Add(item.MaCB, item.MaMB, item.Ngaybay, item.Thoigianbay, mb.Gheloai1, mb.Gheloai2);
+                //    }
+                //}
+                //gunaDataGridView1.AutoGenerateColumns = false;
+                //gunaDataGridView1.DataSource = table;
         }
 
         private void dtchuyenbay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Form6 f = new Form6();
-            f.Show();
-            this.Close();
+            //Form6 f = new Form6();
+            //f.Show();
+            //this.Close();
         }
 
         private void dtchuyenbay_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -126,7 +133,7 @@ namespace QL
        
         private void gunaButton1_Click_2(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 quanli.deletecb(MaTB);
                 quanli.SaveChanges();
@@ -137,9 +144,9 @@ namespace QL
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
-                gunaDataGridView1.DataSource = quanli.Chuyenbays.Where(p => p.MaCB.Contains(gunaTextBox1.Text.Trim())).ToList();
+                dataGridView1.DataSource = quanli.Chuyenbays.Where(p => p.MaCB.Contains(gunaTextBox1.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }

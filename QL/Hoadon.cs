@@ -22,16 +22,20 @@ namespace QL
     
         public string MaHD { get; set; }
         public string MaNV { get; set; }
-        public Nullable<System.DateTime> Nlap { get; set; }
-        public Nullable<double> ThueVAT { get; set; }
         public string Tinhtrang { get; set; }
-        public Nullable<double> Tongtien { get; set; }
         public string Mave { get; set; }
         public string MaCB { get; set; }
+        public Nullable<int> Tongtien { get; set; }
+        public Nullable<int> ThueVAT { get; set; }
+        public string Makh { get; set; }
+        public Nullable<System.DateTime> Nlap { get; set; }
+        public string Magiovang { get; set; }
     
         public virtual Chuyenbay Chuyenbay { get; set; }
+        public virtual Chuyenbay Chuyenbay1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTVe> CTVes { get; set; }
         public virtual Nhanvien Nhanvien { get; set; }
+        public virtual Khachhang Khachhang { get; set; }
     }
 }

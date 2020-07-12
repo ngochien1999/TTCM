@@ -42,13 +42,6 @@
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton6 = new Guna.UI.WinForms.GunaButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.makhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tuoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.đCkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cMNDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khachhangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLBCMBDataSet13 = new QL.QLBCMBDataSet13();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -67,6 +60,14 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
             this.khachhangTableAdapter = new QL.QLBCMBDataSet13TableAdapters.KhachhangTableAdapter();
+            this.makhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tuoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.đCkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMNDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -275,6 +276,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -284,55 +286,14 @@
             this.sDTkhDataGridViewTextBoxColumn,
             this.đCkhDataGridViewTextBoxColumn,
             this.cMNDDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn});
+            this.emailDataGridViewTextBoxColumn,
+            this.Xoa});
             this.dataGridView1.DataSource = this.khachhangBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 268);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 268);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(726, 147);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // makhDataGridViewTextBoxColumn
-            // 
-            this.makhDataGridViewTextBoxColumn.DataPropertyName = "Makh";
-            this.makhDataGridViewTextBoxColumn.HeaderText = "Makh";
-            this.makhDataGridViewTextBoxColumn.Name = "makhDataGridViewTextBoxColumn";
-            // 
-            // tenkhDataGridViewTextBoxColumn
-            // 
-            this.tenkhDataGridViewTextBoxColumn.DataPropertyName = "Tenkh";
-            this.tenkhDataGridViewTextBoxColumn.HeaderText = "Tenkh";
-            this.tenkhDataGridViewTextBoxColumn.Name = "tenkhDataGridViewTextBoxColumn";
-            // 
-            // tuoiDataGridViewTextBoxColumn
-            // 
-            this.tuoiDataGridViewTextBoxColumn.DataPropertyName = "Tuoi";
-            this.tuoiDataGridViewTextBoxColumn.HeaderText = "Tuoi";
-            this.tuoiDataGridViewTextBoxColumn.Name = "tuoiDataGridViewTextBoxColumn";
-            // 
-            // sDTkhDataGridViewTextBoxColumn
-            // 
-            this.sDTkhDataGridViewTextBoxColumn.DataPropertyName = "SDTkh";
-            this.sDTkhDataGridViewTextBoxColumn.HeaderText = "SDTkh";
-            this.sDTkhDataGridViewTextBoxColumn.Name = "sDTkhDataGridViewTextBoxColumn";
-            // 
-            // đCkhDataGridViewTextBoxColumn
-            // 
-            this.đCkhDataGridViewTextBoxColumn.DataPropertyName = "ĐCkh";
-            this.đCkhDataGridViewTextBoxColumn.HeaderText = "ĐCkh";
-            this.đCkhDataGridViewTextBoxColumn.Name = "đCkhDataGridViewTextBoxColumn";
-            // 
-            // cMNDDataGridViewTextBoxColumn
-            // 
-            this.cMNDDataGridViewTextBoxColumn.DataPropertyName = "CMND";
-            this.cMNDDataGridViewTextBoxColumn.HeaderText = "CMND";
-            this.cMNDDataGridViewTextBoxColumn.Name = "cMNDDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
             // khachhangBindingSource
             // 
@@ -550,6 +511,55 @@
             // 
             this.khachhangTableAdapter.ClearBeforeFill = true;
             // 
+            // makhDataGridViewTextBoxColumn
+            // 
+            this.makhDataGridViewTextBoxColumn.DataPropertyName = "Makh";
+            this.makhDataGridViewTextBoxColumn.HeaderText = "Makh";
+            this.makhDataGridViewTextBoxColumn.Name = "makhDataGridViewTextBoxColumn";
+            // 
+            // tenkhDataGridViewTextBoxColumn
+            // 
+            this.tenkhDataGridViewTextBoxColumn.DataPropertyName = "Tenkh";
+            this.tenkhDataGridViewTextBoxColumn.HeaderText = "Tenkh";
+            this.tenkhDataGridViewTextBoxColumn.Name = "tenkhDataGridViewTextBoxColumn";
+            // 
+            // tuoiDataGridViewTextBoxColumn
+            // 
+            this.tuoiDataGridViewTextBoxColumn.DataPropertyName = "Tuoi";
+            this.tuoiDataGridViewTextBoxColumn.HeaderText = "Tuoi";
+            this.tuoiDataGridViewTextBoxColumn.Name = "tuoiDataGridViewTextBoxColumn";
+            // 
+            // sDTkhDataGridViewTextBoxColumn
+            // 
+            this.sDTkhDataGridViewTextBoxColumn.DataPropertyName = "SDTkh";
+            this.sDTkhDataGridViewTextBoxColumn.HeaderText = "SDTkh";
+            this.sDTkhDataGridViewTextBoxColumn.Name = "sDTkhDataGridViewTextBoxColumn";
+            // 
+            // đCkhDataGridViewTextBoxColumn
+            // 
+            this.đCkhDataGridViewTextBoxColumn.DataPropertyName = "ĐCkh";
+            this.đCkhDataGridViewTextBoxColumn.HeaderText = "ĐCkh";
+            this.đCkhDataGridViewTextBoxColumn.Name = "đCkhDataGridViewTextBoxColumn";
+            // 
+            // cMNDDataGridViewTextBoxColumn
+            // 
+            this.cMNDDataGridViewTextBoxColumn.DataPropertyName = "CMND";
+            this.cMNDDataGridViewTextBoxColumn.HeaderText = "CMND";
+            this.cMNDDataGridViewTextBoxColumn.Name = "cMNDDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // Xoa
+            // 
+            this.Xoa.HeaderText = "Xoas";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,5 +630,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn đCkhDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMNDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }
 }

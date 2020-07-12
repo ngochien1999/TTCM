@@ -21,13 +21,13 @@ namespace QL
         {
             InitializeComponent();
         }
-        QLBCMBEntities1 quanlichuan = new QLBCMBEntities1();
+        QLBCMBEntities3 quanlichuan = new QLBCMBEntities3();
 
         private void Form11_Load(object sender, EventArgs e)
         {
-            cbMayBay.DisplayMember = "TenMB";
-            cbMayBay.ValueMember = "MaMB";
-            cbMayBay.DataSource = quanlichuan.Maybays.ToList();
+            //cbMayBay.DisplayMember = "TenMB";
+            //cbMayBay.ValueMember = "MaMB";
+            //cbMayBay.DataSource = quanlichuan.Maybays.ToList();
 
             cbdi.DisplayMember = "TenSb";
             cbdi.ValueMember = "MaSb";
@@ -97,13 +97,51 @@ namespace QL
             //    MessageBox.Show("Da them");
 
             //}
+            //Chuyenbay cb = new Chuyenbay();
+            //string macb = quanlichuan.Chuyenbays.Max(p => p.MaCB);
+            //macb = macb.Substring(2, macb.Length - 2);
+            //if (int.Parse(macb) < 9)
+            //    macb = "CB0" + (int.Parse(macb) + 1);
+            //else
+            //    macb = "CB" + (int.Parse(macb) + 1);
+            //cb.MaCB = macb;
 
-            quanlichuan.ThemDuLieu(txtma.Text.Trim(), Convert.ToDateTime(dtngay.Value),
-                TimeSpan.Parse(tbgiobay.Text), txtmatb.Text.Trim(), TimeSpan.Parse(dtThoiGiandung.Text)
-                , cbTrungGian.SelectedValue.ToString(), cbdi.SelectedValue.ToString(), cbden.SelectedValue.ToString(),
-                cbMayBay.SelectedValue.ToString());
 
-            MessageBox.Show("Đã thêm thành công !!!");
+
+            //string mamb = quanlichuan.Chuyenbays.Max(p => p.MaMB);
+            //mamb = mamb.Substring(2, mamb.Length - 2);
+            //if (int.Parse(mamb) < 9)
+            //    mamb = "MB0" + (int.Parse(mamb) + 1);
+            //else
+            //    mamb = "MB" + (int.Parse(mamb) + 1);
+            //cb.MaMB = mamb;
+
+
+
+
+            //CTchuyenbay ct = new CTchuyenbay();
+            //string matb = quanlichuan.CTchuyenbays.Max(p => p.MaTB);
+            //matb = matb.Substring(2, macb.Length - 2);
+            //if (int.Parse(matb) < 9)
+            //    matb = "TB" + (int.Parse(matb) + 1);
+            //else
+            //    matb = "TB0" + (int.Parse(matb) + 1);
+            //ct.MaTB = matb;
+
+
+
+
+
+            quanlichuan.chuyenbay_ha(txtma.Text, txtmac.Text, Convert.ToDateTime(dtngay.Text), TimeSpan.Parse(tbgiobay.Text), cbden.SelectedValue.ToString(), cbdi.SelectedValue.ToString(), int.Parse(txtI.Text), int.Parse(txtII.Text), txttuyen.Text, TimeSpan.Parse(dtThoiGiandung.Text), cbTrungGian.SelectedValue.ToString());
+            MessageBox.Show("Đã thêm thành công");
+
+
+            //quanlichuan.ThemDuLieu(txtma.Text.Trim(), Convert.ToDateTime(dtngay.Value),
+            //    TimeSpan.Parse(tbgiobay.Text), txtmatb.Text.Trim(), TimeSpan.Parse(dtThoiGiandung.Text)
+            //    , cbTrungGian.SelectedValue.ToString(), cbdi.SelectedValue.ToString(), cbden.SelectedValue.ToString(),
+            //    cbMayBay.SelectedValue.ToString());
+
+            //MessageBox.Show("Đã thêm thành công !!!");
             Form5 f = new Form5();
             f.Show();
             this.Close();

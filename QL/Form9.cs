@@ -42,7 +42,7 @@ namespace QL
             {
                 if (MessageBox.Show("Bạn có muốn xóa nhà khách hàng không ?", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                    using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                     {
                         quanli.deletenv(manv);
                         MessageBox.Show("đã xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -84,7 +84,7 @@ namespace QL
                 {
                     return;
                 }
-                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
                     string manv = quanli.Nhanviens.Max(p=>p.MaNV);
                     string ma = manv.Substring(2, manv.Length - 2);
@@ -127,7 +127,7 @@ namespace QL
                     MessageBox.Show("Hãy chọn nhân viên cần sửa!");
                     return;
                 }
-                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
                     Nhanvien nv = quanli.Nhanviens.FirstOrDefault(p => p.MaNV == manv);
                    
@@ -144,7 +144,7 @@ namespace QL
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 dtnhanvien.DataSource = quanli.Nhanviens.Where(p => p.MaNV.Contains(txttimkiem.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

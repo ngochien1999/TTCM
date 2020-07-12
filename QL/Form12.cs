@@ -14,7 +14,7 @@ namespace QL
 {
     public partial class Form12 : Form
     {
-        QLBCMBEntities1 quanlichuan = new QLBCMBEntities1();
+        QLBCMBEntities3 quanlichuan = new QLBCMBEntities3();
         public Form12()
         {
             InitializeComponent();
@@ -117,7 +117,7 @@ namespace QL
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 dataGridView1.DataSource = quanli.Sanbays.Where(p => p.MaSb.Contains(txttimkiem.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

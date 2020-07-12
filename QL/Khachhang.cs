@@ -17,6 +17,7 @@ namespace QL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Khachhang()
         {
+            this.Hoadons = new HashSet<Hoadon>();
             this.Ves = new HashSet<Ve>();
         }
     
@@ -28,6 +29,8 @@ namespace QL
         public Nullable<int> CMND { get; set; }
         public string Email { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Hoadon> Hoadons { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ve> Ves { get; set; }
     }

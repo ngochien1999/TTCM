@@ -40,11 +40,6 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dtmaybay = new System.Windows.Forms.DataGridView();
-            this.maMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gheloai1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gheloai2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maybayBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.qLBCMBDataSet10 = new QL.QLBCMBDataSet10();
             this.maybayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,6 +68,11 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.tenMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gheloai1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gheloai2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtmaybay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maybayBindingSource2)).BeginInit();
@@ -204,56 +204,25 @@
             // 
             // dtmaybay
             // 
+            this.dtmaybay.AllowUserToAddRows = false;
+            this.dtmaybay.AllowUserToDeleteRows = false;
             this.dtmaybay.AutoGenerateColumns = false;
+            this.dtmaybay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtmaybay.BackgroundColor = System.Drawing.Color.White;
             this.dtmaybay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtmaybay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maMBDataGridViewTextBoxColumn,
             this.tenMBDataGridViewTextBoxColumn,
             this.hangDataGridViewTextBoxColumn,
             this.gheloai1DataGridViewTextBoxColumn,
-            this.gheloai2DataGridViewTextBoxColumn});
+            this.gheloai2DataGridViewTextBoxColumn,
+            this.Column1});
             this.dtmaybay.DataSource = this.maybayBindingSource2;
             this.dtmaybay.Location = new System.Drawing.Point(21, 357);
             this.dtmaybay.Name = "dtmaybay";
-            this.dtmaybay.Size = new System.Drawing.Size(736, 119);
+            this.dtmaybay.ReadOnly = true;
+            this.dtmaybay.Size = new System.Drawing.Size(736, 110);
             this.dtmaybay.TabIndex = 1;
             this.dtmaybay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtmaybay_CellContentClick);
-            // 
-            // maMBDataGridViewTextBoxColumn
-            // 
-            this.maMBDataGridViewTextBoxColumn.DataPropertyName = "MaMB";
-            this.maMBDataGridViewTextBoxColumn.HeaderText = "Mã Máy Bay";
-            this.maMBDataGridViewTextBoxColumn.Name = "maMBDataGridViewTextBoxColumn";
-            this.maMBDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tenMBDataGridViewTextBoxColumn
-            // 
-            this.tenMBDataGridViewTextBoxColumn.DataPropertyName = "TenMB";
-            this.tenMBDataGridViewTextBoxColumn.HeaderText = "Tên Máy Bay";
-            this.tenMBDataGridViewTextBoxColumn.Name = "tenMBDataGridViewTextBoxColumn";
-            this.tenMBDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // hangDataGridViewTextBoxColumn
-            // 
-            this.hangDataGridViewTextBoxColumn.DataPropertyName = "Hang";
-            this.hangDataGridViewTextBoxColumn.HeaderText = "Hãng Máy Bay";
-            this.hangDataGridViewTextBoxColumn.Name = "hangDataGridViewTextBoxColumn";
-            this.hangDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // gheloai1DataGridViewTextBoxColumn
-            // 
-            this.gheloai1DataGridViewTextBoxColumn.DataPropertyName = "Gheloai1";
-            this.gheloai1DataGridViewTextBoxColumn.HeaderText = "Ghế Loại I ";
-            this.gheloai1DataGridViewTextBoxColumn.Name = "gheloai1DataGridViewTextBoxColumn";
-            this.gheloai1DataGridViewTextBoxColumn.Width = 150;
-            // 
-            // gheloai2DataGridViewTextBoxColumn
-            // 
-            this.gheloai2DataGridViewTextBoxColumn.DataPropertyName = "Gheloai2";
-            this.gheloai2DataGridViewTextBoxColumn.HeaderText = "Ghế Loại II";
-            this.gheloai2DataGridViewTextBoxColumn.Name = "gheloai2DataGridViewTextBoxColumn";
-            this.gheloai2DataGridViewTextBoxColumn.Width = 150;
             // 
             // maybayBindingSource2
             // 
@@ -538,6 +507,42 @@
             this.labelControl1.TabIndex = 87;
             this.labelControl1.Text = "Quyền Sử Dụng:";
             // 
+            // tenMBDataGridViewTextBoxColumn
+            // 
+            this.tenMBDataGridViewTextBoxColumn.DataPropertyName = "TenMB";
+            this.tenMBDataGridViewTextBoxColumn.HeaderText = "Tên Máy Bay";
+            this.tenMBDataGridViewTextBoxColumn.Name = "tenMBDataGridViewTextBoxColumn";
+            this.tenMBDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hangDataGridViewTextBoxColumn
+            // 
+            this.hangDataGridViewTextBoxColumn.DataPropertyName = "Hang";
+            this.hangDataGridViewTextBoxColumn.HeaderText = "Hãng Máy Bay";
+            this.hangDataGridViewTextBoxColumn.Name = "hangDataGridViewTextBoxColumn";
+            this.hangDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gheloai1DataGridViewTextBoxColumn
+            // 
+            this.gheloai1DataGridViewTextBoxColumn.DataPropertyName = "Gheloai1";
+            this.gheloai1DataGridViewTextBoxColumn.HeaderText = "Ghế Loại I ";
+            this.gheloai1DataGridViewTextBoxColumn.Name = "gheloai1DataGridViewTextBoxColumn";
+            this.gheloai1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gheloai2DataGridViewTextBoxColumn
+            // 
+            this.gheloai2DataGridViewTextBoxColumn.DataPropertyName = "Gheloai2";
+            this.gheloai2DataGridViewTextBoxColumn.HeaderText = "Ghế Loại II";
+            this.gheloai2DataGridViewTextBoxColumn.Name = "gheloai2DataGridViewTextBoxColumn";
+            this.gheloai2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,15 +621,15 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtThongTin;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maMBDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenMBDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gheloai1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gheloai2DataGridViewTextBoxColumn;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenMBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gheloai1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gheloai2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

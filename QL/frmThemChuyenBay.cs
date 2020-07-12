@@ -12,6 +12,7 @@ namespace QL
 {
     public partial class frmThemChuyenBay : Form
     {
+        QLBCMBEntities3 dt = new QLBCMBEntities3();
         public frmThemChuyenBay()
         {
             InitializeComponent();
@@ -19,8 +20,7 @@ namespace QL
 
         private void frmThemChuyenBay_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'duLieu.Maybay' table. You can move, or remove it, as needed.
-            this.maybayTableAdapter.Fill(this.duLieu.Maybay);
+            dataGridView1.DataSource = dt.TimKiemNangCao("SB02", "SB04", "BamBoo", Convert.ToDateTime("2020-07-07"));
 
         }
     }

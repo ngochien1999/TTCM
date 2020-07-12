@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.duLieu = new QL.dataset.DuLieu();
-            this.maybayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.maybayTableAdapter = new QL.dataset.DuLieuTableAdapters.MaybayTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maybayBindingSource)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaComboBox1
@@ -58,8 +54,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.maybayBindingSource;
-            this.comboBox1.DisplayMember = "TenMB";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(490, 95);
             this.comboBox1.Name = "comboBox1";
@@ -67,32 +61,26 @@
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "MaMB";
             // 
-            // duLieu
+            // dataGridView1
             // 
-            this.duLieu.DataSetName = "DuLieu";
-            this.duLieu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // maybayBindingSource
-            // 
-            this.maybayBindingSource.DataMember = "Maybay";
-            this.maybayBindingSource.DataSource = this.duLieu;
-            // 
-            // maybayTableAdapter
-            // 
-            this.maybayTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 181);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(623, 220);
+            this.dataGridView1.TabIndex = 2;
             // 
             // frmThemChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.gunaComboBox1);
             this.Name = "frmThemChuyenBay";
             this.Text = "frmThemChuyenBay";
             this.Load += new System.EventHandler(this.frmThemChuyenBay_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.duLieu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maybayBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,8 +89,6 @@
 
         private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private dataset.DuLieu duLieu;
-        private System.Windows.Forms.BindingSource maybayBindingSource;
-        private dataset.DuLieuTableAdapters.MaybayTableAdapter maybayTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

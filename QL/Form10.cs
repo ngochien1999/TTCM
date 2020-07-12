@@ -22,24 +22,35 @@ namespace QL
             this.maybayTableAdapter1.Fill(this.qLBCMBDataSet9.Maybay);
             // TODO: This line of code loads data into the 'qLBCMBDataSet8.Maybay' table. You can move, or remove it, as needed.
             this.maybayTableAdapter.Fill(this.qLBCMBDataSet8.Maybay);
-
         }
         string mamb = "";
         private void dtmaybay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            mamb = dtmaybay.CurrentRow.Cells[0].Value.ToString();
+            //mamb = dtmaybay.CurrentRow.Cells[0].Value.ToString();
 
-            txtten.Text = dtmaybay.CurrentRow.Cells[1].Value.ToString();
-            cbGT.Text = dtmaybay.CurrentRow.Cells[2].Value.ToString();
-            txtI.Text = dtmaybay.CurrentRow.Cells[3].Value.ToString();
-            txtII.Text = dtmaybay.CurrentRow.Cells[4].Value.ToString();
-           
+            txtten.Text = dtmaybay.CurrentRow.Cells[0].Value.ToString();
+            cbGT.Text = dtmaybay.CurrentRow.Cells[1].Value.ToString();
+            txtI.Text = dtmaybay.CurrentRow.Cells[2].Value.ToString();
+            txtII.Text = dtmaybay.CurrentRow.Cells[3].Value.ToString();
+            if (e.ColumnIndex == 4)
+            {
+                if (MessageBox.Show("Bạn có muốn xóa nhà khách hàng không ?", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
+                    {
+                        quanli.deletemb(mamb);
+                        MessageBox.Show("đã xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        Form10_Load(sender, e);
+                    }
+                }
+            }
+
         }
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 dtmaybay.DataSource = quanli.Maybays.Where(p => p.MaMB.Contains(txttimkiem.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -48,7 +59,7 @@ namespace QL
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 quanli.deletemb(mamb);
                 quanli.SaveChanges();
@@ -73,7 +84,7 @@ namespace QL
                 {
                     return;
                 }
-                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
                     string mamb = quanli.Maybays.Max(p => p.MaMB);
                     string ma = mamb.Substring(2, mamb.Length - 2);
@@ -110,7 +121,7 @@ namespace QL
         {
 
             {
-                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
 
                     if (mamb == "")

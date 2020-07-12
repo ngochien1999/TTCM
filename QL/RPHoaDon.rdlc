@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.85417in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.85417in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.82292in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.54167in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Ten MB</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hang</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Gheloai2</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Gheloai1</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.54167in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TenMB">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TenMB.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TenMB</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Hang">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Hang.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Hang</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Gheloai2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Gheloai2.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Gheloai2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Gheloai1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Gheloai1.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Gheloai1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.42583in</Top>
+        <Left>0.44667in</Left>
+        <Height>1.08333in</Height>
+        <Width>4.53125in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nhập chữ</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>1.8425in</Top>
+        <Left>0.44667in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>2.09375in</Height>
+    <Style />
+  </Body>
+  <Width>6.03in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image2">
+          <Source>Embedded</Source>
+          <Value>icons8paperplane64</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.19667in</Top>
+          <Left>0.80083in</Left>
+          <Height>0.5in</Height>
+          <Width>0.5in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Máy Bay Hiển Hiển</Value>
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.19667in</Top>
+          <Left>1.48833in</Left>
+          <Height>0.58806in</Height>
+          <Width>2.72917in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.92708in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="QLBCMBDataSet10">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>eaf7d598-d142-427c-8b56-be1749b15d1e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>QLBCMBDataSet10</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="MaMB">
+          <DataField>MaMB</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenMB">
+          <DataField>TenMB</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hang">
+          <DataField>Hang</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gheloai1">
+          <DataField>Gheloai1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gheloai2">
+          <DataField>Gheloai2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>QLBCMBDataSet10</rd:DataSetName>
+        <rd:SchemaPath>D:\ThucTapChuyenMon\QL\QLBCMBDataSet10.xsd</rd:SchemaPath>
+        <rd:TableName>Maybay</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>MaybayTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="icons8paperplane64">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>b69c6b97-401b-44e0-9d7e-d5d493dd85a3</rd:ReportID>
+</Report>

@@ -14,11 +14,11 @@ namespace QL
     public partial class TimKiemNangCao_Result
     {
         public string MaCB { get; set; }
+        public string Sabdi { get; set; }
+        public string Sabden { get; set; }
+        public string TenMB { get; set; }
         public Nullable<System.DateTime> Ngaybay { get; set; }
         public Nullable<System.TimeSpan> Thoigianbay { get; set; }
-        public string TenMB { get; set; }
         public string Hang { get; set; }
-        public string SBdi { get; set; }
-        public string SBden { get; set; }
     }
 }

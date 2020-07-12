@@ -19,17 +19,24 @@ namespace QL
         {
             this.CTchuyenbays = new HashSet<CTchuyenbay>();
             this.Hoadons = new HashSet<Hoadon>();
+            this.Hoadons1 = new HashSet<Hoadon>();
         }
     
         public string MaMB { get; set; }
         public string MaCB { get; set; }
         public Nullable<System.DateTime> Ngaybay { get; set; }
         public Nullable<System.TimeSpan> Thoigianbay { get; set; }
+        public string Sabden { get; set; }
+        public string Sabdi { get; set; }
+        public Nullable<int> SLveLoaiI { get; set; }
+        public Nullable<int> SLveloaiII { get; set; }
     
         public virtual Maybay Maybay { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTchuyenbay> CTchuyenbays { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoadon> Hoadons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Hoadon> Hoadons1 { get; set; }
     }
 }

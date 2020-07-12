@@ -23,8 +23,8 @@ namespace QL
         public string Mave { get; set; }
         public string Makh { get; set; }
         public Nullable<int> Slg { get; set; }
-        public Nullable<double> Giave { get; set; }
         public string Hangve { get; set; }
+        public string Giave { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTVe> CTVes { get; set; }

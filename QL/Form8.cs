@@ -12,7 +12,7 @@ namespace QL
 {
     public partial class Form8 : Form
     {
-        QLBCMBEntities1 quanlichuan = new QLBCMBEntities1();
+        QLBCMBEntities3 quanlichuan = new QLBCMBEntities3();
         public Form8()
         {
             InitializeComponent();
@@ -50,6 +50,18 @@ namespace QL
             txtdiachi.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             txtcmnd.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             txtemail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            if (e.ColumnIndex == 7)
+            {
+                if (MessageBox.Show("Bạn có muốn xóa nhà khách hàng không ?", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
+                    {
+                        quanli.deletekh(makh);
+                        MessageBox.Show("đã xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        Form8_Load(sender, e);
+                    }
+                }
+            }
 
         }
 
@@ -60,7 +72,7 @@ namespace QL
                 {
                     return;
                 }
-                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
                     string makh = quanli.Khachhangs.Max(p => p.Makh);
                     string ma = makh.Substring(2, makh.Length - 2);
@@ -86,7 +98,7 @@ namespace QL
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 quanli.deletekh(makh);
                 quanli.SaveChanges();
@@ -103,7 +115,7 @@ namespace QL
                     MessageBox.Show("Hãy chọn khách hàng cần sửa!");
                     return;
                 }
-                using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+                using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
                     Khachhang kh = quanli.Khachhangs.FirstOrDefault(p => p.Makh == makh);
 
@@ -123,7 +135,7 @@ namespace QL
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities1 quanli = new QLBCMBEntities1())
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 dataGridView1.DataSource = quanli.Khachhangs.Where(p => p.Makh.Contains(txttimkiem.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

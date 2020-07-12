@@ -34,32 +34,23 @@ namespace QL
 
         private void GunaButton1_Click(object sender, EventArgs e)
         {
-           if(txttk.Text=="admin" && txtmk.Text=="12345")
+            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
-                Form2 f = new Form2();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                TK tk = quanli.TKs.FirstOrDefault(p => p.TenTK.Trim() == txttk.Text.Trim() && p.Pass.Trim() == txtmk.Text.Trim());
+                if (tk != null)
+                {
+                    Form2 f = new Form2();
+                    this.Hide();
+                    this.Show();
+                    f.manv = tk.TenTK;
+                    f.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("BẠN NHẬP SAI TK HOẶC MK", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
 
             }
-           else if(txttk.Text == "" && txtmk.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đủ thông tin !!!");
-            }   
-           else if(txttk.Text=="nhanvien " && txtmk.Text == "12345")
-            {
-
-                Form16 f = new Form16();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
-            }    
-           
-            else
-            {
-                MessageBox.Show("Bạn đã nhập sai tài khoản hoặc mật khẩu vui lòng kiểm tra lại !!!");
-            }
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -70,6 +61,11 @@ namespace QL
         private void btnReset_CheckedChanged(object sender, EventArgs e)
         {
             txtmk.Text = txttk.Text = "";
+        }
+
+        private void gunaPictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

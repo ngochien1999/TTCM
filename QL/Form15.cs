@@ -26,7 +26,7 @@ namespace QL
         {
             InitializeComponent();
         }
-        QLBCMBEntities1 quanlichuan = new QLBCMBEntities1();
+        QLBCMBEntities3 quanlichuan = new QLBCMBEntities3();
         
         private void btnSend_Click(object sender, EventArgs e)
         {
