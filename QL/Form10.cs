@@ -27,19 +27,22 @@ namespace QL
         private void dtmaybay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            //mamb = dtmaybay.CurrentRow.Cells[0].Value.ToString();
+            mamb = dtmaybay.CurrentRow.Cells[0].Value.ToString();
 
-            txtten.Text = dtmaybay.CurrentRow.Cells[0].Value.ToString();
-            cbGT.Text = dtmaybay.CurrentRow.Cells[1].Value.ToString();
-            txtI.Text = dtmaybay.CurrentRow.Cells[2].Value.ToString();
-            txtII.Text = dtmaybay.CurrentRow.Cells[3].Value.ToString();
-            if (e.ColumnIndex == 4)
+            txtten.Text = dtmaybay.CurrentRow.Cells[1].Value.ToString();
+            cbGT.Text = dtmaybay.CurrentRow.Cells[2].Value.ToString();
+            txtI.Text = dtmaybay.CurrentRow.Cells[3].Value.ToString();
+            txtII.Text = dtmaybay.CurrentRow.Cells[4].Value.ToString();
+            MessageBox.Show(e.ColumnIndex.ToString());
+
+            if (e.ColumnIndex == 5)
             {
                 if (MessageBox.Show("Bạn có muốn xóa nhà khách hàng không ?", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                     {
                         quanli.deletemb(mamb);
+                        quanli.SaveChanges();
                         MessageBox.Show("đã xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         Form10_Load(sender, e);
                     }
@@ -59,12 +62,19 @@ namespace QL
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
+            if (MessageBox.Show("Bạn có muốn xóa hóa đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                quanli.deletemb(mamb);
-                quanli.SaveChanges();
-                MessageBox.Show("đã xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                Form10_Load(sender, e);
+                using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
+                {
+                    Maybay hd = quanli.Maybays.FirstOrDefault(p => p.MaMB == mamb);
+                    if (hd != null)
+                    {
+                        quanli.Maybays.Remove(hd);
+                        quanli.SaveChanges();
+                        MessageBox.Show("Đã xóa!");
+                        Form10_Load(sender, e);
+                    }
+                }
             }
         }
         public bool kiemtra()
@@ -99,6 +109,7 @@ namespace QL
                     nv.Hang = cbGT.Text;
                     nv.Gheloai1 = txtI.Text;
                     nv.Gheloai2 =txtII.Text;
+                    
                     quanli.Maybays.Add(nv);
                     quanli.SaveChanges();
 
@@ -129,20 +140,26 @@ namespace QL
                         MessageBox.Show("Hãy chọn sân bay cần sửa!");
                         return;
                     }
-                    Maybay nv = quanli.Maybays.FirstOrDefault(p => p.MaMB == mamb);
-
-                    nv.TenMB = txtten.Text;
-                    nv.Hang = cbGT.Text;
-                    nv.Gheloai1 = txtI.Text;
-                    nv.Gheloai2 = txtII.Text;
-
-                    quanli.SaveChanges();
-                    DialogResult dr = MessageBox.Show("Sua thanh cong!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (dr == DialogResult.OK)
+                    
+                    using(QLBCMBEntities3 quanli1 = new QLBCMBEntities3())
                     {
+                        Maybay nv = quanli1.Maybays.FirstOrDefault(p => p.MaMB == mamb);
+
+                        nv.TenMB = txtten.Text;
+                        nv.Hang = cbGT.Text;
+                        nv.Gheloai1 = txtI.Text;
+                        nv.Gheloai2 = txtII.Text;
+
+                        quanli1.SaveChanges();
+                        DialogResult dr = MessageBox.Show("Sua thanh cong!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Form10_Load(sender, e);
                     }
+                       
+
+                    
+
+
                 } 
             }
         }

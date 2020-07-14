@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.GunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.txttk = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -37,32 +35,11 @@
             this.GunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.GunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.btnReset = new DevExpress.XtraEditors.CheckButton();
+            this.GunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GunaPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // GunaPictureBox2
-            // 
-            this.GunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.GunaPictureBox2.Image = global::QL.Properties.Resources.admin;
-            this.GunaPictureBox2.Location = new System.Drawing.Point(102, 36);
-            this.GunaPictureBox2.Name = "GunaPictureBox2";
-            this.GunaPictureBox2.Size = new System.Drawing.Size(121, 83);
-            this.GunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.GunaPictureBox2.TabIndex = 9;
-            this.GunaPictureBox2.TabStop = false;
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::QL.Properties.Resources.air;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(-2, -1);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(319, 425);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 0;
-            this.gunaPictureBox1.TabStop = false;
-            this.gunaPictureBox1.Click += new System.EventHandler(this.gunaPictureBox1_Click);
             // 
             // GunaLabel2
             // 
@@ -119,7 +96,7 @@
             this.GunaButton1.AnimationHoverSpeed = 0.07F;
             this.GunaButton1.AnimationSpeed = 0.03F;
             this.GunaButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.GunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.GunaButton1.BorderColor = System.Drawing.Color.Black;
             this.GunaButton1.FocusedColor = System.Drawing.Color.Empty;
             this.GunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -143,7 +120,7 @@
             // 
             this.GunaButton2.AnimationHoverSpeed = 0.07F;
             this.GunaButton2.AnimationSpeed = 0.03F;
-            this.GunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.GunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.GunaButton2.BorderColor = System.Drawing.Color.Black;
             this.GunaButton2.FocusedColor = System.Drawing.Color.Empty;
             this.GunaButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -167,12 +144,35 @@
             // 
             this.btnReset.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Appearance.Options.UseFont = true;
-            this.btnReset.Location = new System.Drawing.Point(84, 377);
+            this.btnReset.Location = new System.Drawing.Point(115, 385);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(98, 27);
             this.btnReset.TabIndex = 13;
             this.btnReset.Text = "Reset";
             this.btnReset.CheckedChanged += new System.EventHandler(this.btnReset_CheckedChanged);
+            // 
+            // GunaPictureBox2
+            // 
+            this.GunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.GunaPictureBox2.Image = global::QL.Properties.Resources.admin;
+            this.GunaPictureBox2.Location = new System.Drawing.Point(102, 36);
+            this.GunaPictureBox2.Name = "GunaPictureBox2";
+            this.GunaPictureBox2.Size = new System.Drawing.Size(121, 83);
+            this.GunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GunaPictureBox2.TabIndex = 9;
+            this.GunaPictureBox2.TabStop = false;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::QL.Properties.Resources.photo_1572198404182_2c115d89fb26;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(-2, -1);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(319, 425);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 0;
+            this.gunaPictureBox1.TabStop = false;
+            this.gunaPictureBox1.Click += new System.EventHandler(this.gunaPictureBox1_Click);
             // 
             // Form1
             // 
@@ -188,6 +188,7 @@
             this.Controls.Add(this.GunaLabel2);
             this.Controls.Add(this.GunaPictureBox2);
             this.Controls.Add(this.gunaPictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

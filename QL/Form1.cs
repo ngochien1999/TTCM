@@ -31,21 +31,47 @@ namespace QL
                 e.Cancel = true;
             }
         }
-
+        private static string[] demc = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+        public static string tentkchuan;
         private void GunaButton1_Click(object sender, EventArgs e)
         {
+            //(tk.dem == "0" || tk.dem == "1" || tk.dem == "2" || tk.dem == "3" || tk.dem == "4"
+            //        || tk.dem == "5" || tk.dem == "6" || tk.dem == "7" || tk.dem == "8" || tk.dem == "9")
             using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             {
                 TK tk = quanli.TKs.FirstOrDefault(p => p.TenTK.Trim() == txttk.Text.Trim() && p.Pass.Trim() == txtmk.Text.Trim());
-                if (tk != null)
+                if (tk != null && (tk.dem <= 10 || tk.keykh.Length > 3))
                 {
-                    Form2 f = new Form2();
-                    this.Hide();
-                    this.Show();
-                    f.manv = tk.TenTK;
-                    f.ShowDialog();
+                    if(tk.dem <= 10)
+                    {
+                        quanli.updatekey((tk.dem + 1).ToString(), txttk.Text.Trim());
+                        Form2 f = new Form2();
+                        this.Hide();
+                        this.Show();
+                        f.manv = tk.TenTK;
+                        f.ShowDialog();
+                    }
+                    else if(tk.keykh.Length > 3)
+                    {
+                        Form2 f = new Form2();
+                        this.Hide();
+                        this.Show();
+                        f.manv = tk.TenTK;
+                        f.ShowDialog();
+                    }
+                    
                 }
-                else
+                else if (tk != null && (tk.dem > 10 || tk.keykh == null))
+                {
+                    tentkchuan = tk.TenTK;
+                    DialogResult dr = MessageBox.Show("Bạn Có Muốn Kích Hoạt Key Không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.OK)
+                    {
+                        FormKichHoat f = new FormKichHoat();
+                        f.ShowDialog();
+                    }
+                }
+                else if(tk == null)
                 {
                     MessageBox.Show("BẠN NHẬP SAI TK HOẶC MK", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
@@ -61,6 +87,7 @@ namespace QL
         private void btnReset_CheckedChanged(object sender, EventArgs e)
         {
             txtmk.Text = txttk.Text = "";
+          
         }
 
         private void gunaPictureBox1_Click(object sender, EventArgs e)

@@ -567,6 +567,7 @@
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(928, 499);
             this.pnMain.TabIndex = 3;
+            this.pnMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMain_Paint_1);
             // 
             // Form2
             // 

@@ -20,16 +20,32 @@ namespace QL
 
         private void ttDSHoaDon_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            DialogResult tl = XtraMessageBox.Show("Bạn muốn lựa chọn In thông tin Danh Sách Hóa Đơn ?", "Chú ý !"
-                                    , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        private void ttTongDoanhThu_ItemClick(object sender, TileItemEventArgs e)
+        {
+            DialogResult tl = XtraMessageBox.Show("Bạn muốn lựa chọn xem thông tin thống kê doanh thu theo năm ?", "Chú ý !"
+                                   , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (tl == DialogResult.Yes)
             {
-               Form3 frm = new Form3();
+                Form17 frm = new Form17();
                 frm.ShowDialog();
             }
         }
 
-        private void ttTongDoanhThu_ItemClick(object sender, TileItemEventArgs e)
+        private void t_ItemClick(object sender, TileItemEventArgs e)
+        {
+
+            DialogResult tl = XtraMessageBox.Show("Bạn muốn lựa chọn xem thống kê doanh thu theo tháng ?", "Chú ý !"
+                                    , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (tl == DialogResult.Yes)
+            {
+                Form18 frm = new Form18();
+                frm.ShowDialog();
+            }
+        }
+
+        private void ttDoanhThuTheoThoiGian_ItemClick(object sender, TileItemEventArgs e)
         {
 
         }

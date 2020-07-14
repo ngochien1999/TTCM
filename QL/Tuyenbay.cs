@@ -24,8 +24,6 @@ namespace QL
         public string SBdi { get; set; }
         public string SBden { get; set; }
     
-        public virtual Sanbay Sanbay { get; set; }
-        public virtual Sanbay Sanbay1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTchuyenbay> CTchuyenbays { get; set; }
     }

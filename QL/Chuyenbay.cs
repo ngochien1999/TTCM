@@ -18,8 +18,7 @@ namespace QL
         public Chuyenbay()
         {
             this.CTchuyenbays = new HashSet<CTchuyenbay>();
-            this.Hoadons = new HashSet<Hoadon>();
-            this.Hoadons1 = new HashSet<Hoadon>();
+            this.Ves = new HashSet<Ve>();
         }
     
         public string MaMB { get; set; }
@@ -35,8 +34,6 @@ namespace QL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTchuyenbay> CTchuyenbays { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Hoadon> Hoadons { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Hoadon> Hoadons1 { get; set; }
+        public virtual ICollection<Ve> Ves { get; set; }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbGT = new System.Windows.Forms.ComboBox();
             this.txtII = new Guna.UI.WinForms.GunaTextBox();
             this.txtI = new Guna.UI.WinForms.GunaTextBox();
@@ -63,17 +63,18 @@
             this.txtThongTin = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gheloai1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gheloai2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtmaybay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maybayBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLBCMBDataSet10)).BeginInit();
@@ -86,23 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.maybayBindingSource1)).BeginInit();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
+            this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.Controls.Add(this.cbGT);
-            this.gunaPanel1.Controls.Add(this.txtII);
-            this.gunaPanel1.Controls.Add(this.txtI);
-            this.gunaPanel1.Controls.Add(this.txtten);
-            this.gunaPanel1.Controls.Add(this.gunaLabel4);
-            this.gunaPanel1.Controls.Add(this.gunaLabel3);
-            this.gunaPanel1.Controls.Add(this.gunaLabel2);
-            this.gunaPanel1.Controls.Add(this.gunaLabel1);
-            this.gunaPanel1.Location = new System.Drawing.Point(21, 125);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(736, 226);
-            this.gunaPanel1.TabIndex = 0;
             // 
             // cbGT
             // 
@@ -211,6 +198,7 @@
             this.dtmaybay.BackgroundColor = System.Drawing.Color.White;
             this.dtmaybay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtmaybay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
             this.tenMBDataGridViewTextBoxColumn,
             this.hangDataGridViewTextBoxColumn,
             this.gheloai1DataGridViewTextBoxColumn,
@@ -256,7 +244,7 @@
             this.gunaGroupBox2.Controls.Add(this.gunaButton6);
             this.gunaGroupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.gunaGroupBox2.Location = new System.Drawing.Point(763, 125);
+            this.gunaGroupBox2.Location = new System.Drawing.Point(763, 120);
             this.gunaGroupBox2.Name = "gunaGroupBox2";
             this.gunaGroupBox2.Size = new System.Drawing.Size(165, 351);
             this.gunaGroupBox2.TabIndex = 2;
@@ -453,17 +441,6 @@
             this.gunaPictureBox2.TabIndex = 5;
             this.gunaPictureBox2.TabStop = false;
             // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::QL.Properties.Resources.Airline_strike__1_1;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(327, 5);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(261, 114);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 4;
-            this.gunaPictureBox1.TabStop = false;
-            // 
             // gunaElipse1
             // 
             this.gunaElipse1.Radius = 10;
@@ -507,6 +484,39 @@
             this.labelControl1.TabIndex = 87;
             this.labelControl1.Text = "Quyền Sử Dụng:";
             // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.Controls.Add(this.cbGT);
+            this.gunaPanel1.Controls.Add(this.txtII);
+            this.gunaPanel1.Controls.Add(this.txtI);
+            this.gunaPanel1.Controls.Add(this.txtten);
+            this.gunaPanel1.Controls.Add(this.gunaLabel4);
+            this.gunaPanel1.Controls.Add(this.gunaLabel3);
+            this.gunaPanel1.Controls.Add(this.gunaLabel2);
+            this.gunaPanel1.Controls.Add(this.gunaLabel1);
+            this.gunaPanel1.Location = new System.Drawing.Point(21, 125);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(736, 226);
+            this.gunaPanel1.TabIndex = 0;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::QL.Properties.Resources.Airline_strike__1_1;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(327, 5);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(261, 114);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 4;
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaMB";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // tenMBDataGridViewTextBoxColumn
             // 
             this.tenMBDataGridViewTextBoxColumn.DataPropertyName = "TenMB";
@@ -537,7 +547,10 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "Xóa";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "Xóa";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -564,8 +577,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form10";
             this.Load += new System.EventHandler(this.Form10_Load);
-            this.gunaPanel1.ResumeLayout(false);
-            this.gunaPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtmaybay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maybayBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLBCMBDataSet10)).EndInit();
@@ -580,6 +591,8 @@
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
+            this.gunaPanel1.ResumeLayout(false);
+            this.gunaPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -587,8 +600,6 @@
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaTextBox txtII;
         private Guna.UI.WinForms.GunaTextBox txtI;
         private Guna.UI.WinForms.GunaTextBox txtten;
@@ -616,7 +627,6 @@
         private QLBCMBDataSet10TableAdapters.MaybayTableAdapter maybayTableAdapter2;
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaLabel lbchao;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtThongTin;
@@ -626,6 +636,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenMBDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gheloai1DataGridViewTextBoxColumn;

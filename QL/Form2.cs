@@ -295,6 +295,11 @@ namespace QL
 
         }
 
+        private void pnMain_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
         Random random = new Random();
         private void timer2_Tick(object sender, EventArgs e)
         {

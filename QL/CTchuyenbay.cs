@@ -21,7 +21,6 @@ namespace QL
         public string Magiovang { get; set; }
     
         public virtual Chuyenbay Chuyenbay { get; set; }
-        public virtual Sanbay Sanbay { get; set; }
         public virtual Tuyenbay Tuyenbay { get; set; }
     }
 }

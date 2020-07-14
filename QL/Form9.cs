@@ -38,7 +38,8 @@ namespace QL
             txtcmnd.Text = dtnhanvien.CurrentRow.Cells[2].Value.ToString();
             txtdiachi.Text = dtnhanvien.CurrentRow.Cells[3].Value.ToString();
             txtsdt.Text = dtnhanvien.CurrentRow.Cells[4].Value.ToString();
-            if (e.ColumnIndex ==5)
+            txtchucvu.Text = dtnhanvien.CurrentRow.Cells[5].Value.ToString();
+            if (e.ColumnIndex ==6)
             {
                 if (MessageBox.Show("Bạn có muốn xóa nhà khách hàng không ?", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -112,6 +113,8 @@ namespace QL
 
             private void Form9_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLBCMBDataSet18.Nhanvien' table. You can move, or remove it, as needed.
+            this.nhanvienTableAdapter3.Fill(this.qLBCMBDataSet18.Nhanvien);
             // TODO: This line of code loads data into the 'qLBCMBDataSet5.Nhanvien' table. You can move, or remove it, as needed.
             this.nhanvienTableAdapter2.Fill(this.qLBCMBDataSet5.Nhanvien);
 
@@ -135,6 +138,7 @@ namespace QL
                     nv.SĐT = txtsdt.Text;
                     nv.Diachi = txtdiachi.Text;
                     nv.CMND = int.Parse(txtcmnd.Text);
+                    nv.Chucvu = txtchucvu.Text;
                     quanli.SaveChanges();
                     MessageBox.Show("Sua thanh cong!");
                     Form9_Load(sender,e);

@@ -14,23 +14,8 @@ namespace QL
     
     public partial class Sanbay
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sanbay()
-        {
-            this.CTchuyenbays = new HashSet<CTchuyenbay>();
-            this.Tuyenbays = new HashSet<Tuyenbay>();
-            this.Tuyenbays1 = new HashSet<Tuyenbay>();
-        }
-    
         public string MaSb { get; set; }
         public string TenSb { get; set; }
         public string Diachi { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTchuyenbay> CTchuyenbays { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tuyenbay> Tuyenbays { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tuyenbay> Tuyenbays1 { get; set; }
     }
 }

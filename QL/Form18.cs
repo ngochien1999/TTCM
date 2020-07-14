@@ -22,7 +22,7 @@ namespace QL
             // TODO: This line of code loads data into the 'QLBCMBDataSet10.Maybay' table. You can move, or remove it, as needed.
             this.MaybayTableAdapter.Fill(this.QLBCMBDataSet10.Maybay);
 
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
             loadchart();
         }
         void loadchart()
@@ -33,6 +33,16 @@ namespace QL
                 chart1.Series["VND"].XValueMember = "thoigian";
                 chart1.Series["VND"].YValueMembers = "tongtien";
             }
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

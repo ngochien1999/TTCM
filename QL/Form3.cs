@@ -56,9 +56,9 @@ namespace QL
             cbkh.DisplayMember = "Tenkh";
             cbkh.DataSource = dt.Khachhangs.ToList();
 
-            //cbmanv.ValueMember = "Hoten";
-            //cbmanv.DisplayMember = "MaNV";
-            //cbmanv.DataSource = dt.Nhanviens.ToList();
+            cbnv.ValueMember = "MaNV";
+            cbnv.DisplayMember = "MaNV";
+            cbnv.DataSource = dt.Nhanviens.ToList();
 
             //cbcmnd.ValueMember = "Makh";
             //cbcmnd.DisplayMember = "CMND";
@@ -135,17 +135,13 @@ namespace QL
             if (chuyenbay != null)
             {
                 string a = chuyenbay.MaCB.ToString();
-                Hoadon hoadon = dt.Hoadons.Where(s => s.MaCB == a.ToString()).FirstOrDefault();
-                if (hoadon != null)
+                Ve ve1 = dt.Ves.Where(s => s.MaCB == a.ToString()).FirstOrDefault();
+                if (ve1 != null)
                 {
-                    string b = hoadon.MaHD.ToString();
-                    CTVe cTVe = dt.CTVes.Where(s => s.MaHD == b.ToString()).FirstOrDefault();
-                    if (cTVe != null)
-                    {
-                        string c = cTVe.Mave.ToString();
-                        Ve ve = dt.Ves.Where(s => s.Mave == c.ToString()).FirstOrDefault();
-                        giave1 = int.Parse(ve.Giave);
-                        if (txtI.Text == "")
+                    giave1 = int.Parse(ve1.Giave);
+                    giave1 = int.Parse(ve1.Giave);
+                }
+                if (txtI.Text == "")
                         {
                             if (txtII.Text != "")
                             {
@@ -159,17 +155,15 @@ namespace QL
                             }
                             return;
                         }
-                         giaveloai1 = giave1 * int.Parse(txtI.Text.Trim());
-                         tongtien = int.Parse(lbTongTien.Text);
-                         tongtien += giaveloai1;
-                         lbTongTien.Text = tongtien.ToString();
+                        giaveloai1 = giave1 * int.Parse(txtI.Text.Trim());
+                        tongtien = int.Parse(lbTongTien.Text);
+                        tongtien += giaveloai1;
+                        lbTongTien.Text = tongtien.ToString();
+                        dt.SaveChanges();
+                        Form3_Load(sender, e);
+
                     
-                            hoadon.Tongtien = tongtien;
-                            dt.SaveChanges();
-                            Form3_Load(sender, e);
-                        
-                    }
-                }
+                
             }
         }
 
@@ -178,58 +172,64 @@ namespace QL
             
                 using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
-                    Hoadon hd = new Hoadon();
-                    hd.MaHD = txtmahd.Text;
-                    hd.Nlap = DateTime.Now;
-                    hd.MaNV = cbnv.SelectedValue.ToString();
-                    hd.Makh = cbkh.SelectedValue.ToString();
-                     hd.MaCB = dt.Chuyenbays.Where(s => s.MaCB == label3.Text).FirstOrDefault().MaCB; 
-                    hd.Tongtien = int.Parse(lbTongTien.Text);
-                    quanli.Hoadons.Add(hd);
-                    quanli.SaveChanges();
+                //    Hoadon hd = new Hoadon();
+                //    hd.MaHD = txtmahd.Text;
+                //    hd.Nlap = DateTime.Now;
+                //    hd.MaNV = cbnv.SelectedValue.ToString();
+                //    hd.Makh = cbkh.SelectedValue.ToString();
+                //    hd.MaCB = label3.Text;
+                //hd.Tongtien = int.Parse(lbTongTien.Text);
+                //quanli.Hoadons.Add(hd);
+                //quanli.SaveChanges();
+                quanli.themHoaDon(txtmahd.Text, cbnv.SelectedValue.ToString()
+                    , int.Parse(lbTongTien.Text), cbkh.SelectedValue.ToString(), DateTime.Now);
 
-                    if (String.IsNullOrEmpty(txtI.Text))
-                    {
-                        CTVe cT = new CTVe();
-                        cT.MaHD = txtmahd.Text;
-                        cT.Mave = "VE01";
-                        cT.Soluongban = int.Parse(txtI.Text);
-                        quanli.CTVes.Add(cT);
-                        quanli.SaveChanges();
-                    }
-                    if (String.IsNullOrEmpty(txtII.Text))
-                    {
-                        CTVe cT = new CTVe();
-                        cT.MaHD = txtmahd.Text;
-                        cT.Mave = "VE02";
-                        cT.Soluongban = int.Parse(txtI.Text);
-                        quanli.CTVes.Add(cT);
-                        quanli.SaveChanges();
-                    }
+                //if (String.IsNullOrEmpty(txtI.Text))
+                //{
+                //    CTVe cT = new CTVe();
+                //    cT.MaHD = txtmahd.Text;
+                //    cT.Mave = "V01";
+                //    cT.Soluongban = int.Parse(txtI.Text);
+                //    quanli.CTVes.Add(cT);
+                //    quanli.SaveChanges();
+                //}
+                //if (String.IsNullOrEmpty(txtII.Text))
+                //{
+                //    CTVe cT = new CTVe();
+                //    cT.MaHD = txtmahd.Text;
+                //    cT.Mave = "V02";
+                //    cT.Soluongban = int.Parse(txtI.Text);
+                //    quanli.CTVes.Add(cT);
+                //    quanli.SaveChanges();
+                //}
                 MessageBox.Show("Thêm thành công");
 
                 }
-            
-            
-            
-
-            //    //dt.themhd(cbnv.SelectedValue.ToString(), Convert.ToDateTime(dtngaylap.Text), int.Parse(lbTongTien.Text), comboBox3.SelectedValue.ToString(), int.Parse(textBox1.Text), textBox2.Text, cbcb.SelectedValue.ToString(), cbmakh.SelectedValue.ToString());
-
-            //}
-            //    Chuyenbay chuyenbay = dt.Chuyenbays.Where(s => s.MaCB == label3.Text.Trim()).FirstOrDefault();
-            //    Hoadon hoadon = dt.Hoadons.Where(s => s.MaCB == chuyenbay.MaCB.ToString()).FirstOrDefault();
-            //    CTVe cTVe = dt.CTVes.Where(s => s.MaHD == hoadon.MaHD.ToString()).FirstOrDefault();
-            //    Ve ve = dt.Ves.Where(s => s.Mave == cTVe.Mave.ToString()).FirstOrDefault();
-            //    giave = Convert.ToDouble(ve.Giave) ;
-            //    lbTongTien2.Text = giave.ToString();
             int giaveloai1, giaveloai2;
             if (txtI.Text != "" && txtII.Text != "")
             {
-                giaveloai1 = int.Parse(txtI.Text)*giave1;
+                giaveloai1 = int.Parse(txtI.Text) * giave1;
                 giaveloai2 = int.Parse(txtII.Text) * giave2;
                 int tong = giaveloai1 + giaveloai2;
                 lbTongTien.Text = tong.ToString();
             }
+
+
+
+
+            //    //dt.themhd(cbnv.SelectedValue.ToString(), Convert.ToDateTime(dtngaylap.Text), int.Parse(lbTongTien.Text), comboBox3.SelectedValue.ToString(), int.Parse(textBox1.Text), textBox2.Text, cbcb.SelectedValue.ToString(), cbmakh.SelectedValue.ToString());
+
+            //}
+            //Chuyenbay chuyenbay = dt.Chuyenbays.Where(s => s.MaCB == label3.Text.Trim()).FirstOrDefault();
+            //Hoadon hoadon = dt.Hoadons.Where(s => s.MaCB == chuyenbay.MaCB.ToString()).FirstOrDefault();
+            //CTVe cTVe = dt.CTVes.Where(s => s.MaHD == hoadon.MaHD.ToString()).FirstOrDefault();
+            //Ve ve = dt.Ves.Where(s => s.Mave == cTVe.Mave.ToString()).FirstOrDefault();
+            //giave = int.Parse(ve.Giave);
+            //lbTongTien.Text = giave.ToString();
+            //giave = Convert.ToDouble(ve.Giave);
+            //lbTongtien.Text = giave.ToString();
+
+
         }
 
         private void dtngaylap_ValueChanged(object sender, EventArgs e)
@@ -251,16 +251,9 @@ namespace QL
             if (chuyenbay != null)
             {
                 string a = chuyenbay.MaCB.ToString();
-                Hoadon hoadon = dt.Hoadons.Where(s => s.MaCB == a.ToString()).FirstOrDefault();
-                if (hoadon != null)
-                {
-                    string b = hoadon.MaHD.ToString();
-                    CTVe cTVe = dt.CTVes.Where(s => s.MaHD == b.ToString()).FirstOrDefault();
-                    if (cTVe != null)
-                    {
-                        string c = cTVe.Mave.ToString();
-                        Ve ve = dt.Ves.Where(s => s.Mave == c.ToString()).FirstOrDefault();
-                        giave2 = int.Parse(ve.Giave);
+                Ve ve1 = dt.Ves.Where(s => s.MaCB == a.ToString()).FirstOrDefault();
+               
+                        giave2 = int.Parse(ve1.Giave);
                         if (txtII.Text == "")
                         {
                             if (txtI.Text != "")
@@ -274,19 +267,55 @@ namespace QL
                                 lbTongTien.Text = "0";
                             }
                             return;
-                        }                 
-                        giaveloai2 = (giave2 * int.Parse(txtII.Text.Trim()))*80/100;
+                        }
+                        giaveloai2 = (giave2 * int.Parse(txtII.Text.Trim())) * 80 / 100;
                         tongtien = int.Parse(lbTongTien.Text);
                         tongtien += giaveloai2;
                         lbTongTien.Text = tongtien.ToString();
-                        hoadon.Tongtien = tongtien;
+                       // hoadon.Tongtien = tongtien;
                         //hoadon.MaNV = txtmahd.Text; 
                         dt.SaveChanges();
                         Form3_Load(sender, e);
-                    }
-                }
+                    
+                
 
             }
+        }
+
+        private void cbDiemDi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLoaiVe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbnv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //label4.Text = cbnv.SelectedValue.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form15 f = new Form15();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            Form20 f = new Form20();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -16,6 +16,8 @@ namespace QL
     {
         public string TenTK { get; set; }
         public string Pass { get; set; }
+        public Nullable<int> dem { get; set; }
+        public string keykh { get; set; }
     
         public virtual Nhanvien Nhanvien { get; set; }
     }

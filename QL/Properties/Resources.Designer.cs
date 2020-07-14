@@ -503,6 +503,26 @@ namespace QL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo_1572198404182_2c115d89fb26 {
+            get {
+                object obj = ResourceManager.GetObject("photo-1572198404182-2c115d89fb26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_1572198404182_2c115d89fb261 {
+            get {
+                object obj = ResourceManager.GetObject("photo-1572198404182-2c115d89fb261", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search__v1 {
             get {
                 object obj = ResourceManager.GetObject("search--v1", resourceCulture);
