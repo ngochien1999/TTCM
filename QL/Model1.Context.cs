@@ -565,5 +565,42 @@ namespace QL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updatekeykh", keyParameter, tkParameter);
         }
+    
+        public virtual int mahoadon(string maNV, Nullable<System.DateTime> nlap, Nullable<int> tongtien, string mave, Nullable<int> thueVAT, string tinhtrang, string maCB, string makh)
+        {
+            var maNVParameter = maNV != null ?
+                new ObjectParameter("MaNV", maNV) :
+                new ObjectParameter("MaNV", typeof(string));
+    
+            var nlapParameter = nlap.HasValue ?
+                new ObjectParameter("Nlap", nlap) :
+                new ObjectParameter("Nlap", typeof(System.DateTime));
+    
+            var tongtienParameter = tongtien.HasValue ?
+                new ObjectParameter("Tongtien", tongtien) :
+                new ObjectParameter("Tongtien", typeof(int));
+    
+            var maveParameter = mave != null ?
+                new ObjectParameter("Mave", mave) :
+                new ObjectParameter("Mave", typeof(string));
+    
+            var thueVATParameter = thueVAT.HasValue ?
+                new ObjectParameter("ThueVAT", thueVAT) :
+                new ObjectParameter("ThueVAT", typeof(int));
+    
+            var tinhtrangParameter = tinhtrang != null ?
+                new ObjectParameter("Tinhtrang", tinhtrang) :
+                new ObjectParameter("Tinhtrang", typeof(string));
+    
+            var maCBParameter = maCB != null ?
+                new ObjectParameter("MaCB", maCB) :
+                new ObjectParameter("MaCB", typeof(string));
+    
+            var makhParameter = makh != null ?
+                new ObjectParameter("Makh", makh) :
+                new ObjectParameter("Makh", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("mahoadon", maNVParameter, nlapParameter, tongtienParameter, maveParameter, thueVATParameter, tinhtrangParameter, maCBParameter, makhParameter);
+        }
     }
 }

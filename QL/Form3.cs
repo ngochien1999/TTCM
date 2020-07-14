@@ -181,6 +181,7 @@ namespace QL
                 //hd.Tongtien = int.Parse(lbTongTien.Text);
                 //quanli.Hoadons.Add(hd);
                 //quanli.SaveChanges();
+                quanli.mahoadon(cbnv.va)
                 quanli.themHoaDon(txtmahd.Text, cbnv.SelectedValue.ToString()
                     , int.Parse(lbTongTien.Text), cbkh.SelectedValue.ToString(), DateTime.Now);
 

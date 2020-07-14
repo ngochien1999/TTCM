@@ -305,6 +305,16 @@
           <Parameter Name="Hang" Type="nvarchar" Mode="In" />
           <Parameter Name="Ngaybay" Type="date" Mode="In" />
         </Function>
+        <Function Name="mahoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
+          <Parameter Name="Nlap" Type="datetime" Mode="In" />
+          <Parameter Name="Tongtien" Type="int" Mode="In" />
+          <Parameter Name="Mave" Type="nvarchar" Mode="In" />
+          <Parameter Name="ThueVAT" Type="int" Mode="In" />
+          <Parameter Name="Tinhtrang" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaCB" Type="nvarchar" Mode="In" />
+          <Parameter Name="Makh" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="NewSelectCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="rptChuyenBay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -909,6 +919,16 @@
             <Parameter Name="key" Mode="In" Type="String" />
             <Parameter Name="tk" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="mahoadon">
+            <Parameter Name="MaNV" Mode="In" Type="String" />
+            <Parameter Name="Nlap" Mode="In" Type="DateTime" />
+            <Parameter Name="Tongtien" Mode="In" Type="Int32" />
+            <Parameter Name="Mave" Mode="In" Type="String" />
+            <Parameter Name="ThueVAT" Mode="In" Type="Int32" />
+            <Parameter Name="Tinhtrang" Mode="In" Type="String" />
+            <Parameter Name="MaCB" Mode="In" Type="String" />
+            <Parameter Name="Makh" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="doanhthu_Result">
           <Property Type="Int32" Name="thoigian" Nullable="true" />
@@ -1253,6 +1273,7 @@
           <FunctionImportMapping FunctionImportName="tongdthu" FunctionName="QLBCMBModel.Store.tongdthu" />
           <FunctionImportMapping FunctionImportName="updatekey" FunctionName="QLBCMBModel.Store.updatekey" />
           <FunctionImportMapping FunctionImportName="updatekeykh" FunctionName="QLBCMBModel.Store.updatekeykh" />
+          <FunctionImportMapping FunctionImportName="mahoadon" FunctionName="QLBCMBModel.Store.mahoadon" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
