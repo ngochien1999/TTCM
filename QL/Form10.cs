@@ -33,7 +33,7 @@ namespace QL
             cbGT.Text = dtmaybay.CurrentRow.Cells[2].Value.ToString();
             txtI.Text = dtmaybay.CurrentRow.Cells[3].Value.ToString();
             txtII.Text = dtmaybay.CurrentRow.Cells[4].Value.ToString();
-            MessageBox.Show(e.ColumnIndex.ToString());
+           
 
             if (e.ColumnIndex == 5)
             {

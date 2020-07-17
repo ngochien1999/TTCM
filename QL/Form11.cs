@@ -53,7 +53,7 @@ namespace QL
         }
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            //using (QLBCMBEntities2 quanli = new QLBCMBEntities2())
+            //using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
             //{
             //    Chuyenbay cb = new Chuyenbay(); ;
             //    string macb = quanli.Chuyenbays.Max(p => p.MaCB);
@@ -65,7 +65,7 @@ namespace QL
             //    cb.MaCB = macb;
             //    cb.Ngaybay = dtngay.Value;
 
-            //    var mb = quanli.Maybays.Where(s=>s.MaMB == cbMayBay.SelectedValue.ToString()).FirstOrDefault();
+            //    var mb = quanli.Maybays.Where(s => s.MaMB == cbMayBay.SelectedValue.ToString()).FirstOrDefault();
             //    cb.MaMB = mb.TenMB;
             //    TimeSpan time = TimeSpan.Parse(tbgiobay.Text);
             //    cb.Thoigianbay = time;
@@ -132,7 +132,7 @@ namespace QL
 
 
 
-            quanlichuan.chuyenbay_ha(txtma.Text, txtmac.Text, Convert.ToDateTime(dtngay.Text), TimeSpan.Parse(tbgiobay.Text), cbden.SelectedValue.ToString(), cbdi.SelectedValue.ToString(), int.Parse(txtI.Text), int.Parse(txtII.Text), txttuyen.Text, TimeSpan.Parse(dtThoiGiandung.Text), cbTrungGian.SelectedValue.ToString());
+            quanlichuan.chuyenbay_ha(txtma.Text, txtmac.Text, Convert.ToDateTime(dtngay.Text), TimeSpan.Parse(tbgiobay.Text), cbden.SelectedValue.ToString(), cbdi.SelectedValue.ToString(), int.Parse(txtI.Text), int.Parse(txtII.Text), txttuyen.Text, TimeSpan.Parse(dtThoiGiandung.Text), cbTrungGian.SelectedValue.ToString() );
             MessageBox.Show("Đã thêm thành công");
 
 
@@ -154,10 +154,16 @@ namespace QL
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            Form5 f = new Form5();
+            //this.Hide();
+            //Form2 f = ;
             this.Hide();
-            f.ShowDialog();
-            this.Show();
+            //f.ShowDialog();
+            //this.Show();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

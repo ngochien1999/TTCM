@@ -109,7 +109,7 @@ namespace QL
         {
 
             Form11 f = new Form11();
-            this.Hide();
+            f.Visible = true;
             f.getLuu().Click += closeForm;
             f.Show();
         }
@@ -149,6 +149,22 @@ namespace QL
                 dataGridView1.DataSource = quanli.Chuyenbays.Where(p => p.MaCB.Contains(gunaTextBox1.Text.Trim())).ToList();
                 MessageBox.Show("Tìm kiếm thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MaTB = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtngaybay.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtthoigianbay.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtsanbayden.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtsbd.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+             txtdiachi.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtsoluongii.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+         
+          
+
+
+
         }
 
         Random random = new Random();

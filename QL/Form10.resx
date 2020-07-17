@@ -159,9 +159,6 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>
   </metadata>
-  <data name="txtThongTin.Text" xml:space="preserve">
-    <value>                                                    Hãng Hàng Không Việt Nam AirLine với chất lượng và đội ngũ cán bộ nhân viên chuyên Việt sẽ luôn đem lại cho bán những giây phút thoải mái và những chuyến bay an toàn nhất..... Chúng tôi luôn lấy tiêu chí khách hàng lên hàng đầu... !!! Xin cảm ơn quý khách đã tin tưởng chúng tôi trong suốt nhiều năm qua ....! Mọi chi tiết vui lòng liên hệ với chúng tôi -Địa Chỉ: Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.  Điện thoại: (84-4) 3 8.320.320 / (84-8) 3 8.320.320 Fax:. (84-4) 3 8.722.375.  Chúc Quý Khách Thượng Lộ Bình An !!!                                                                        </value>
-  </data>
   <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -169,6 +166,9 @@
     <value>104, 95</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>91</value>
+    <value>30</value>
   </metadata>
+  <data name="txtThongTin.Text" xml:space="preserve">
+    <value>                                                    Hãng Hàng Không Việt Nam AirLine với chất lượng và đội ngũ cán bộ nhân viên chuyên Việt sẽ luôn đem lại cho bán những giây phút thoải mái và những chuyến bay an toàn nhất..... Chúng tôi luôn lấy tiêu chí khách hàng lên hàng đầu... !!! Xin cảm ơn quý khách đã tin tưởng chúng tôi trong suốt nhiều năm qua ....! Mọi chi tiết vui lòng liên hệ với chúng tôi -Địa Chỉ: Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.  Điện thoại: (84-4) 3 8.320.320 / (84-8) 3 8.320.320 Fax:. (84-4) 3 8.722.375.  Chúc Quý Khách Thượng Lộ Bình An !!!                                                                        </value>
+  </data>
 </root>

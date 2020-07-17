@@ -236,6 +236,72 @@ namespace QL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<hien_Result>("hien", sandenParameter, sandiParameter, hangParameter, ngaybayParameter);
         }
     
+        public virtual ObjectResult<layhoadon_Result> layhoadon(string mahd, string machuyenbay, string makh, string manv, Nullable<System.DateTime> ngay, Nullable<int> tongtien)
+        {
+            var mahdParameter = mahd != null ?
+                new ObjectParameter("mahd", mahd) :
+                new ObjectParameter("mahd", typeof(string));
+    
+            var machuyenbayParameter = machuyenbay != null ?
+                new ObjectParameter("machuyenbay", machuyenbay) :
+                new ObjectParameter("machuyenbay", typeof(string));
+    
+            var makhParameter = makh != null ?
+                new ObjectParameter("makh", makh) :
+                new ObjectParameter("makh", typeof(string));
+    
+            var manvParameter = manv != null ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(string));
+    
+            var ngayParameter = ngay.HasValue ?
+                new ObjectParameter("ngay", ngay) :
+                new ObjectParameter("ngay", typeof(System.DateTime));
+    
+            var tongtienParameter = tongtien.HasValue ?
+                new ObjectParameter("tongtien", tongtien) :
+                new ObjectParameter("tongtien", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<layhoadon_Result>("layhoadon", mahdParameter, machuyenbayParameter, makhParameter, manvParameter, ngayParameter, tongtienParameter);
+        }
+    
+        public virtual int mahoadon(string maNV, Nullable<System.DateTime> nlap, Nullable<int> tongtien, string mave, Nullable<int> thueVAT, string tinhtrang, string maCB, string makh)
+        {
+            var maNVParameter = maNV != null ?
+                new ObjectParameter("MaNV", maNV) :
+                new ObjectParameter("MaNV", typeof(string));
+    
+            var nlapParameter = nlap.HasValue ?
+                new ObjectParameter("Nlap", nlap) :
+                new ObjectParameter("Nlap", typeof(System.DateTime));
+    
+            var tongtienParameter = tongtien.HasValue ?
+                new ObjectParameter("Tongtien", tongtien) :
+                new ObjectParameter("Tongtien", typeof(int));
+    
+            var maveParameter = mave != null ?
+                new ObjectParameter("Mave", mave) :
+                new ObjectParameter("Mave", typeof(string));
+    
+            var thueVATParameter = thueVAT.HasValue ?
+                new ObjectParameter("ThueVAT", thueVAT) :
+                new ObjectParameter("ThueVAT", typeof(int));
+    
+            var tinhtrangParameter = tinhtrang != null ?
+                new ObjectParameter("Tinhtrang", tinhtrang) :
+                new ObjectParameter("Tinhtrang", typeof(string));
+    
+            var maCBParameter = maCB != null ?
+                new ObjectParameter("MaCB", maCB) :
+                new ObjectParameter("MaCB", typeof(string));
+    
+            var makhParameter = makh != null ?
+                new ObjectParameter("Makh", makh) :
+                new ObjectParameter("Makh", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("mahoadon", maNVParameter, nlapParameter, tongtienParameter, maveParameter, thueVATParameter, tinhtrangParameter, maCBParameter, makhParameter);
+        }
+    
         public virtual ObjectResult<NewSelectCommand_Result> NewSelectCommand()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NewSelectCommand_Result>("NewSelectCommand");
@@ -489,12 +555,8 @@ namespace QL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("themhd", maNVParameter, nlapParameter, tongtienParameter, maveParameter, thueVATParameter, tinhtrangParameter, maCBParameter, makhParameter);
         }
     
-        public virtual int themHoaDon(string mahd, string manv, Nullable<int> tongtien, string makh, Nullable<System.DateTime> ngaylap)
+        public virtual int themHoaDon(string manv, Nullable<int> tongtien, string makh, Nullable<System.DateTime> ngaylap, string mave)
         {
-            var mahdParameter = mahd != null ?
-                new ObjectParameter("mahd", mahd) :
-                new ObjectParameter("mahd", typeof(string));
-    
             var manvParameter = manv != null ?
                 new ObjectParameter("manv", manv) :
                 new ObjectParameter("manv", typeof(string));
@@ -511,7 +573,11 @@ namespace QL
                 new ObjectParameter("ngaylap", ngaylap) :
                 new ObjectParameter("ngaylap", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("themHoaDon", mahdParameter, manvParameter, tongtienParameter, makhParameter, ngaylapParameter);
+            var maveParameter = mave != null ?
+                new ObjectParameter("mave", mave) :
+                new ObjectParameter("mave", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("themHoaDon", manvParameter, tongtienParameter, makhParameter, ngaylapParameter, maveParameter);
         }
     
         public virtual ObjectResult<TimKiemNangCao_Result> TimKiemNangCao(string sbdi, string sbden, string hang, Nullable<System.DateTime> ngaybay)
@@ -533,6 +599,15 @@ namespace QL
                 new ObjectParameter("Ngaybay", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TimKiemNangCao_Result>("TimKiemNangCao", sbdiParameter, sbdenParameter, hangParameter, ngaybayParameter);
+        }
+    
+        public virtual ObjectResult<string> tkcb(string mahd)
+        {
+            var mahdParameter = mahd != null ?
+                new ObjectParameter("mahd", mahd) :
+                new ObjectParameter("mahd", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("tkcb", mahdParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> tongdthu()
@@ -566,41 +641,13 @@ namespace QL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updatekeykh", keyParameter, tkParameter);
         }
     
-        public virtual int mahoadon(string maNV, Nullable<System.DateTime> nlap, Nullable<int> tongtien, string mave, Nullable<int> thueVAT, string tinhtrang, string maCB, string makh)
+        public virtual ObjectResult<RPhoadon_Result> RPhoadon(string mahd)
         {
-            var maNVParameter = maNV != null ?
-                new ObjectParameter("MaNV", maNV) :
-                new ObjectParameter("MaNV", typeof(string));
+            var mahdParameter = mahd != null ?
+                new ObjectParameter("mahd", mahd) :
+                new ObjectParameter("mahd", typeof(string));
     
-            var nlapParameter = nlap.HasValue ?
-                new ObjectParameter("Nlap", nlap) :
-                new ObjectParameter("Nlap", typeof(System.DateTime));
-    
-            var tongtienParameter = tongtien.HasValue ?
-                new ObjectParameter("Tongtien", tongtien) :
-                new ObjectParameter("Tongtien", typeof(int));
-    
-            var maveParameter = mave != null ?
-                new ObjectParameter("Mave", mave) :
-                new ObjectParameter("Mave", typeof(string));
-    
-            var thueVATParameter = thueVAT.HasValue ?
-                new ObjectParameter("ThueVAT", thueVAT) :
-                new ObjectParameter("ThueVAT", typeof(int));
-    
-            var tinhtrangParameter = tinhtrang != null ?
-                new ObjectParameter("Tinhtrang", tinhtrang) :
-                new ObjectParameter("Tinhtrang", typeof(string));
-    
-            var maCBParameter = maCB != null ?
-                new ObjectParameter("MaCB", maCB) :
-                new ObjectParameter("MaCB", typeof(string));
-    
-            var makhParameter = makh != null ?
-                new ObjectParameter("Makh", makh) :
-                new ObjectParameter("Makh", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("mahoadon", maNVParameter, nlapParameter, tongtienParameter, maveParameter, thueVATParameter, tinhtrangParameter, maCBParameter, makhParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RPhoadon_Result>("RPhoadon", mahdParameter);
         }
     }
 }

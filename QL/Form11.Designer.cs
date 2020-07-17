@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txttuyen = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
             this.txtmac = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
             this.txtII = new Guna.UI.WinForms.GunaTextBox();
@@ -44,6 +46,7 @@
             this.tbgiobay = new System.Windows.Forms.MaskedTextBox();
             this.dtThoiGiandung = new System.Windows.Forms.MaskedTextBox();
             this.dtngay = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.txtma = new Guna.UI.WinForms.GunaTextBox();
             this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
@@ -52,9 +55,6 @@
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.txtma = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
-            this.txttuyen = new Guna.UI.WinForms.GunaTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,8 +90,34 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(723, 391);
+            this.panel1.Size = new System.Drawing.Size(914, 391);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txttuyen
+            // 
+            this.txttuyen.BaseColor = System.Drawing.Color.White;
+            this.txttuyen.BorderColor = System.Drawing.Color.Silver;
+            this.txttuyen.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txttuyen.FocusedBaseColor = System.Drawing.Color.White;
+            this.txttuyen.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txttuyen.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txttuyen.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txttuyen.Location = new System.Drawing.Point(247, 123);
+            this.txttuyen.Name = "txttuyen";
+            this.txttuyen.PasswordChar = '\0';
+            this.txttuyen.Size = new System.Drawing.Size(159, 26);
+            this.txttuyen.TabIndex = 63;
+            // 
+            // gunaLabel12
+            // 
+            this.gunaLabel12.AutoSize = true;
+            this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel12.Location = new System.Drawing.Point(46, 135);
+            this.gunaLabel12.Name = "gunaLabel12";
+            this.gunaLabel12.Size = new System.Drawing.Size(79, 15);
+            this.gunaLabel12.TabIndex = 62;
+            this.gunaLabel12.Text = "Mã tuyến bay";
             // 
             // txtmac
             // 
@@ -102,7 +128,7 @@
             this.txtmac.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtmac.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtmac.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtmac.Location = new System.Drawing.Point(161, 42);
+            this.txtmac.Location = new System.Drawing.Point(243, 33);
             this.txtmac.Name = "txtmac";
             this.txtmac.PasswordChar = '\0';
             this.txtmac.Size = new System.Drawing.Size(167, 30);
@@ -127,10 +153,10 @@
             this.txtII.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtII.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtII.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtII.Location = new System.Drawing.Point(161, 287);
+            this.txtII.Location = new System.Drawing.Point(679, 282);
             this.txtII.Name = "txtII";
             this.txtII.PasswordChar = '\0';
-            this.txtII.Size = new System.Drawing.Size(159, 26);
+            this.txtII.Size = new System.Drawing.Size(204, 26);
             this.txtII.TabIndex = 59;
             // 
             // txtI
@@ -142,7 +168,7 @@
             this.txtI.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtI.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtI.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtI.Location = new System.Drawing.Point(161, 255);
+            this.txtI.Location = new System.Drawing.Point(243, 282);
             this.txtI.Name = "txtI";
             this.txtI.PasswordChar = '\0';
             this.txtI.Size = new System.Drawing.Size(159, 26);
@@ -152,7 +178,7 @@
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel9.Location = new System.Drawing.Point(49, 298);
+            this.gunaLabel9.Location = new System.Drawing.Point(556, 282);
             this.gunaLabel9.Name = "gunaLabel9";
             this.gunaLabel9.Size = new System.Drawing.Size(106, 15);
             this.gunaLabel9.TabIndex = 57;
@@ -162,7 +188,7 @@
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel2.Location = new System.Drawing.Point(46, 255);
+            this.gunaLabel2.Location = new System.Drawing.Point(46, 293);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(97, 15);
             this.gunaLabel2.TabIndex = 56;
@@ -179,7 +205,7 @@
             this.gunaButton2.ForeColor = System.Drawing.Color.White;
             this.gunaButton2.Image = global::QL.Properties.Resources.exit1;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(690, 0);
+            this.gunaButton2.Location = new System.Drawing.Point(881, 0);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -195,7 +221,7 @@
             this.gunaLabel10.AutoSize = true;
             this.gunaLabel10.BackColor = System.Drawing.Color.DarkKhaki;
             this.gunaLabel10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel10.Location = new System.Drawing.Point(258, 11);
+            this.gunaLabel10.Location = new System.Drawing.Point(388, 9);
             this.gunaLabel10.Name = "gunaLabel10";
             this.gunaLabel10.Size = new System.Drawing.Size(213, 21);
             this.gunaLabel10.TabIndex = 51;
@@ -207,7 +233,7 @@
             this.cbTrungGian.Items.AddRange(new object[] {
             "Buôn Ma Thuột",
             "Tân Sơn Nhất"});
-            this.cbTrungGian.Location = new System.Drawing.Point(488, 174);
+            this.cbTrungGian.Location = new System.Drawing.Point(679, 172);
             this.cbTrungGian.Name = "cbTrungGian";
             this.cbTrungGian.Size = new System.Drawing.Size(204, 21);
             this.cbTrungGian.TabIndex = 47;
@@ -215,7 +241,7 @@
             // cbden
             // 
             this.cbden.FormattingEnabled = true;
-            this.cbden.Location = new System.Drawing.Point(161, 174);
+            this.cbden.Location = new System.Drawing.Point(243, 174);
             this.cbden.Name = "cbden";
             this.cbden.Size = new System.Drawing.Size(163, 21);
             this.cbden.TabIndex = 46;
@@ -223,7 +249,7 @@
             // cbdi
             // 
             this.cbdi.FormattingEnabled = true;
-            this.cbdi.Location = new System.Drawing.Point(161, 213);
+            this.cbdi.Location = new System.Drawing.Point(243, 230);
             this.cbdi.Name = "cbdi";
             this.cbdi.Size = new System.Drawing.Size(163, 21);
             this.cbdi.TabIndex = 45;
@@ -239,7 +265,7 @@
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(278, 339);
+            this.gunaButton1.Location = new System.Drawing.Point(770, 351);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -255,7 +281,7 @@
             // tbgiobay
             // 
             this.tbgiobay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbgiobay.Location = new System.Drawing.Point(488, 119);
+            this.tbgiobay.Location = new System.Drawing.Point(679, 119);
             this.tbgiobay.Mask = "00:00";
             this.tbgiobay.Name = "tbgiobay";
             this.tbgiobay.Size = new System.Drawing.Size(204, 20);
@@ -265,7 +291,7 @@
             // dtThoiGiandung
             // 
             this.dtThoiGiandung.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtThoiGiandung.Location = new System.Drawing.Point(488, 230);
+            this.dtThoiGiandung.Location = new System.Drawing.Point(679, 230);
             this.dtThoiGiandung.Mask = "00:00";
             this.dtThoiGiandung.Name = "dtThoiGiandung";
             this.dtThoiGiandung.Size = new System.Drawing.Size(204, 20);
@@ -282,7 +308,7 @@
             this.dtngay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtngay.ForeColor = System.Drawing.Color.Black;
             this.dtngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtngay.Location = new System.Drawing.Point(488, 67);
+            this.dtngay.Location = new System.Drawing.Point(679, 67);
             this.dtngay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtngay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtngay.Name = "dtngay";
@@ -294,6 +320,21 @@
             this.dtngay.TabIndex = 24;
             this.dtngay.Text = "07/07/2020";
             this.dtngay.Value = new System.DateTime(2020, 7, 7, 16, 28, 54, 495);
+            // 
+            // txtma
+            // 
+            this.txtma.BaseColor = System.Drawing.Color.White;
+            this.txtma.BorderColor = System.Drawing.Color.Silver;
+            this.txtma.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtma.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtma.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtma.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtma.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtma.Location = new System.Drawing.Point(239, 87);
+            this.txtma.Name = "txtma";
+            this.txtma.PasswordChar = '\0';
+            this.txtma.Size = new System.Drawing.Size(167, 30);
+            this.txtma.TabIndex = 19;
             // 
             // progressPanel1
             // 
@@ -317,7 +358,7 @@
             // 
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel8.Location = new System.Drawing.Point(374, 174);
+            this.gunaLabel8.Location = new System.Drawing.Point(554, 174);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(108, 15);
             this.gunaLabel8.TabIndex = 7;
@@ -327,7 +368,7 @@
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel7.Location = new System.Drawing.Point(374, 232);
+            this.gunaLabel7.Location = new System.Drawing.Point(554, 219);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(87, 15);
             this.gunaLabel7.TabIndex = 6;
@@ -337,7 +378,7 @@
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel6.Location = new System.Drawing.Point(384, 119);
+            this.gunaLabel6.Location = new System.Drawing.Point(554, 124);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(47, 15);
             this.gunaLabel6.TabIndex = 5;
@@ -347,7 +388,7 @@
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel5.Location = new System.Drawing.Point(384, 67);
+            this.gunaLabel5.Location = new System.Drawing.Point(554, 67);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(57, 15);
             this.gunaLabel5.TabIndex = 4;
@@ -357,7 +398,7 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel4.Location = new System.Drawing.Point(46, 180);
+            this.gunaLabel4.Location = new System.Drawing.Point(46, 197);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(72, 15);
             this.gunaLabel4.TabIndex = 3;
@@ -367,7 +408,7 @@
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel3.Location = new System.Drawing.Point(56, 230);
+            this.gunaLabel3.Location = new System.Drawing.Point(46, 249);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(62, 15);
             this.gunaLabel3.TabIndex = 2;
@@ -383,56 +424,15 @@
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Mã máy bay";
             // 
-            // txtma
-            // 
-            this.txtma.BaseColor = System.Drawing.Color.White;
-            this.txtma.BorderColor = System.Drawing.Color.Silver;
-            this.txtma.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtma.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtma.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtma.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtma.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtma.Location = new System.Drawing.Point(161, 87);
-            this.txtma.Name = "txtma";
-            this.txtma.PasswordChar = '\0';
-            this.txtma.Size = new System.Drawing.Size(167, 30);
-            this.txtma.TabIndex = 19;
-            // 
-            // gunaLabel12
-            // 
-            this.gunaLabel12.AutoSize = true;
-            this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel12.Location = new System.Drawing.Point(46, 146);
-            this.gunaLabel12.Name = "gunaLabel12";
-            this.gunaLabel12.Size = new System.Drawing.Size(79, 15);
-            this.gunaLabel12.TabIndex = 62;
-            this.gunaLabel12.Text = "Mã tuyến bay";
-            // 
-            // txttuyen
-            // 
-            this.txttuyen.BaseColor = System.Drawing.Color.White;
-            this.txttuyen.BorderColor = System.Drawing.Color.Silver;
-            this.txttuyen.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txttuyen.FocusedBaseColor = System.Drawing.Color.White;
-            this.txttuyen.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txttuyen.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txttuyen.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttuyen.Location = new System.Drawing.Point(161, 135);
-            this.txttuyen.Name = "txttuyen";
-            this.txttuyen.PasswordChar = '\0';
-            this.txttuyen.Size = new System.Drawing.Size(159, 26);
-            this.txttuyen.TabIndex = 63;
-            // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 391);
+            this.ClientSize = new System.Drawing.Size(915, 391);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form11";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form11";
             this.Load += new System.EventHandler(this.Form11_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

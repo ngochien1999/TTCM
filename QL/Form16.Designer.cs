@@ -28,46 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.RPhoadonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QLBCMBDataSet20 = new QL.QLBCMBDataSet20();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.RPhoadonTableAdapter = new QL.QLBCMBDataSet20TableAdapters.RPhoadonTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.RPhoadonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLBCMBDataSet20)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // RPhoadonBindingSource
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(45, 68);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "VND";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(389, 338);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.RPhoadonBindingSource.DataMember = "RPhoadon";
+            this.RPhoadonBindingSource.DataSource = this.QLBCMBDataSet20;
+            // 
+            // QLBCMBDataSet20
+            // 
+            this.QLBCMBDataSet20.DataSetName = "QLBCMBDataSet20";
+            this.QLBCMBDataSet20.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.RPhoadonBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QL.Report4.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(23, 11);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(908, 466);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // RPhoadonTableAdapter
+            // 
+            this.RPhoadonTableAdapter.ClearBeforeFill = true;
             // 
             // Form16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 436);
-            this.Controls.Add(this.chart1);
+            this.ClientSize = new System.Drawing.Size(939, 496);
+            this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form16";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form16";
             this.Load += new System.EventHandler(this.Form16_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RPhoadonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QLBCMBDataSet20)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource RPhoadonBindingSource;
+        private QLBCMBDataSet20 QLBCMBDataSet20;
+        private QLBCMBDataSet20TableAdapters.RPhoadonTableAdapter RPhoadonTableAdapter;
     }
 }

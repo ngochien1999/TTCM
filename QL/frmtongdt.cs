@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL
 {
-    public partial class Form17 : Form
+    public partial class frmtongdt : Form
     {
-        public Form17()
+        public frmtongdt()
         {
             InitializeComponent();
         }

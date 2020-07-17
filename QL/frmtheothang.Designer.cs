@@ -1,6 +1,6 @@
 ﻿namespace QL
 {
-    partial class Form18
+    partial class frmtheothang
     {
         /// <summary>
         /// Required designer variable.
@@ -62,14 +62,14 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 147);
+            this.chart1.Location = new System.Drawing.Point(29, 83);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "VND";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(524, 243);
+            this.chart1.Size = new System.Drawing.Size(462, 243);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
@@ -79,7 +79,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(149, 71);
+            this.label1.Location = new System.Drawing.Point(126, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 22);
             this.label1.TabIndex = 2;
@@ -90,9 +90,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.ClientSize = new System.Drawing.Size(548, 402);
+            this.ClientSize = new System.Drawing.Size(528, 341);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chart1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form18";
             this.Text = "Form18";
             this.Load += new System.EventHandler(this.Form18_Load);

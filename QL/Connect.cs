@@ -45,6 +45,14 @@ namespace QL
             conn.Close();
             return data;
     }
+        public int updateTaikhoan(string query)
+        {
+            SqlConnection conn = new SqlConnection(connSTr);
+            conn.Open();
+            SqlCommand command = new SqlCommand(query, conn);
+            int a = command.ExecuteNonQuery();
+            return a;
+        }
     }
     
 }

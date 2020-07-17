@@ -18,7 +18,6 @@ namespace QL
         public string MaTB { get; set; }
         public Nullable<System.TimeSpan> Thoigiandung { get; set; }
         public string SBtrunggian { get; set; }
-        public string Magiovang { get; set; }
     
         public virtual Chuyenbay Chuyenbay { get; set; }
         public virtual Tuyenbay Tuyenbay { get; set; }

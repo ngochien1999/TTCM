@@ -40,7 +40,7 @@ namespace QL
             {
 
             }
-            login = new NetworkCredential(txtussename.Text, txtPassword.Text);
+            login = new NetworkCredential(txtussename.Text="ntnhien19091999", txtPassword.Text="ngochien19091999");
             client = new SmtpClient(txtSmtp.Text);
             client.Port = Convert.ToInt32(txtPort.Text);
             client.EnableSsl = chkssl.Checked;

@@ -86,8 +86,11 @@ namespace QL
 
         private void btnReset_CheckedChanged(object sender, EventArgs e)
         {
-            txtmk.Text = txttk.Text = "";
-          
+            Form7 f = new Form7();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+
         }
 
         private void gunaPictureBox1_Click(object sender, EventArgs e)

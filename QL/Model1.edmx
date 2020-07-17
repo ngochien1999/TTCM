@@ -27,7 +27,6 @@
           <Property Name="MaTB" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Thoigiandung" Type="time" Precision="7" />
           <Property Name="SBtrunggian" Type="nvarchar" MaxLength="10" />
-          <Property Name="Magiovang" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="CTVe">
           <Key>
@@ -95,6 +94,7 @@
           <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
           <Property Name="SĐT" Type="nvarchar" MaxLength="50" />
           <Property Name="Chucvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Sanbay">
           <Key>
@@ -122,6 +122,7 @@
           <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="dem" Type="int" />
           <Property Name="keykh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tuyenbay">
           <Key>
@@ -305,6 +306,14 @@
           <Parameter Name="Hang" Type="nvarchar" Mode="In" />
           <Parameter Name="Ngaybay" Type="date" Mode="In" />
         </Function>
+        <Function Name="layhoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mahd" Type="nvarchar" Mode="In" />
+          <Parameter Name="machuyenbay" Type="nvarchar" Mode="In" />
+          <Parameter Name="makh" Type="nvarchar" Mode="In" />
+          <Parameter Name="manv" Type="nvarchar" Mode="In" />
+          <Parameter Name="ngay" Type="datetime" Mode="In" />
+          <Parameter Name="tongtien" Type="int" Mode="In" />
+        </Function>
         <Function Name="mahoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaNV" Type="nvarchar" Mode="In" />
           <Parameter Name="Nlap" Type="datetime" Mode="In" />
@@ -316,6 +325,9 @@
           <Parameter Name="Makh" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="NewSelectCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="RPhoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mahd" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="rptChuyenBay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -385,17 +397,20 @@
           <Parameter Name="Makh" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="themHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="mahd" Type="nvarchar" Mode="In" />
           <Parameter Name="manv" Type="nvarchar" Mode="In" />
           <Parameter Name="tongtien" Type="int" Mode="In" />
           <Parameter Name="makh" Type="nvarchar" Mode="In" />
           <Parameter Name="ngaylap" Type="datetime" Mode="In" />
+          <Parameter Name="mave" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="TimKiemNangCao" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="sbdi" Type="nvarchar" Mode="In" />
           <Parameter Name="sbden" Type="nvarchar" Mode="In" />
           <Parameter Name="Hang" Type="nvarchar" Mode="In" />
           <Parameter Name="Ngaybay" Type="date" Mode="In" />
+        </Function>
+        <Function Name="tkcb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mahd" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="tongdthu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="updatekey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -486,7 +501,6 @@
           <Property Name="MaTB" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Thoigiandung" Type="Time" Precision="7" />
           <Property Name="SBtrunggian" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Magiovang" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Chuyenbay" Relationship="Self.FK_CTchuyenbay_Chuyenbay" FromRole="CTchuyenbay" ToRole="Chuyenbay" />
           <NavigationProperty Name="Tuyenbay" Relationship="Self.FK_CTchuyenbay_Tuyenbay" FromRole="CTchuyenbay" ToRole="Tuyenbay" />
         </EntityType>
@@ -563,6 +577,7 @@
           <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SĐT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Chucvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Hoadons" Relationship="Self.FK__Hoadon__Tongtien__47DBAE45" FromRole="Nhanvien" ToRole="Hoadon" />
           <NavigationProperty Name="TK" Relationship="Self.FK_TK_Nhanvien" FromRole="Nhanvien" ToRole="TK" />
         </EntityType>
@@ -592,6 +607,7 @@
           <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="dem" Type="Int32" />
           <Property Name="keykh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Nhanvien" Relationship="Self.FK_TK_Nhanvien" FromRole="TK" ToRole="Nhanvien" />
         </EntityType>
         <EntityType Name="Tuyenbay">
@@ -828,6 +844,24 @@
             <Parameter Name="Hang" Mode="In" Type="String" />
             <Parameter Name="Ngaybay" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="layhoadon" ReturnType="Collection(QLBCMBModel.layhoadon_Result)">
+            <Parameter Name="mahd" Mode="In" Type="String" />
+            <Parameter Name="machuyenbay" Mode="In" Type="String" />
+            <Parameter Name="makh" Mode="In" Type="String" />
+            <Parameter Name="manv" Mode="In" Type="String" />
+            <Parameter Name="ngay" Mode="In" Type="DateTime" />
+            <Parameter Name="tongtien" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="mahoadon">
+            <Parameter Name="MaNV" Mode="In" Type="String" />
+            <Parameter Name="Nlap" Mode="In" Type="DateTime" />
+            <Parameter Name="Tongtien" Mode="In" Type="Int32" />
+            <Parameter Name="Mave" Mode="In" Type="String" />
+            <Parameter Name="ThueVAT" Mode="In" Type="Int32" />
+            <Parameter Name="Tinhtrang" Mode="In" Type="String" />
+            <Parameter Name="MaCB" Mode="In" Type="String" />
+            <Parameter Name="Makh" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="NewSelectCommand" ReturnType="Collection(QLBCMBModel.NewSelectCommand_Result)" />
           <FunctionImport Name="rptChuyenBay" />
           <FunctionImport Name="sp_alterdiagram">
@@ -898,17 +932,20 @@
             <Parameter Name="Makh" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="themHoaDon">
-            <Parameter Name="mahd" Mode="In" Type="String" />
             <Parameter Name="manv" Mode="In" Type="String" />
             <Parameter Name="tongtien" Mode="In" Type="Int32" />
             <Parameter Name="makh" Mode="In" Type="String" />
             <Parameter Name="ngaylap" Mode="In" Type="DateTime" />
+            <Parameter Name="mave" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TimKiemNangCao" ReturnType="Collection(QLBCMBModel.TimKiemNangCao_Result)">
             <Parameter Name="sbdi" Mode="In" Type="String" />
             <Parameter Name="sbden" Mode="In" Type="String" />
             <Parameter Name="Hang" Mode="In" Type="String" />
             <Parameter Name="Ngaybay" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="tkcb" ReturnType="Collection(String)">
+          <Parameter Name="mahd" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="tongdthu" ReturnType="Collection(Int32)" />
           <FunctionImport Name="updatekey">
@@ -919,15 +956,8 @@
             <Parameter Name="key" Mode="In" Type="String" />
             <Parameter Name="tk" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="mahoadon">
-            <Parameter Name="MaNV" Mode="In" Type="String" />
-            <Parameter Name="Nlap" Mode="In" Type="DateTime" />
-            <Parameter Name="Tongtien" Mode="In" Type="Int32" />
-            <Parameter Name="Mave" Mode="In" Type="String" />
-            <Parameter Name="ThueVAT" Mode="In" Type="Int32" />
-            <Parameter Name="Tinhtrang" Mode="In" Type="String" />
-            <Parameter Name="MaCB" Mode="In" Type="String" />
-            <Parameter Name="Makh" Mode="In" Type="String" />
+          <FunctionImport Name="RPhoadon" ReturnType="Collection(QLBCMBModel.RPhoadon_Result)">
+          <Parameter Name="mahd" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="doanhthu_Result">
@@ -955,6 +985,14 @@
           <Property Type="Time" Name="Thoigianbay" Nullable="true" />
           <Property Type="String" Name="TenMB" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Hang" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="layhoadon_Result">
+          <Property Type="String" Name="MaCB" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MaHD" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Makh" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Makh1" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="Nlap" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Tongtien" Nullable="true" />
         </ComplexType>
         <ComplexType Name="NewSelectCommand_Result">
           <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
@@ -997,6 +1035,16 @@
           <Property Type="Time" Name="Thoigianbay" Nullable="true" />
           <Property Type="String" Name="Hang" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="RPhoadon_Result">
+          <Property Type="String" Name="MaHD" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="Nlap" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Tongtien" Nullable="true" />
+          <Property Type="String" Name="Tenkh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Hoten" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Sabden" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sabdi" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1024,7 +1072,6 @@
                 <ScalarProperty Name="MaTB" ColumnName="MaTB" />
                 <ScalarProperty Name="Thoigiandung" ColumnName="Thoigiandung" />
                 <ScalarProperty Name="SBtrunggian" ColumnName="SBtrunggian" />
-                <ScalarProperty Name="Magiovang" ColumnName="Magiovang" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1097,6 +1144,7 @@
                 <ScalarProperty Name="Diachi" ColumnName="Diachi" />
                 <ScalarProperty Name="SĐT" ColumnName="SĐT" />
                 <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1127,6 +1175,7 @@
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
                 <ScalarProperty Name="dem" ColumnName="dem" />
                 <ScalarProperty Name="keykh" ColumnName="keykh" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1199,6 +1248,19 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="layhoadon" FunctionName="QLBCMBModel.Store.layhoadon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBCMBModel.layhoadon_Result">
+                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+                <ScalarProperty Name="Makh" ColumnName="Makh" />
+                <ScalarProperty Name="Makh1" ColumnName="Makh1" />
+                <ScalarProperty Name="Nlap" ColumnName="Nlap" />
+                <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="mahoadon" FunctionName="QLBCMBModel.Store.mahoadon" />
           <FunctionImportMapping FunctionImportName="NewSelectCommand" FunctionName="QLBCMBModel.Store.NewSelectCommand">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QLBCMBModel.NewSelectCommand_Result">
@@ -1270,10 +1332,24 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="tkcb" FunctionName="QLBCMBModel.Store.tkcb" />
           <FunctionImportMapping FunctionImportName="tongdthu" FunctionName="QLBCMBModel.Store.tongdthu" />
           <FunctionImportMapping FunctionImportName="updatekey" FunctionName="QLBCMBModel.Store.updatekey" />
           <FunctionImportMapping FunctionImportName="updatekeykh" FunctionName="QLBCMBModel.Store.updatekeykh" />
-          <FunctionImportMapping FunctionImportName="mahoadon" FunctionName="QLBCMBModel.Store.mahoadon" />
+          <FunctionImportMapping FunctionImportName="RPhoadon" FunctionName="QLBCMBModel.Store.RPhoadon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBCMBModel.RPhoadon_Result">
+                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+                <ScalarProperty Name="Nlap" ColumnName="Nlap" />
+                <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+                <ScalarProperty Name="Tenkh" ColumnName="Tenkh" />
+                <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="Sabden" ColumnName="Sabden" />
+                <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.rptChuyenBayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Datareport = new QL.Datareport();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.rptChuyenBayTableAdapter = new QL.DatareportTableAdapters.rptChuyenBayTableAdapter();
+            this.SettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.rptChuyenBayBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datareport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rptChuyenBayBindingSource
@@ -51,10 +54,12 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.rptChuyenBayBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QL.RPHoaDon.rdlc";
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.SettingsBindingSource;
+            reportDataSource4.Name = "DataSet2";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QL.Report3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(968, 509);
@@ -63,6 +68,10 @@
             // rptChuyenBayTableAdapter
             // 
             this.rptChuyenBayTableAdapter.ClearBeforeFill = true;
+            // 
+            // SettingsBindingSource
+            // 
+            this.SettingsBindingSource.DataSource = typeof(QL.Properties.Settings);
             // 
             // Form20
             // 
@@ -75,6 +84,7 @@
             this.Load += new System.EventHandler(this.Form20_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rptChuyenBayBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datareport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +95,6 @@
         private System.Windows.Forms.BindingSource rptChuyenBayBindingSource;
         private Datareport Datareport;
         private DatareportTableAdapters.rptChuyenBayTableAdapter rptChuyenBayTableAdapter;
+        private System.Windows.Forms.BindingSource SettingsBindingSource;
     }
 }

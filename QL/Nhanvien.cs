@@ -26,6 +26,7 @@ namespace QL
         public string Diachi { get; set; }
         public string SĐT { get; set; }
         public string Chucvu { get; set; }
+        public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoadon> Hoadons { get; set; }

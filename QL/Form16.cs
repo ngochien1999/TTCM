@@ -12,27 +12,27 @@ namespace QL
 {
     public partial class Form16 : Form
     {
+        private string mahoadon;
         public Form16()
         {
             InitializeComponent();
         }
-
-
-        void loadchart1()
+        public Form16(string mahoadon)
         {
-            using (QLBCMBEntities3 db = new QLBCMBEntities3())
-            {
-                chart1.DataSource = db.dthu().ToList();
-                chart1.Series["VND"].XValueMember = "thoigian";
-                chart1.Series["VND"].YValueMembers = "tongtien";
-            }
+            this.Mahoadon = mahoadon;
+            InitializeComponent();
+          
         }
+
+        public string Mahoadon { get => mahoadon; set => mahoadon = value; }
+
         private void Form16_Load(object sender, EventArgs e)
         {
-            loadchart1();
+            MessageBox.Show(mahoadon);
+            // TODO: This line of code loads data into the 'QLBCMBDataSet20.RPhoadon' table. You can move, or remove it, as needed.
+            this.RPhoadonTableAdapter.Fill(this.QLBCMBDataSet20.RPhoadon,mahoadon);
+
+            this.reportViewer1.RefreshReport();
         }
-
     }
-
-        
 }

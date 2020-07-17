@@ -132,6 +132,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dataset\DuLieu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +178,12 @@
     <Compile Include="Form13.Designer.cs">
       <DependentUpon>Form13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form15.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,17 +196,35 @@
     <Compile Include="Form16.Designer.cs">
       <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form17.cs">
+    <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form17.Designer.cs">
-      <DependentUpon>Form17.cs</DependentUpon>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form18.cs">
+    <Compile Include="frmdttn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form18.Designer.cs">
-      <DependentUpon>Form18.cs</DependentUpon>
+    <Compile Include="frmdttn.Designer.cs">
+      <DependentUpon>frmdttn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmtongdt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtongdt.Designer.cs">
+      <DependentUpon>frmtongdt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmtheothang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtheothang.Designer.cs">
+      <DependentUpon>frmtheothang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form19.Designer.cs">
+      <DependentUpon>Form19.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -215,11 +244,17 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="Form6.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
     <Compile Include="Form8.cs">
       <SubType>Form</SubType>
@@ -270,6 +305,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="KM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="layhoadon_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Maybay.cs">
@@ -351,6 +389,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBCMBDataSet18.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLBCMBDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBCMBDataSet19.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLBCMBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -358,6 +401,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBCMBDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBCMBDataSet20.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLBCMBDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -392,6 +440,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBCMBDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPhoadon_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Sanbay.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -441,17 +492,29 @@
     <EmbeddedResource Include="Form13.resx">
       <DependentUpon>Form13.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form14.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form15.resx">
       <DependentUpon>Form15.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form16.resx">
       <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form17.resx">
-      <DependentUpon>Form17.cs</DependentUpon>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form18.resx">
-      <DependentUpon>Form18.cs</DependentUpon>
+    <EmbeddedResource Include="frmdttn.resx">
+      <DependentUpon>frmdttn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtongdt.resx">
+      <DependentUpon>frmtongdt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtheothang.resx">
+      <DependentUpon>frmtheothang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form19.resx">
+      <DependentUpon>Form19.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -462,8 +525,11 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
@@ -483,6 +549,7 @@
     <EmbeddedResource Include="frmThemChuyenBay.resx">
       <DependentUpon>frmThemChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nhanvien.rdlc" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -495,6 +562,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
     <EmbeddedResource Include="RPHoaDon.rdlc" />
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
@@ -532,6 +602,17 @@
     </None>
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
     </None>
     <None Include="dataset\DuLieu.xsc">
       <DependentUpon>DuLieu.xsd</DependentUpon>
@@ -699,6 +780,17 @@
     <None Include="QLBCMBDataSet18.xss">
       <DependentUpon>QLBCMBDataSet18.xsd</DependentUpon>
     </None>
+    <None Include="QLBCMBDataSet19.xsc">
+      <DependentUpon>QLBCMBDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBCMBDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBCMBDataSet19.xss">
+      <DependentUpon>QLBCMBDataSet19.xsd</DependentUpon>
+    </None>
     <None Include="QLBCMBDataSet2.xsc">
       <DependentUpon>QLBCMBDataSet2.xsd</DependentUpon>
     </None>
@@ -709,6 +801,17 @@
     </None>
     <None Include="QLBCMBDataSet2.xss">
       <DependentUpon>QLBCMBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet20.xsc">
+      <DependentUpon>QLBCMBDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="QLBCMBDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBCMBDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBCMBDataSet20.xss">
+      <DependentUpon>QLBCMBDataSet20.xsd</DependentUpon>
     </None>
     <None Include="QLBCMBDataSet3.xsc">
       <DependentUpon>QLBCMBDataSet3.xsd</DependentUpon>
@@ -829,6 +932,8 @@
     <None Include="Resources\tải xuống %282%29.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tải xuống3.jpg" />
+    <None Include="Resources\tải xuống2.jpg" />
     <None Include="Resources\photo-1572198404182-2c115d89fb261.jpg" />
     <None Include="Resources\photo-1572198404182-2c115d89fb26.jpg" />
     <None Include="Resources\pexels-photo-2700532.jpeg" />

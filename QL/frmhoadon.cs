@@ -28,7 +28,7 @@ namespace QL
                                    , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (tl == DialogResult.Yes)
             {
-                Form17 frm = new Form17();
+                frmtongdt frm = new frmtongdt();
                 frm.ShowDialog();
             }
         }
@@ -40,7 +40,7 @@ namespace QL
                                     , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (tl == DialogResult.Yes)
             {
-                Form18 frm = new Form18();
+                frmtheothang frm = new frmtheothang();
                 frm.ShowDialog();
             }
         }
@@ -48,6 +48,11 @@ namespace QL
         private void ttDoanhThuTheoThoiGian_ItemClick(object sender, TileItemEventArgs e)
         {
 
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -224,7 +224,6 @@ D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form10.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form11.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form2.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form3.resources
-D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form4.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form5.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form9.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.frmThemChuyenBay.resources
@@ -243,10 +242,7 @@ D:\ThucTapChuyenMon\QL\obj\Debug\QL.frmhoadon.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form8.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form15.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.UserControl1.resources
-D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form16.resources
-D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form17.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.csprojAssemblyReference.cache
-D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form18.resources
 D:\ThucTapChuyenMon\QL\bin\Debug\DevExpress.Charts.v19.1.Core.dll
 D:\ThucTapChuyenMon\QL\bin\Debug\DevExpress.XtraCharts.v19.1.dll
 D:\ThucTapChuyenMon\QL\bin\Debug\DevExpress.XtraCharts.v19.1.UI.dll
@@ -288,3 +284,12 @@ D:\ThucTapChuyenMon\QL\bin\Debug\ja\DevExpress.XtraRichEdit.v19.1.resources.dll
 D:\ThucTapChuyenMon\QL\bin\Debug\ru\DevExpress.XtraRichEdit.v19.1.resources.dll
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.FormKichHoat.resources
 D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form20.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form6.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form14.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form19.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form7.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.frmdttn.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.frmtongdt.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.frmtheothang.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form4.resources
+D:\ThucTapChuyenMon\QL\obj\Debug\QL.Form16.resources

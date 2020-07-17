@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL
 {
-    public partial class Form18 : Form
+    public partial class frmtheothang : Form
     {
-        public Form18()
+        public frmtheothang()
         {
             InitializeComponent();
         }

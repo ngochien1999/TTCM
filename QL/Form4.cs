@@ -16,5 +16,19 @@ namespace QL
         {
             InitializeComponent();
         }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'QLBCMBDataSet19.Nhanvien' table. You can move, or remove it, as needed.
+            this.NhanvienTableAdapter.Fill(this.QLBCMBDataSet19.Nhanvien);
+
+            this.reportViewer1.RefreshReport();
+           
+        }
+
+        private void reportViewer2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

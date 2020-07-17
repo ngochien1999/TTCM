@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
             this.cbGT = new System.Windows.Forms.ComboBox();
             this.txtII = new Guna.UI.WinForms.GunaTextBox();
             this.txtI = new Guna.UI.WinForms.GunaTextBox();
@@ -40,6 +40,12 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dtmaybay = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gheloai1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gheloai2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.maybayBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.qLBCMBDataSet10 = new QL.QLBCMBDataSet10();
             this.maybayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,7 +66,6 @@
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.lbchao = new Guna.UI.WinForms.GunaLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtThongTin = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
@@ -68,13 +73,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenMBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gheloai1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gheloai2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.txtThongTin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtmaybay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maybayBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLBCMBDataSet10)).BeginInit();
@@ -88,7 +89,7 @@
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.gunaPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbGT
@@ -97,7 +98,7 @@
             this.cbGT.Items.AddRange(new object[] {
             "BamBoo",
             "VietNamAirLine"});
-            this.cbGT.Location = new System.Drawing.Point(136, 126);
+            this.cbGT.Location = new System.Drawing.Point(136, 91);
             this.cbGT.Name = "cbGT";
             this.cbGT.Size = new System.Drawing.Size(164, 21);
             this.cbGT.TabIndex = 7;
@@ -112,7 +113,7 @@
             this.txtII.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtII.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtII.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtII.Location = new System.Drawing.Point(453, 121);
+            this.txtII.Location = new System.Drawing.Point(445, 103);
             this.txtII.Name = "txtII";
             this.txtII.PasswordChar = '\0';
             this.txtII.Size = new System.Drawing.Size(164, 26);
@@ -127,7 +128,7 @@
             this.txtI.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtI.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtI.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtI.Location = new System.Drawing.Point(453, 36);
+            this.txtI.Location = new System.Drawing.Point(462, 23);
             this.txtI.Name = "txtI";
             this.txtI.PasswordChar = '\0';
             this.txtI.Size = new System.Drawing.Size(164, 26);
@@ -142,7 +143,7 @@
             this.txtten.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtten.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtten.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtten.Location = new System.Drawing.Point(136, 37);
+            this.txtten.Location = new System.Drawing.Point(136, 23);
             this.txtten.Name = "txtten";
             this.txtten.PasswordChar = '\0';
             this.txtten.Size = new System.Drawing.Size(164, 26);
@@ -152,7 +153,7 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(354, 38);
+            this.gunaLabel4.Location = new System.Drawing.Point(354, 23);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(85, 19);
             this.gunaLabel4.TabIndex = 3;
@@ -162,7 +163,7 @@
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(349, 126);
+            this.gunaLabel3.Location = new System.Drawing.Point(349, 103);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(90, 19);
             this.gunaLabel3.TabIndex = 2;
@@ -172,7 +173,7 @@
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(26, 128);
+            this.gunaLabel2.Location = new System.Drawing.Point(26, 91);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(96, 19);
             this.gunaLabel2.TabIndex = 1;
@@ -183,7 +184,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel1.Location = new System.Drawing.Point(26, 43);
+            this.gunaLabel1.Location = new System.Drawing.Point(26, 23);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(87, 19);
             this.gunaLabel1.TabIndex = 0;
@@ -205,12 +206,58 @@
             this.gheloai2DataGridViewTextBoxColumn,
             this.Column1});
             this.dtmaybay.DataSource = this.maybayBindingSource2;
-            this.dtmaybay.Location = new System.Drawing.Point(21, 357);
+            this.dtmaybay.Location = new System.Drawing.Point(0, 279);
             this.dtmaybay.Name = "dtmaybay";
             this.dtmaybay.ReadOnly = true;
-            this.dtmaybay.Size = new System.Drawing.Size(736, 110);
+            this.dtmaybay.Size = new System.Drawing.Size(767, 147);
             this.dtmaybay.TabIndex = 1;
             this.dtmaybay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtmaybay_CellContentClick);
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaMB";
+            this.Column2.HeaderText = "Mã MB";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // tenMBDataGridViewTextBoxColumn
+            // 
+            this.tenMBDataGridViewTextBoxColumn.DataPropertyName = "TenMB";
+            this.tenMBDataGridViewTextBoxColumn.HeaderText = "Tên Máy Bay";
+            this.tenMBDataGridViewTextBoxColumn.Name = "tenMBDataGridViewTextBoxColumn";
+            this.tenMBDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hangDataGridViewTextBoxColumn
+            // 
+            this.hangDataGridViewTextBoxColumn.DataPropertyName = "Hang";
+            this.hangDataGridViewTextBoxColumn.HeaderText = "Hãng Máy Bay";
+            this.hangDataGridViewTextBoxColumn.Name = "hangDataGridViewTextBoxColumn";
+            this.hangDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gheloai1DataGridViewTextBoxColumn
+            // 
+            this.gheloai1DataGridViewTextBoxColumn.DataPropertyName = "Gheloai1";
+            this.gheloai1DataGridViewTextBoxColumn.HeaderText = "Ghế Loại I ";
+            this.gheloai1DataGridViewTextBoxColumn.Name = "gheloai1DataGridViewTextBoxColumn";
+            this.gheloai1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gheloai2DataGridViewTextBoxColumn
+            // 
+            this.gheloai2DataGridViewTextBoxColumn.DataPropertyName = "Gheloai2";
+            this.gheloai2DataGridViewTextBoxColumn.HeaderText = "Ghế Loại II";
+            this.gheloai2DataGridViewTextBoxColumn.Name = "gheloai2DataGridViewTextBoxColumn";
+            this.gheloai2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "Xóa";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "Xóa";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // maybayBindingSource2
             // 
@@ -388,10 +435,11 @@
             // 
             // gunaPanel2
             // 
+            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.gunaPanel2.Controls.Add(this.lbchao);
-            this.gunaPanel2.Location = new System.Drawing.Point(21, 6);
+            this.gunaPanel2.Location = new System.Drawing.Point(0, -1);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(300, 113);
+            this.gunaPanel2.Size = new System.Drawing.Size(764, 120);
             this.gunaPanel2.TabIndex = 3;
             // 
             // lbchao
@@ -399,7 +447,7 @@
             this.lbchao.AutoSize = true;
             this.lbchao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lbchao.Font = new System.Drawing.Font("Tempus Sans ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbchao.Location = new System.Drawing.Point(96, 50);
+            this.lbchao.Location = new System.Drawing.Point(80, 46);
             this.lbchao.Name = "lbchao";
             this.lbchao.Size = new System.Drawing.Size(99, 24);
             this.lbchao.TabIndex = 0;
@@ -410,19 +458,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // txtThongTin
-            // 
-            this.txtThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(233)))));
-            this.txtThongTin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtThongTin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtThongTin.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThongTin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtThongTin.Location = new System.Drawing.Point(0, 486);
-            this.txtThongTin.Name = "txtThongTin";
-            this.txtThongTin.Size = new System.Drawing.Size(928, 13);
-            this.txtThongTin.TabIndex = 41;
-            this.txtThongTin.Text = resources.GetString("txtThongTin.Text");
             // 
             // timer2
             // 
@@ -486,6 +521,7 @@
             // 
             // gunaPanel1
             // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.LemonChiffon;
             this.gunaPanel1.Controls.Add(this.cbGT);
             this.gunaPanel1.Controls.Add(this.txtII);
             this.gunaPanel1.Controls.Add(this.txtI);
@@ -494,80 +530,65 @@
             this.gunaPanel1.Controls.Add(this.gunaLabel3);
             this.gunaPanel1.Controls.Add(this.gunaLabel2);
             this.gunaPanel1.Controls.Add(this.gunaLabel1);
-            this.gunaPanel1.Location = new System.Drawing.Point(21, 125);
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 111);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(736, 226);
+            this.gunaPanel1.Size = new System.Drawing.Size(767, 150);
             this.gunaPanel1.TabIndex = 0;
             // 
-            // gunaPictureBox1
+            // pictureBox1
             // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::QL.Properties.Resources.Airline_strike__1_1;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(327, 5);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(261, 114);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 4;
-            this.gunaPictureBox1.TabStop = false;
+            this.pictureBox1.Image = global::QL.Properties.Resources.istockphoto_1149089650_1024x1024;
+            this.pictureBox1.Location = new System.Drawing.Point(287, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 90;
+            this.pictureBox1.TabStop = false;
             // 
-            // Column2
+            // progressPanel1
             // 
-            this.Column2.DataPropertyName = "MaMB";
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.progressPanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.progressPanel1.Appearance.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressPanel1.Appearance.Options.UseBackColor = true;
+            this.progressPanel1.Appearance.Options.UseFont = true;
+            this.progressPanel1.AppearanceCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.progressPanel1.AppearanceCaption.Options.UseFont = true;
+            this.progressPanel1.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.progressPanel1.AppearanceDescription.Options.UseFont = true;
+            this.progressPanel1.BarAnimationElementThickness = 2;
+            this.progressPanel1.Caption = "BamBoo AirLine";
+            this.progressPanel1.Location = new System.Drawing.Point(0, 427);
+            this.progressPanel1.Name = "progressPanel1";
+            this.progressPanel1.Size = new System.Drawing.Size(727, 39);
+            this.progressPanel1.TabIndex = 93;
+            this.progressPanel1.Text = "progressPanel1";
             // 
-            // tenMBDataGridViewTextBoxColumn
+            // txtThongTin
             // 
-            this.tenMBDataGridViewTextBoxColumn.DataPropertyName = "TenMB";
-            this.tenMBDataGridViewTextBoxColumn.HeaderText = "Tên Máy Bay";
-            this.tenMBDataGridViewTextBoxColumn.Name = "tenMBDataGridViewTextBoxColumn";
-            this.tenMBDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hangDataGridViewTextBoxColumn
-            // 
-            this.hangDataGridViewTextBoxColumn.DataPropertyName = "Hang";
-            this.hangDataGridViewTextBoxColumn.HeaderText = "Hãng Máy Bay";
-            this.hangDataGridViewTextBoxColumn.Name = "hangDataGridViewTextBoxColumn";
-            this.hangDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gheloai1DataGridViewTextBoxColumn
-            // 
-            this.gheloai1DataGridViewTextBoxColumn.DataPropertyName = "Gheloai1";
-            this.gheloai1DataGridViewTextBoxColumn.HeaderText = "Ghế Loại I ";
-            this.gheloai1DataGridViewTextBoxColumn.Name = "gheloai1DataGridViewTextBoxColumn";
-            this.gheloai1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gheloai2DataGridViewTextBoxColumn
-            // 
-            this.gheloai2DataGridViewTextBoxColumn.DataPropertyName = "Gheloai2";
-            this.gheloai2DataGridViewTextBoxColumn.HeaderText = "Ghế Loại II";
-            this.gheloai2DataGridViewTextBoxColumn.Name = "gheloai2DataGridViewTextBoxColumn";
-            this.gheloai2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "Xóa";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "Xóa";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.txtThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(233)))));
+            this.txtThongTin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtThongTin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtThongTin.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThongTin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtThongTin.Location = new System.Drawing.Point(0, 486);
+            this.txtThongTin.Name = "txtThongTin";
+            this.txtThongTin.Size = new System.Drawing.Size(928, 13);
+            this.txtThongTin.TabIndex = 94;
+            this.txtThongTin.Text = resources.GetString("txtThongTin.Text");
             // 
             // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(928, 499);
+            this.Controls.Add(this.txtThongTin);
+            this.Controls.Add(this.progressPanel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.txtThongTin);
             this.Controls.Add(this.gunaPictureBox2);
-            this.Controls.Add(this.gunaPictureBox1);
             this.Controls.Add(this.gunaPanel2);
             this.Controls.Add(this.gunaGroupBox2);
             this.Controls.Add(this.dtmaybay);
@@ -593,7 +614,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,20 +650,21 @@
         private Guna.UI.WinForms.GunaLabel lbchao;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox txtThongTin;
         private System.Windows.Forms.Timer timer2;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenMBDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gheloai1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gheloai2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.TextBox txtThongTin;
     }
 }

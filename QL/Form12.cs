@@ -83,35 +83,17 @@ namespace QL
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-                quanlichuan.deletesb(txtma.Text.Trim());
-                DialogResult dr =  MessageBox.Show("đã xóa", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (dr == DialogResult.OK)
-                {
-                    Form12_Load(sender, e);
-                }
+               
         }
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
+            quanlichuan.deletesb(txtma.Text.Trim());
+            DialogResult dr = MessageBox.Show("đã xóa", "Thông báo",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dr == DialogResult.OK)
             {
-                if (masb == "")
-                {
-                    MessageBox.Show("Hãy chọn sân bay cần sửa!");
-                    return;
-                }
-                   Sanbay nv = quanlichuan.Sanbays.FirstOrDefault(p => p.MaSb == masb);
-
-                    nv.TenSb = txtten.Text;
-                    nv.Diachi = txtdiachi.Text;
-                   
-                    quanlichuan.SaveChanges();
-                DialogResult dr = MessageBox.Show("Sua thanh cong!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (dr == DialogResult.OK)
-                {
-                    Form12_Load(sender, e);
-                }
+                Form12_Load(sender, e);
             }
         }
 
@@ -137,6 +119,29 @@ namespace QL
             txtma.Text = "";
             txtdiachi.Text = "";
             txtten.Text = "";
+        }
+
+        private void gunaButton5_Click(object sender, EventArgs e)
+        {
+            {
+                if (masb == "")
+                {
+                    MessageBox.Show("Hãy chọn sân bay cần sửa!");
+                    return;
+                }
+                Sanbay nv = quanlichuan.Sanbays.FirstOrDefault(p => p.MaSb == masb);
+
+                nv.TenSb = txtten.Text;
+                nv.Diachi = txtdiachi.Text;
+
+                quanlichuan.SaveChanges();
+                DialogResult dr = MessageBox.Show("Sua thanh cong!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK)
+                {
+                    Form12_Load(sender, e);
+                }
+            }
         }
 
         private void Form12_Load(object sender, EventArgs e)

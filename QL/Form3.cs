@@ -35,6 +35,9 @@ namespace QL
             //data.Columns.Add("Giave");
             //data.Columns.Add("Hangve");
             //data.Columns.Add("Hangmb");
+           
+
+
 
             cbDiemDi.ValueMember = "MaSb";
             cbDiemDi.DisplayMember = "TenSb";
@@ -88,10 +91,6 @@ namespace QL
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = dt.TimKiemNangCao(cbDiemDi.SelectedValue.ToString(),
-                                                            cbDiemDen.SelectedValue.ToString(),
-                                                            cbLoaiVe.SelectedValue.ToString(),
-                                                            Convert.ToDateTime(dtpNgayDi.Value));
             //dataGridView1.DataSource = dt.TimKiemNangCao(Convert.ToDateTime(dtpNgayDi.Value), cbDiemDi.SelectedValue.ToString(), cbDiemDen.SelectedValue.ToString(), cbLoaiVe.SelectedValue.ToString());
         }
         string macb = "";
@@ -160,9 +159,7 @@ namespace QL
                         tongtien += giaveloai1;
                         lbTongTien.Text = tongtien.ToString();
                         dt.SaveChanges();
-                        Form3_Load(sender, e);
-
-                    
+                        Form3_Load(sender, e);                    
                 
             }
         }
@@ -170,6 +167,7 @@ namespace QL
         private void btnDatVe_Click(object sender, EventArgs e)
         {
             
+
                 using (QLBCMBEntities3 quanli = new QLBCMBEntities3())
                 {
                 //    Hoadon hd = new Hoadon();
@@ -181,9 +179,18 @@ namespace QL
                 //hd.Tongtien = int.Parse(lbTongTien.Text);
                 //quanli.Hoadons.Add(hd);
                 //quanli.SaveChanges();
-                quanli.mahoadon(cbnv.va)
-                quanli.themHoaDon(txtmahd.Text, cbnv.SelectedValue.ToString()
-                    , int.Parse(lbTongTien.Text), cbkh.SelectedValue.ToString(), DateTime.Now);
+               // quanli.mahoadon(cbnv.SelectedValue, Convert.ToDateTime(dtngay.Text), lbTongTien.Text, cbkh.SelectedValue);
+                quanli.themHoaDon( cbnv.SelectedValue.ToString()
+                    , int.Parse(lbTongTien.Text), cbkh.SelectedValue.ToString(), DateTime.Now, textBox1.Text);
+                CTVe ct = new CTVe();
+                ct.MaHD = quanli.Hoadons.Max(p => p.MaHD);
+                ct.Mave = textBox1.Text;
+                quanli.CTVes.Add(ct);
+                int n = int.Parse(txtI.Text) + int.Parse(txtII.Text);
+
+                ct.Soluongban = n;
+
+                quanli.SaveChanges();
 
                 //if (String.IsNullOrEmpty(txtI.Text))
                 //{
@@ -313,10 +320,30 @@ namespace QL
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            Form20 f = new Form20();
+            string a = "";
+            using(QLBCMBEntities3 quanli = new QLBCMBEntities3())
+            {
+                a = quanli.Hoadons.Max(p => p.MaHD);
+               
+            }    
+            Form16 f = new Form16(a);
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        {
+
+            dataGridView1.DataSource = dt.TimKiemNangCao(cbDiemDi.SelectedValue.ToString(),
+                                                            cbDiemDen.SelectedValue.ToString(),
+                                                            cbLoaiVe.SelectedValue.ToString(),
+                                                            Convert.ToDateTime(dtpNgayDi.Value));
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
