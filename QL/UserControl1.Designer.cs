@@ -59,20 +59,16 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -330,6 +326,7 @@
             this.lblTime.Size = new System.Drawing.Size(27, 13);
             this.lblTime.TabIndex = 94;
             this.lblTime.Text = "time";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // label3
             // 
@@ -427,7 +424,6 @@
             this.groupControl2.Controls.Add(this.pictureBox2);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl11);
-            this.groupControl2.Controls.Add(this.labelControl12);
             this.groupControl2.Controls.Add(this.labelControl30);
             this.groupControl2.Controls.Add(this.labelControl32);
             this.groupControl2.Controls.Add(this.labelControl31);
@@ -477,17 +473,7 @@
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(307, 18);
             this.labelControl11.TabIndex = 129;
-            this.labelControl11.Text = "B2: Nhập thông tin khách hàng và thông tin liên lạc.";
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(31, 110);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(309, 18);
-            this.labelControl12.TabIndex = 130;
-            this.labelControl12.Text = "B3: Nhập thông số khuyến mại tại thời điểm lập vé.";
+            this.labelControl11.Text = "B3: Nhập thông tin khách hàng và thông tin liên lạc.";
             // 
             // labelControl30
             // 
@@ -497,17 +483,17 @@
             this.labelControl30.Name = "labelControl30";
             this.labelControl30.Size = new System.Drawing.Size(301, 18);
             this.labelControl30.TabIndex = 131;
-            this.labelControl30.Text = "B4: Hoàn tất các thủ tục còn lại tại các mục phần .";
+            this.labelControl30.Text = "B2: Hoàn tất các thủ tục còn lại tại các mục phần .";
             // 
             // labelControl32
             // 
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl32.Appearance.Options.UseFont = true;
-            this.labelControl32.Location = new System.Drawing.Point(31, 131);
+            this.labelControl32.Location = new System.Drawing.Point(31, 113);
             this.labelControl32.Name = "labelControl32";
             this.labelControl32.Size = new System.Drawing.Size(266, 18);
             this.labelControl32.TabIndex = 133;
-            this.labelControl32.Text = "B6: In hóa đơn vé bán và gửi tới khách hàng .";
+            this.labelControl32.Text = "B5: In hóa đơn vé bán và gửi tới khách hàng .";
             // 
             // labelControl31
             // 
@@ -517,15 +503,12 @@
             this.labelControl31.Name = "labelControl31";
             this.labelControl31.Size = new System.Drawing.Size(313, 18);
             this.labelControl31.TabIndex = 132;
-            this.labelControl31.Text = "B5: Thanh toán tiền mua vé sau khi hoàn tất thủ tục.";
+            this.labelControl31.Text = "B4: Thanh toán tiền mua vé sau khi hoàn tất thủ tục.";
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.labelControl34);
-            this.groupControl1.Controls.Add(this.labelControl33);
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl29);
-            this.groupControl1.Controls.Add(this.labelControl9);
-            this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.textEdit1);
@@ -536,49 +519,9 @@
             this.groupControl1.TabIndex = 143;
             this.groupControl1.Text = "Cách Thức Tính Tiền";
             // 
-            // labelControl34
-            // 
-            this.labelControl34.Location = new System.Drawing.Point(170, 110);
-            this.labelControl34.Name = "labelControl34";
-            this.labelControl34.Size = new System.Drawing.Size(113, 13);
-            this.labelControl34.TabIndex = 145;
-            this.labelControl34.Text = "+ Em Bé (tuổi <5) : 5%";
-            // 
-            // labelControl33
-            // 
-            this.labelControl33.Location = new System.Drawing.Point(170, 128);
-            this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(125, 13);
-            this.labelControl33.TabIndex = 144;
-            this.labelControl33.Text = "+ Trẻ Em (tuổi 5-15) : 5%";
-            // 
-            // labelControl29
-            // 
-            this.labelControl29.Location = new System.Drawing.Point(170, 146);
-            this.labelControl29.Name = "labelControl29";
-            this.labelControl29.Size = new System.Drawing.Size(138, 13);
-            this.labelControl29.TabIndex = 143;
-            this.labelControl29.Text = "+ Người Lớn (tuổi >15) : 0%";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(148, 92);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(239, 13);
-            this.labelControl9.TabIndex = 142;
-            this.labelControl9.Text = "Khuyến Mãi 2: Lượng khuyến mãi dựa vào Độ tuổi";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(148, 74);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(227, 13);
-            this.labelControl8.TabIndex = 141;
-            this.labelControl8.Text = "Khuyến Mãi 1: Lượng khuyến mãi vào Thời điểm";
-            // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(93, 74);
+            this.labelControl7.Location = new System.Drawing.Point(104, 77);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(49, 13);
             this.labelControl7.TabIndex = 140;
@@ -596,7 +539,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.EditValue = "Tổng Tiền = Tiền Vé - Khuyến Mại 1 - Khuyến Mại 2 + Thuế Vat ";
+            this.textEdit1.EditValue = "Tổng Tiền = Tiền Vé  + Thuế VAT";
             this.textEdit1.Location = new System.Drawing.Point(75, 49);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Consolas", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -604,18 +547,34 @@
             this.textEdit1.Properties.Appearance.Options.UseFont = true;
             this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit1.Properties.ReadOnly = true;
-            this.textEdit1.Size = new System.Drawing.Size(436, 22);
+            this.textEdit1.Size = new System.Drawing.Size(283, 22);
             this.textEdit1.TabIndex = 139;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(25, 167);
+            this.labelControl5.Location = new System.Drawing.Point(90, 157);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(268, 13);
             this.labelControl5.TabIndex = 135;
             this.labelControl5.Text = "Chú ý: Nếu là trẻ em thì cần người thân giám hộ.";
+            // 
+            // labelControl29
+            // 
+            this.labelControl29.Location = new System.Drawing.Point(199, 88);
+            this.labelControl29.Name = "labelControl29";
+            this.labelControl29.Size = new System.Drawing.Size(66, 13);
+            this.labelControl29.TabIndex = 143;
+            this.labelControl29.Text = "Thuế VAT = 0";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(104, 118);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(337, 13);
+            this.labelControl3.TabIndex = 144;
+            this.labelControl3.Text = "Giá vé tùy thuộc vào vé Loại I và vé Loại II , Vé loại II = 20% vé loại I";
             // 
             // UserControl1
             // 
@@ -673,21 +632,17 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl30;
         private DevExpress.XtraEditors.LabelControl labelControl32;
         private DevExpress.XtraEditors.LabelControl labelControl31;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl34;
-        private DevExpress.XtraEditors.LabelControl labelControl33;
-        private DevExpress.XtraEditors.LabelControl labelControl29;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl29;
     }
 }

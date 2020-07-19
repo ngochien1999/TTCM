@@ -250,6 +250,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="banchay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="chuyenbay_ha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaMB" Type="nvarchar" Mode="In" />
           <Parameter Name="MaCB" Type="nvarchar" Mode="In" />
@@ -959,6 +960,7 @@
           <FunctionImport Name="RPhoadon" ReturnType="Collection(QLBCMBModel.RPhoadon_Result)">
           <Parameter Name="mahd" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="banchay" ReturnType="Collection(QLBCMBModel.banchay_Result)" />
         </EntityContainer>
         <ComplexType Name="doanhthu_Result">
           <Property Type="Int32" Name="thoigian" Nullable="true" />
@@ -1044,6 +1046,12 @@
           <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="Sabden" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Sabdi" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="banchay_Result">
+          <Property Type="String" Name="Sabdi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sabden" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaCB" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="tong" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1347,6 +1355,16 @@
                 <ScalarProperty Name="MaCB" ColumnName="MaCB" />
                 <ScalarProperty Name="Sabden" ColumnName="Sabden" />
                 <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="banchay" FunctionName="QLBCMBModel.Store.banchay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBCMBModel.banchay_Result">
+                <ScalarProperty Name="Sabdi" ColumnName="Sabdi" />
+                <ScalarProperty Name="Sabden" ColumnName="Sabden" />
+                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+                <ScalarProperty Name="tong" ColumnName="tong" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

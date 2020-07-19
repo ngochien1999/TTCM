@@ -649,5 +649,10 @@ namespace QL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RPhoadon_Result>("RPhoadon", mahdParameter);
         }
+    
+        public virtual ObjectResult<banchay_Result> banchay()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<banchay_Result>("banchay");
+        }
     }
 }

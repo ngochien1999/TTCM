@@ -19,7 +19,7 @@ namespace QL
         QLBCMBEntities3 dt = new QLBCMBEntities3();
         private void button2_Click(object sender, EventArgs e)
         {
-            dt.updatekeykh(textBox1.Text.Trim(), Form1.tentkchuan);
+            dt.updatekeykh(textBox1.Text.Trim(), frmLogin.tentkchuan);
             this.Close();
         }
     }

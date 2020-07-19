@@ -37,7 +37,7 @@ namespace QL
                 if (data > 0)
                     MessageBox.Show("Đổi mật khẩu thành công.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                Form1 back = new Form1();
+                frmLogin back = new frmLogin();
                 back.Visible = true;
             }
             else

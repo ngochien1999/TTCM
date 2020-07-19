@@ -39,7 +39,7 @@
             this.pcchinh.Image = global::QL.Properties.Resources.maybay10;
             this.pcchinh.Location = new System.Drawing.Point(-8, -19);
             this.pcchinh.Name = "pcchinh";
-            this.pcchinh.Size = new System.Drawing.Size(928, 499);
+            this.pcchinh.Size = new System.Drawing.Size(946, 602);
             this.pcchinh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcchinh.TabIndex = 4;
             this.pcchinh.TabStop = false;
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 456);
+            this.ClientSize = new System.Drawing.Size(1000, 550);
             this.Controls.Add(this.pcchinh);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form13";

@@ -27,5 +27,10 @@ namespace QL
             DateTime tn = DateTime.Now;
             lblDate.Text = tn.ToString("dd/MM/YYYY");
         }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
