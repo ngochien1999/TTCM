@@ -32,7 +32,7 @@ Các chức năng đã hoàn thành bao gồm:
 - Ấn Install
 - Ấn Yes để tiến hành cài đặt
 ## Hướng dẫn sử dụng
-- Đăng nhập (tài khoản admin_ tên tài khoản: "NV01" _ mật khẩu: "12345")
+- Đăng nhập (tài khoản admin_ tên tài khoản: "NV01" _ mật khẩu: "12345") NV02-67891
 - Chọn các chức năng cần sử dụng
 - Sau khi sử dụng, ấn nút Cài đặt ở góc phải trên cùng của ứng dụng, chọn Đăng xuất, chọn Thoát
 ## Xin cám ơn!
